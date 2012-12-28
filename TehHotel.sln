@@ -24,6 +24,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TehHotel.TestClient", "TehH
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TehHotel.Gui.Test", "TehHotel.Gui.TEst\TehHotel.Gui.Test.csproj", "{AF77CF4B-E3A8-4700-B5FB-3B226EE11129}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7F01A3A3-DA7D-4A17-8B26-986F58F304F0} = {7F01A3A3-DA7D-4A17-8B26-986F58F304F0}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
