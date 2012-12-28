@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5ACE31F7-79AC-4B3B-B53F-76DC473AEC42}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TehHotel.Dal</RootNamespace>
+    <AssemblyName>TehHotel.Dal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.2.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IDao.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Dao\DvoranaEFDao.cs" />
+    <Compile Include="Models\Dao\HotelEFDao.cs" />
+    <Compile Include="Models\Dao\IdentifikacijaEFDao.cs" />
+    <Compile Include="Models\Dao\NaslovEFDao.cs" />
+    <Compile Include="Models\Dao\ParkirisceEFDao.cs" />
+    <Compile Include="Models\Dao\RacunEFDao.cs" />
+    <Compile Include="Models\Dao\RezervacijaDvoraneEFDao.cs" />
+    <Compile Include="Models\Dao\RezervacijaParkirisceEFDao.cs" />
+    <Compile Include="Models\Dao\RezervacijaSobeEFDao.cs" />
+    <Compile Include="Models\Dao\SobaEFDao.cs" />
+    <Compile Include="Models\Dao\StrankaEFDao.cs" />
+    <Compile Include="Models\Dao\ZaposleniEFDao.cs" />
+    <Compile Include="Models\DvoranaEF.cs" />
+    <Compile Include="Models\HotelEF.cs" />
+    <Compile Include="Models\IdentifikacijaEF.cs" />
+    <Compile Include="Models\NaslovEF.cs" />
+    <Compile Include="Models\ParkirisceEF.cs" />
+    <Compile Include="Models\RacunEF.cs" />
+    <Compile Include="Models\RezervacijaDvoraneEF.cs" />
+    <Compile Include="Models\RezervacijaParkiriscaEF.cs" />
+    <Compile Include="Models\RezervacijaSobeEF.cs" />
+    <Compile Include="Models\SobaEF.cs" />
+    <Compile Include="Models\StrankaEF.cs" />
+    <Compile Include="Models\ZaposleniEF.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TehHotelContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TehHotel.Contracts\TehHotel.Contracts.csproj">
+      <Project>{54be9619-b264-4dc5-9b62-655bf24d64ec}</Project>
+      <Name>TehHotel.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

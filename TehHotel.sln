@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TehHotel.Dal", "TehHotel.Dal\TehHotel.Dal.csproj", "{5ACE31F7-79AC-4B3B-B53F-76DC473AEC42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TehHotel.Contracts", "TehHotel.Contracts\TehHotel.Contracts.csproj", "{54BE9619-B264-4DC5-9B62-655BF24D64EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TehHotel.Model", "TehHotel.Model\TehHotel.Model.csproj", "{3DB4F9E9-0673-4568-B9CC-8778AA259885}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{07C10A9E-A869-437C-83B9-768EF9DCF031}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TehHotel.DalTest", "TehHotel.DalTest\TehHotel.DalTest.csproj", "{928A8145-79A5-454C-8F00-2537C0FD1770}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TehHotel.Host", "TehHotel.Host\TehHotel.Host.csproj", "{7F01A3A3-DA7D-4A17-8B26-986F58F304F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TehHotel.TestClient", "TehHotel.TestClient\TehHotel.TestClient.csproj", "{976B8577-F47A-49F2-BFCF-45E845EE5C5F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7F01A3A3-DA7D-4A17-8B26-986F58F304F0} = {7F01A3A3-DA7D-4A17-8B26-986F58F304F0}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ACE31F7-79AC-4B3B-B53F-76DC473AEC42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ACE31F7-79AC-4B3B-B53F-76DC473AEC42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ACE31F7-79AC-4B3B-B53F-76DC473AEC42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ACE31F7-79AC-4B3B-B53F-76DC473AEC42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54BE9619-B264-4DC5-9B62-655BF24D64EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54BE9619-B264-4DC5-9B62-655BF24D64EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54BE9619-B264-4DC5-9B62-655BF24D64EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54BE9619-B264-4DC5-9B62-655BF24D64EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DB4F9E9-0673-4568-B9CC-8778AA259885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DB4F9E9-0673-4568-B9CC-8778AA259885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DB4F9E9-0673-4568-B9CC-8778AA259885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DB4F9E9-0673-4568-B9CC-8778AA259885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{928A8145-79A5-454C-8F00-2537C0FD1770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{928A8145-79A5-454C-8F00-2537C0FD1770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{928A8145-79A5-454C-8F00-2537C0FD1770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{928A8145-79A5-454C-8F00-2537C0FD1770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F01A3A3-DA7D-4A17-8B26-986F58F304F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F01A3A3-DA7D-4A17-8B26-986F58F304F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F01A3A3-DA7D-4A17-8B26-986F58F304F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F01A3A3-DA7D-4A17-8B26-986F58F304F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{976B8577-F47A-49F2-BFCF-45E845EE5C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{976B8577-F47A-49F2-BFCF-45E845EE5C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{976B8577-F47A-49F2-BFCF-45E845EE5C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{976B8577-F47A-49F2-BFCF-45E845EE5C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
