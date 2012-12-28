@@ -754,3 +754,11 @@ tr.pager td {
             margin: 0;
         }
 }
+
+table input {
+    width: 40px;
+}
+
+.mojatabela td {
+    padding-left: 10px;
+}
