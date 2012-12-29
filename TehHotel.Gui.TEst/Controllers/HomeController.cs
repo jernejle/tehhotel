@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace TehHotel.Gui.TEst.Controllers
+namespace TehHotel.Gui.Test.Controllers
 {
     public class HomeController : Controller
     {

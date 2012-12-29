@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TehHotel.Gui.TEst.Properties {
+namespace TehHotel.Gui.Test.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -30,6 +30,16 @@ namespace TehHotel.Gui.TEst.Properties {
         public string TehHotel_Gui_TEst_RezervacijaService_RezervacijaService {
             get {
                 return ((string)(this["TehHotel_Gui_TEst_RezervacijaService_RezervacijaService"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1476/HotelService.svc")]
+        public string TehHotel_Gui_Test_HotelService_HotelService {
+            get {
+                return ((string)(this["TehHotel_Gui_Test_HotelService_HotelService"]));
             }
         }
     }

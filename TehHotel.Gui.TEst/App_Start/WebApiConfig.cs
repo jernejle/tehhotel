@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace TehHotel.Gui.TEst
+namespace TehHotel.Gui.Test
 {
     public static class WebApiConfig
     {

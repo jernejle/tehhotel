@@ -4,9 +4,9 @@ using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
-using TehHotel.Gui.TEst.Models;
+using TehHotel.Gui.Test.Models;
 
-namespace TehHotel.Gui.TEst.Filters
+namespace TehHotel.Gui.Test.Filters
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public sealed class InitializeSimpleMembershipAttribute : ActionFilterAttribute

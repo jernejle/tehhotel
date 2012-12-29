@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http//www.tehhotel.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1476/HotelService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="CreateHotel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http//www.tehhotel.com/" minOccurs="0" name="h" nillable="true" type="q1:Hotel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Hotel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bazen" type="xs:boolean" />
+      <xs:element xmlns:q2="http//www.tehhotel.com/" minOccurs="0" name="Dvorane" nillable="true" type="q2:ArrayOfDvorana" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kuhinja" type="xs:boolean" />
+      <xs:element xmlns:q3="http//www.tehhotel.com/" minOccurs="0" name="Naslov" nillable="true" type="q3:Naslov" />
+      <xs:element xmlns:q4="http//www.tehhotel.com/" minOccurs="0" name="Osebje" nillable="true" type="q4:ArrayOfZaposleni" />
+      <xs:element xmlns:q5="http//www.tehhotel.com/" minOccurs="0" name="Parkirisca" nillable="true" type="q5:ArrayOfParkirisce" />
+      <xs:element xmlns:q6="http//www.tehhotel.com/" minOccurs="0" name="Sobe" nillable="true" type="q6:ArrayOfSoba" />
+      <xs:element minOccurs="0" name="Zvezdice" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q7="http//www.tehhotel.com/" name="Hotel" nillable="true" type="q7:Hotel" />
+  <xs:complexType name="ArrayOfDvorana">
+    <xs:sequence>
+      <xs:element xmlns:q8="http//www.tehhotel.com/" minOccurs="0" maxOccurs="unbounded" name="Dvorana" nillable="true" type="q8:Dvorana" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q9="http//www.tehhotel.com/" name="ArrayOfDvorana" nillable="true" type="q9:ArrayOfDvorana" />
+  <xs:complexType name="Dvorana">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HotelId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Povrsina" type="xs:double" />
+      <xs:element minOccurs="0" name="StLjudi" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element xmlns:q10="http//www.tehhotel.com/" name="Dvorana" nillable="true" type="q10:Dvorana" />
+  <xs:complexType name="Naslov">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Drzava" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Kraj" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostnaStevilka" type="xs:int" />
+      <xs:element minOccurs="0" name="Ulica" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q11="http//www.tehhotel.com/" name="Naslov" nillable="true" type="q11:Naslov" />
+  <xs:complexType name="ArrayOfZaposleni">
+    <xs:sequence>
+      <xs:element xmlns:q12="http//www.tehhotel.com/" minOccurs="0" maxOccurs="unbounded" name="Zaposleni" nillable="true" type="q12:Zaposleni" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q13="http//www.tehhotel.com/" name="ArrayOfZaposleni" nillable="true" type="q13:ArrayOfZaposleni" />
+  <xs:complexType name="Zaposleni">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatumRojstva" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatumZaposlitve" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HotelId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element xmlns:q14="http//www.tehhotel.com/" minOccurs="0" name="Identifikacija" nillable="true" type="q14:Identifikacija" />
+      <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Izobrazba" nillable="true" type="xs:string" />
+      <xs:element xmlns:q15="http//www.tehhotel.com/" minOccurs="0" name="Naslov" nillable="true" type="q15:Naslov" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priimek" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Spol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefon" type="xs:int" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vloga" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q16="http//www.tehhotel.com/" name="Zaposleni" nillable="true" type="q16:Zaposleni" />
+  <xs:complexType name="Identifikacija">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Tip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vrednost" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q17="http//www.tehhotel.com/" name="Identifikacija" nillable="true" type="q17:Identifikacija" />
+  <xs:complexType name="ArrayOfParkirisce">
+    <xs:sequence>
+      <xs:element xmlns:q18="http//www.tehhotel.com/" minOccurs="0" maxOccurs="unbounded" name="Parkirisce" nillable="true" type="q18:Parkirisce" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q19="http//www.tehhotel.com/" name="ArrayOfParkirisce" nillable="true" type="q19:ArrayOfParkirisce" />
+  <xs:complexType name="Parkirisce">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HotelId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Pokrito" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Stevilka" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q20="http//www.tehhotel.com/" name="Parkirisce" nillable="true" type="q20:Parkirisce" />
+  <xs:complexType name="ArrayOfSoba">
+    <xs:sequence>
+      <xs:element xmlns:q21="http//www.tehhotel.com/" minOccurs="0" maxOccurs="unbounded" name="Soba" nillable="true" type="q21:Soba" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q22="http//www.tehhotel.com/" name="ArrayOfSoba" nillable="true" type="q22:ArrayOfSoba" />
+  <xs:complexType name="Soba">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Balkon" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Cena" type="xs:double" />
+      <xs:element minOccurs="0" name="Hladilnik" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HotelId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Internet" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Nadstropje" type="xs:int" />
+      <xs:element minOccurs="0" name="Povrsina" type="xs:double" />
+      <xs:element minOccurs="0" name="StPostelj" type="xs:int" />
+      <xs:element minOccurs="0" name="Stevilka" type="xs:int" />
+      <xs:element minOccurs="0" name="Televizija" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Valuta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q23="http//www.tehhotel.com/" name="Soba" nillable="true" type="q23:Soba" />
+  <xs:element name="CreateHotelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateHotelResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadHotel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadHotelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http//www.tehhotel.com/" minOccurs="0" name="ReadHotelResult" nillable="true" type="q24:Hotel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateHotel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http//www.tehhotel.com/" minOccurs="0" name="h" nillable="true" type="q25:Hotel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateHotelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateHotelResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteHotel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteHotelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteHotelResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListHotel">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListHotelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http//www.tehhotel.com/" minOccurs="0" name="ListHotelResult" nillable="true" type="q26:ArrayOfHotel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfHotel">
+    <xs:sequence>
+      <xs:element xmlns:q27="http//www.tehhotel.com/" minOccurs="0" maxOccurs="unbounded" name="Hotel" nillable="true" type="q27:Hotel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q28="http//www.tehhotel.com/" name="ArrayOfHotel" nillable="true" type="q28:ArrayOfHotel" />
+  <xs:element name="ListHotelByKraj">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="kraj" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListHotelByKrajResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http//www.tehhotel.com/" minOccurs="0" name="ListHotelByKrajResult" nillable="true" type="q29:ArrayOfHotel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListHotelByDrzava">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="drzava" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListHotelByDrzavaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http//www.tehhotel.com/" minOccurs="0" name="ListHotelByDrzavaResult" nillable="true" type="q30:ArrayOfHotel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSoba">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hotelId" type="xs:int" />
+        <xs:element xmlns:q31="http//www.tehhotel.com/" minOccurs="0" name="s" nillable="true" type="q31:Soba" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddSobaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddSobaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSoba">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hotelId" type="xs:int" />
+        <xs:element minOccurs="0" name="sobaId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveSobaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveSobaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDvorana">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hotelId" type="xs:int" />
+        <xs:element xmlns:q32="http//www.tehhotel.com/" minOccurs="0" name="d" nillable="true" type="q32:Dvorana" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDvoranaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddDvoranaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveDvorana">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hotelId" type="xs:int" />
+        <xs:element minOccurs="0" name="dvoranaId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveDvoranaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveDvoranaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddParkirisce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hotelId" type="xs:int" />
+        <xs:element xmlns:q33="http//www.tehhotel.com/" minOccurs="0" name="p" nillable="true" type="q33:Parkirisce" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddParkirisceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddParkirisceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveParkirisce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hotelId" type="xs:int" />
+        <xs:element minOccurs="0" name="parkirisceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveParkirisceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RemoveParkirisceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateZaposleni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http//www.tehhotel.com/" minOccurs="0" name="z" nillable="true" type="q34:Zaposleni" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateZaposleniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateZaposleniResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadZaposleni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadZaposleniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http//www.tehhotel.com/" minOccurs="0" name="ReadZaposleniResult" nillable="true" type="q35:Zaposleni" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateZaposleni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http//www.tehhotel.com/" minOccurs="0" name="z" nillable="true" type="q36:Zaposleni" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateZaposleniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateZaposleniResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteZaposleni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteZaposleniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteZaposleniResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListZaposleni">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListZaposleniResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http//www.tehhotel.com/" minOccurs="0" name="ListZaposleniResult" nillable="true" type="q37:ArrayOfZaposleni" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListZaposleniByHotel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="hotelId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListZaposleniByHotelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http//www.tehhotel.com/" minOccurs="0" name="ListZaposleniByHotelResult" nillable="true" type="q38:ArrayOfZaposleni" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

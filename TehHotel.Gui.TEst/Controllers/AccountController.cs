@@ -8,10 +8,10 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using TehHotel.Gui.TEst.Filters;
-using TehHotel.Gui.TEst.Models;
+using TehHotel.Gui.Test.Filters;
+using TehHotel.Gui.Test.Models;
 
-namespace TehHotel.Gui.TEst.Controllers
+namespace TehHotel.Gui.Test.Controllers
 {
     [Authorize]
     [InitializeSimpleMembership]

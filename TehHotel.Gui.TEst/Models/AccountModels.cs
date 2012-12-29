@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.Globalization;
 using System.Web.Security;
 
-namespace TehHotel.Gui.TEst.Models
+namespace TehHotel.Gui.Test.Models
 {
     public class UsersContext : DbContext
     {

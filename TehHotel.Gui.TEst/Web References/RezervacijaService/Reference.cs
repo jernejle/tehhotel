@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace TehHotel.Gui.TEst.RezervacijaService {
+namespace TehHotel.Gui.Test.RezervacijaService {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -55,7 +55,7 @@ namespace TehHotel.Gui.TEst.RezervacijaService {
         
         /// <remarks/>
         public RezervacijaService() {
-            this.Url = global::TehHotel.Gui.TEst.Properties.Settings.Default.TehHotel_Gui_TEst_RezervacijaService_RezervacijaService;
+            this.Url = global::TehHotel.Gui.Test.Properties.Settings.Default.TehHotel_Gui_TEst_RezervacijaService_RezervacijaService;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

@@ -175,7 +175,6 @@ namespace TehHotel.Dal.Models.Dao
         {
             SobaEFDao sobadao = new SobaEFDao();
             List<Soba> vseSobe = sobadao.List(idHotel, fos);
-
             List<RezervacijaSobe> rezsob = List(idHotel, datumOd, datumDo, fos);
 
             List<Soba> mozneRezervacije = new List<Soba>();

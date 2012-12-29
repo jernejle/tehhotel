@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace TehHotel.Gui.TEst
+namespace TehHotel.Gui.Test
 {
     public class BundleConfig
     {

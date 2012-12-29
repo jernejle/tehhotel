@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Web.WebPages.OAuth;
-using TehHotel.Gui.TEst.Models;
+using TehHotel.Gui.Test.Models;
 
-namespace TehHotel.Gui.TEst
+namespace TehHotel.Gui.Test
 {
     public static class AuthConfig
     {

@@ -1,0 +1,84 @@
+﻿@model TehHotel.Gui.Test.Objects.RezervacijaSobeObj
+
+@{
+    ViewBag.Title = "Možne rezervacije sobe";
+}
+
+<h2>Možne rezervacije sobe</h2>
+<br />
+@using (Html.BeginForm())
+{
+    <div class="editor-label">
+        <b>Hotel</b>
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(x => x.HotelId, new SelectList(ViewBag.hoteli, "Id", "Ime"))
+    </div>
+    <br />
+    <div class="editor-label">
+        <b>Datum od</b>
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.DatumOd)
+    </div>
+    <div class="editor-label">
+        <b>Datum Do</b>
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.DatumDo)
+    </div>
+    <br />
+    
+    <div class="editor-label">
+        <b>Nadstropje</b>
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.Fos.Nadstropje)
+    </div>
+    <div class="editor-label">
+        <b>Število postelj</b>
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.Fos.StPostelj)
+    </div>
+    <div class="editor-label">
+        <b>Balkon</b>
+    </div>
+    <div class="editor-field">
+        @Html.RadioButtonFor(x => x.Fos.Balkon, true, true) Da
+    @Html.RadioButtonFor(x => x.Fos.Balkon, false, true) Ne
+    @Html.RadioButtonFor(x => x.Fos.Balkon, "", true) Ni pomembno
+    </div>
+    <div class="editor-label">
+        <b>Internet</b>
+    </div>
+    <div class="editor-field">
+        @Html.RadioButtonFor(x => x.Fos.Internet, true, true) Da
+    @Html.RadioButtonFor(x => x.Fos.Internet, false, true) Ne
+    @Html.RadioButtonFor(x => x.Fos.Internet, "", true) Ni pomembno
+    </div>
+    <div class="editor-label">
+        <b>Televizija</b>
+    </div>
+    <div class="editor-field">
+        @Html.RadioButtonFor(x => x.Fos.Televizija, true, true) Da
+    @Html.RadioButtonFor(x => x.Fos.Televizija, false, true) Ne
+    @Html.RadioButtonFor(x => x.Fos.Televizija, "", true) Ni pomembno
+    </div>
+    <div class="editor-label">
+        <b>Hladilnik</b>
+    </div>
+    <div class="editor-field">
+        @Html.RadioButtonFor(x => x.Fos.Hladilnik, true, true) Da
+    @Html.RadioButtonFor(x => x.Fos.Hladilnik, false, true) Ne
+    @Html.RadioButtonFor(x => x.Fos.Hladilnik, "", true) Ni pomembno
+    </div>
+    <input type="submit" value="Išči" />
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#DatumOd, #DatumDo").datepicker({ dateFormat: 'dd.mm.yy' });
+
+    });
+</script>
