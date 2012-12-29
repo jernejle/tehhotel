@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TehHotel.Gui.Test.Models;
 using TehHotel.Gui.Test.RezervacijaService;
 
 namespace TehHotel.Gui.Test.Controllers
@@ -14,48 +15,43 @@ namespace TehHotel.Gui.Test.Controllers
 
         public ActionResult Index()
         {
+            this.ModelState.Clear();
             return View("Rezervacija");
         }
 
         [HttpPost]
-        public ActionResult MozneRezervacijeDvorane(FormCollection form)
+        public ActionResult MozneRezervacijeDvorane(RezervacijaPosebneStoritve model)
         {
-            try
-            {
-                int hotelId = Convert.ToInt32(form["hotelId"]);
-                DateTime datumod = Convert.ToDateTime(form["datumod"]);
-                DateTime datumdo = Convert.ToDateTime(form["datumdo"]);
-                List<Dvorana> mozne_rez = new RezervacijaService.RezervacijaService().ListMozneRezervacijeDvorane(hotelId, true, datumod, true, datumdo, true).ToList();
-                ViewBag.Data = mozne_rez;
-            }
-            catch (Exception e)
-            {
-                Response.Write(e.InnerException);
 
+            if (ModelState.IsValid)
+            {
+                List<Dvorana> mozne_rez = new RezervacijaService.RezervacijaService().ListMozneRezervacijeDvorane(model.idStoritve, true, model.datumOd, true, model.datumDo, true).ToList();
+                ViewBag.Data = mozne_rez;
+                return View("MozneRezervacije");
             }
-            return View("MozneRezervacije");
+            return View("Rezervacija");
         }
 
         [HttpPost]
-        public ActionResult ShraniRezervacijoDvorane(FormCollection form)
+        public ActionResult ShraniRezervacijoDvorane(RezervacijaPosebneStoritve model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                int dvoranaId = Convert.ToInt32(form["dvorana"]);
-                List<int> dvo_list = null;
+                int dvoranaId = model.idStoritve;
+                List<RezervacijaPosebneStoritve> dvo_list = null;
                 if (Session["dvorane"] == null)
                 {
-                    dvo_list = new List<int>();
-                    dvo_list.Add(dvoranaId);
+                    dvo_list = new List<RezervacijaPosebneStoritve>();
+                    dvo_list.Add(model);
                 }
                 else
                 {
 
-                    dvo_list = (List<int>)Session["dvorane"];
+                    dvo_list = (List<RezervacijaPosebneStoritve>)Session["dvorane"];
                     Boolean obstaja = false;
-                    foreach (int id in dvo_list)
+                    foreach (RezervacijaPosebneStoritve rps in dvo_list)
                     {
-                        if (id == dvoranaId)
+                        if (rps.idStoritve == dvoranaId)
                         {
                             obstaja = true;
                             break;
@@ -63,15 +59,17 @@ namespace TehHotel.Gui.Test.Controllers
                     }
                     if (!obstaja)
                     {
-                        dvo_list.Add(dvoranaId);
+                        dvo_list.Add(model);
                     }
                 }
                 Session["dvorane"] = dvo_list;
             }
-            catch (Exception e) {
-                Response.Write(e.InnerException);
+            else
+            {
+                View("MozneRezervacije");
             }
-             return RedirectToAction("Index");
+            this.ModelState.Clear();
+            return RedirectToAction("Index");
         }
 
     }

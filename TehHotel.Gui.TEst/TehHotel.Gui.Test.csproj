@@ -175,6 +175,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\RezervacijaPosebneStoritve.cs" />
     <Compile Include="ViewModel\FilterOptionsSobaObj.cs" />
     <Compile Include="ViewModel\RezervacijaSobeObj.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

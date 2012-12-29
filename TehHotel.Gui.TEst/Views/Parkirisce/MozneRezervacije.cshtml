@@ -1,4 +1,5 @@
-﻿@{
+﻿@model TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve
+@{
     ViewBag.Title = "MozneRezervacije";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -21,7 +22,7 @@
         {
             <tr>
                 <td>
-                    <input type="radio" name="parkirisce" value="@item.Id" />
+                    <input type="radio" name="idStoritve" value="@item.Id" />
                 </td>
                 <td>
                     @item.Id
@@ -35,5 +36,7 @@
             </tr>
         }
     </table>
+    @Html.HiddenFor(m => m.datumOd)
+    @Html.HiddenFor(m => m.datumDo)
     <input type="submit" name="submit" value="Izberi" />
 </form>
