@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "MozneRezervacije";
+}
+
+<h2>Mozne rezervacije sobe</h2>
+
+<form method="post" action="ShraniRezervacijoSobe">
+    <table class="mojatabela">
+        <tr>
+            <th>Izberi</th>
+            <th>#Id</th>
+            <th>Številka</th>
+            <th>#HotelId</th>
+            <th>Nadstropje</th>
+            <th>Št. postelj</th>
+            <th>Cena</th>
+            <th>Valuta</th>
+            <th>Balkon</th>
+            <th>Internet</th>
+            <th>Televizija</th>
+            <th>Hladilnik</th>
+        </tr>
+        @foreach (var item in ViewBag.Sobe)
+        {
+            <tr>
+                <td>
+                    <input type="radio" name="soba" value="@item.Id" />
+                </td>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Stevilka
+                </td>
+                <td>
+                    @item.HotelId
+                </td>
+                <td>
+                    @item.Nadstropje
+                </td>
+                <td>
+                    @item.StPostelj
+                </td>
+                 <td>
+                     @item.Cena
+                </td>
+                 <td>
+                     @item.Valuta
+                </td>
+                 <td>
+                     @item.Balkon
+                </td>
+                 <td>
+                     @item.Internet
+                </td>
+                 <td>
+                     @item.Televizija
+                </td>
+                 <td>
+                     @item.Hladilnik
+                </td>
+            </tr>
+        }
+    </table>
+    <input type="submit" name="submit" value="Izberi" />
+</form>

@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "MozneRezervacije";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Mozne rezervacije parkirišča</h2>
+
+<form method="post" action="ShraniRezervacijoParkirisca">
+    <table class="mojatabela">
+        <tr>
+            <th>Izberi
+            </th>
+            <th>#Id
+            </th>
+            <th>Številka
+            </th>
+            <th>Pokrito
+            </th>
+        </tr>
+        @foreach (var item in ViewBag.Data)
+        {
+            <tr>
+                <td>
+                    <input type="radio" name="parkirisce" value="@item.Id" />
+                </td>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Stevilka
+                </td>
+                <td>
+                    @item.Pokrito
+                </td>
+            </tr>
+        }
+    </table>
+    <input type="submit" name="submit" value="Izberi" />
+</form>

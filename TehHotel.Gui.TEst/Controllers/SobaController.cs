@@ -9,41 +9,72 @@ using TehHotel.Gui.Test.RezervacijaService;
 
 namespace TehHotel.Gui.Test.Controllers
 {
-    public class RezervacijaController : Controller
+    public class SobaController : Controller
     {
         //
         // GET: /Rezervacija/
 
         public ActionResult Index()
         {
-            return View();
-        }
-
-        //
-        // GET: /Rezervacija/MozneRezervacijeSobe
-
-        public ActionResult MozneRezervacijeSobe()
-        {
             ViewBag.hoteli = ListHotel();
-            return View();
+            return View("Rezervacija");
         }
 
         //
         // POST: /Rezervacija/MozneRezervacijeSobe
         [HttpPost]
-        public ActionResult MozneRezervacijeSobe(RezervacijaSobeObj r)
+        public ActionResult MozneRezervacije(RezervacijaSobeObj r)
         {
             if (ModelState.IsValid)
             {
                 RezervacijaService.RezervacijaService client = new RezervacijaService.RezervacijaService();
                 PreveriAtribute(r.Fos);
                 Soba[] sobe = client.ListMozneRezervacijeSobe(r.HotelId, true, r.DatumOd, true, r.DatumDo, true, r.Fos);
-                Debug.WriteLine(sobe.Length);
+                ViewBag.sobe = sobe;
+
+                return View("MozneRezervacije");
             }
-            
                 ViewBag.hoteli = ListHotel();
                 return View(r);
             
+        }
+
+        [HttpPost]
+        public ActionResult ShraniRezervacijoSobe(FormCollection form)
+        {
+            try
+            {
+                int sobaId = Convert.ToInt32(form["soba"]);
+                List<int> sobe_list = null;
+                if (Session["sobe"] == null)
+                {
+                    sobe_list = new List<int>();
+                    sobe_list.Add(sobaId);
+                }
+                else
+                {
+                    sobe_list = (List<int>)Session["sobe"];
+                    Boolean obstaja = false;
+                    foreach (int id in sobe_list)
+                    {
+                        if (id == sobaId)
+                        {
+                            obstaja = true;
+                            break;
+                        }
+                    }
+                    if (!obstaja)
+                    {
+                        sobe_list.Add(sobaId);
+                    }
+                }
+                Session["sobe"] = sobe_list;
+            }
+            catch (Exception e)
+            {
+                Response.Write(e.InnerException);
+            }
+            return RedirectToAction("Index");
         }
 
         public HotelService.Hotel[] ListHotel(){

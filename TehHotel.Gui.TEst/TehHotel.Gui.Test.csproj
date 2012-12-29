@@ -166,8 +166,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DvoranaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RezervacijaController.cs" />
+    <Compile Include="Controllers\SobaController.cs" />
+    <Compile Include="Controllers\ParkirisceController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -319,6 +321,7 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Web References\HotelService\HotelService.wsdl" />
+    <Content Include="Views\Soba\MozneRezervacije.cshtml" />
     <None Include="Web References\HotelService\HotelService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -330,6 +333,7 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
+    <Content Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
     <Content Include="Web References\HotelService\Zaposleni.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -338,7 +342,12 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
-    <Content Include="Views\Rezervacija\MozneRezervacijeSobe.cshtml" />
+    <Content Include="Views\Soba\Rezervacija.cshtml" />
+    <Content Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
+    <Content Include="Views\Dvorana\Rezervacija.cshtml" />
+    <Content Include="Views\Dvorana\MozneRezervacije.cshtml" />
+    <Content Include="Views\Parkirisce\Rezervacija.cshtml" />
+    <Content Include="Views\Parkirisce\MozneRezervacije.cshtml" />
     <None Include="Web References\RezervacijaService\RezervacijaService.xsd">
       <SubType>Designer</SubType>
     </None>
