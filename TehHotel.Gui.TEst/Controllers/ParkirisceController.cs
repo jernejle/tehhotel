@@ -7,10 +7,10 @@ using TehHotel.Gui.TEst.RezervacijaService;
 
 namespace TehHotel.Gui.TEst.Controllers
 {
-    public class DvoranaController : Controller
+    public class ParkirisceController : Controller
     {
         //
-        // GET: /Dvorana/
+        // GET: /Parkirisce/
 
         public ActionResult Index()
         {
@@ -18,44 +18,44 @@ namespace TehHotel.Gui.TEst.Controllers
         }
 
         [HttpPost]
-        public ActionResult MozneRezervacijeDvorane(FormCollection form)
+        public ActionResult MozneRezervacije(FormCollection form)
         {
             try
             {
                 int hotelId = Convert.ToInt32(form["hotelId"]);
                 DateTime datumod = Convert.ToDateTime(form["datumod"]);
                 DateTime datumdo = Convert.ToDateTime(form["datumdo"]);
-                List<Dvorana> mozne_rez = new RezervacijaService.RezervacijaService().ListMozneRezervacijeDvorane(hotelId, true, datumod, true, datumdo, true).ToList();
+                List<Parkirisce> mozne_rez = new RezervacijaService.RezervacijaService().ListMozneRezervacijeParkirisca(hotelId, true, datumod, true, datumdo, true).ToList();
                 ViewBag.Data = mozne_rez;
             }
             catch (Exception e)
             {
                 Response.Write(e.InnerException);
-
             }
             return View("MozneRezervacije");
         }
 
         [HttpPost]
-        public ActionResult ShraniRezervacijoDvorane(FormCollection form)
+        public ActionResult ShraniRezervacijoParkirisca(FormCollection form)
         {
             try
             {
-                int dvoranaId = Convert.ToInt32(form["dvorana"]);
-                List<int> dvo_list = null;
-                if (Session["dvorane"] == null)
+                int parkirisceId = Convert.ToInt32(form["parkirisce"]);
+                Response.Write("daj no " + parkirisceId);
+                List<int> park_list = null;
+                if (Session["parkirisca"] == null)
                 {
-                    dvo_list = new List<int>();
-                    dvo_list.Add(dvoranaId);
+                    park_list = new List<int>();
+                    park_list.Add(parkirisceId);
                 }
                 else
                 {
 
-                    dvo_list = (List<int>)Session["dvorane"];
+                    park_list = (List<int>)Session["parkirisca"];
                     Boolean obstaja = false;
-                    foreach (int id in dvo_list)
+                    foreach (int id in park_list)
                     {
-                        if (id == dvoranaId)
+                        if (id == parkirisceId)
                         {
                             obstaja = true;
                             break;
@@ -63,15 +63,16 @@ namespace TehHotel.Gui.TEst.Controllers
                     }
                     if (!obstaja)
                     {
-                        dvo_list.Add(dvoranaId);
+                        park_list.Add(parkirisceId);
                     }
                 }
-                Session["dvorane"] = dvo_list;
+                Session["parkirisca"] = park_list;
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 Response.Write(e.InnerException);
             }
-             return RedirectToAction("Index");
+            return RedirectToAction("Index");
         }
 
     }

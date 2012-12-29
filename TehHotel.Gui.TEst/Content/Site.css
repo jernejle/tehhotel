@@ -762,3 +762,7 @@ table input {
 .mojatabela td {
     padding-left: 10px;
 }
+
+.mojatabela th {
+    padding: 10px;
+}

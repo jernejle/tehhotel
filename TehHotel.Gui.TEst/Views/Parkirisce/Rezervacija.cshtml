@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Rezervacija";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Rezervacija parkirisca</h2><br />
+
+<form method="post" action="/Parkirisce/MozneRezervacije">
+Hotel id <input type="text" name="hotelId" /><br />
+Datum Od <input type="text" name="datumod" class="datepicker" /><br />
+Datum Do <input type="text" name="datumdo" class="datepicker" /><br />
+<input type="submit" name="submit" value="Išči" />
+</form>
