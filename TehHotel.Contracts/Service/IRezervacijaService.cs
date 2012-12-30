@@ -43,5 +43,8 @@ namespace TehHotel.Contracts.Service
 
         [OperationContract]
         List<Parkirisce> ListMozneRezervacijeParkirisca(int idHotel, DateTime datumOd, DateTime datumDo);
+
+        [OperationContract]
+        Racun ReadRacun(int Racunid);
     }
 }

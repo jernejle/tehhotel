@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Seznam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Seznam vseh strank</h2><br />
+<table class="mojatabela">
+    <tr>
+        <th>
+            #id
+        </th>
+        <th>
+            Ime
+        </th>
+        <th>
+            Priimek
+        </th>
+
+        <th>
+            Datum rojstva
+        </th>
+
+        <th>
+            Naslov
+        </th>
+        <th>
+            Računi
+        </th>
+    </tr>
+
+@foreach (TehHotel.Gui.Test.StrankaService.Stranka stranka in (List<TehHotel.Gui.Test.StrankaService.Stranka>) ViewData["stranke"]) {
+    <tr>
+        <td>
+            @stranka.Id
+        </td>
+        <td>
+            @stranka.Ime
+        </td>
+        <td>
+            @stranka.Priimek
+        </td>
+        <td>
+            @stranka.DatumRojstva.ToShortDateString()
+        </td>
+        <td>
+            @stranka.Naslov.Ulica @stranka.Naslov.Kraj
+        </td>
+        <td>
+            <a href="/Racun/Stranka/@stranka.Id">Poglej račune stranke</a>
+        </td>
+    </tr>
+}
+</table>

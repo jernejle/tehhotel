@@ -2,11 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TehHotel.Gui.Test.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="TehHotel_Gui_TEst_RezervacijaService_RezervacijaService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:1476/RezervacijaService.svc</Value>
-    </Setting>
     <Setting Name="TehHotel_Gui_Test_HotelService_HotelService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:1476/HotelService.svc</Value>
+    </Setting>
+    <Setting Name="TehHotel_Gui_Test_StrankaService_StrankaService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1476/StrankaService.svc</Value>
+    </Setting>
+    <Setting Name="TehHotel_Gui_Test_RezervacijaService_RezervacijaService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1476/RezervacijaService.svc</Value>
     </Setting>
   </Settings>
 </SettingsFile>

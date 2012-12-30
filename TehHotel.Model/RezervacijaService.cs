@@ -22,7 +22,6 @@ namespace TehHotel.Model
             if (idStranka == 0) return null;
             Stranka s = new Stranka();
             s.Id = idStranka;
-            if (s == null) return null;
 
             Random rnd = new Random();
             int stev = rnd.Next(1000, 98989);
@@ -119,6 +118,11 @@ namespace TehHotel.Model
         public List<Parkirisce> ListMozneRezervacijeParkirisca(int idHotel, DateTime datumOd, DateTime datumDo)
         {
             return new RezervacijaParkirisceEFDao().mozneRezervacijeParkirisca(idHotel, datumOd, datumDo);
+        }
+
+        public Racun ReadRacun(int Racunid)
+        {
+            return racdao.Read(Racunid);
         }
     }
 }
