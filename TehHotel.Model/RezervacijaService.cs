@@ -124,5 +124,19 @@ namespace TehHotel.Model
         {
             return racdao.Read(Racunid);
         }
+
+        public Soba ReadSoba(int SobaId)
+        {
+            return sobadao.Read(SobaId);
+        }
+
+        public Dvorana ReadDvorana(int DvoranaId)
+        {
+            return new DvoranaEFDao().Read(DvoranaId);
+        }
+
+        public Parkirisce ReadParkirisce(int ParkirisceId) {
+            return new ParkirisceEFDao().Read(ParkirisceId);
+        }
     }
 }

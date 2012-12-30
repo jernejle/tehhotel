@@ -53,6 +53,12 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private System.Threading.SendOrPostCallback ReadRacunOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ReadSobaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ReadDvoranaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ReadParkirisceOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -126,6 +132,15 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         /// <remarks/>
         public event ReadRacunCompletedEventHandler ReadRacunCompleted;
+        
+        /// <remarks/>
+        public event ReadSobaCompletedEventHandler ReadSobaCompleted;
+        
+        /// <remarks/>
+        public event ReadDvoranaCompletedEventHandler ReadDvoranaCompleted;
+        
+        /// <remarks/>
+        public event ReadParkirisceCompletedEventHandler ReadParkirisceCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http//www.tehhotel.com/RezervacijaService/CreateRezervacija", RequestNamespace="http//www.tehhotel.com/", ResponseNamespace="http//www.tehhotel.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -538,6 +553,102 @@ namespace TehHotel.Gui.Test.RezervacijaService {
             if ((this.ReadRacunCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ReadRacunCompleted(this, new ReadRacunCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http//www.tehhotel.com/RezervacijaService/ReadSoba", RequestNamespace="http//www.tehhotel.com/", ResponseNamespace="http//www.tehhotel.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Soba ReadSoba(int SobaId, [System.Xml.Serialization.XmlIgnoreAttribute()] bool SobaIdSpecified) {
+            object[] results = this.Invoke("ReadSoba", new object[] {
+                        SobaId,
+                        SobaIdSpecified});
+            return ((Soba)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ReadSobaAsync(int SobaId, bool SobaIdSpecified) {
+            this.ReadSobaAsync(SobaId, SobaIdSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void ReadSobaAsync(int SobaId, bool SobaIdSpecified, object userState) {
+            if ((this.ReadSobaOperationCompleted == null)) {
+                this.ReadSobaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnReadSobaOperationCompleted);
+            }
+            this.InvokeAsync("ReadSoba", new object[] {
+                        SobaId,
+                        SobaIdSpecified}, this.ReadSobaOperationCompleted, userState);
+        }
+        
+        private void OnReadSobaOperationCompleted(object arg) {
+            if ((this.ReadSobaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ReadSobaCompleted(this, new ReadSobaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http//www.tehhotel.com/RezervacijaService/ReadDvorana", RequestNamespace="http//www.tehhotel.com/", ResponseNamespace="http//www.tehhotel.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Dvorana ReadDvorana(int DvoranaId, [System.Xml.Serialization.XmlIgnoreAttribute()] bool DvoranaIdSpecified) {
+            object[] results = this.Invoke("ReadDvorana", new object[] {
+                        DvoranaId,
+                        DvoranaIdSpecified});
+            return ((Dvorana)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ReadDvoranaAsync(int DvoranaId, bool DvoranaIdSpecified) {
+            this.ReadDvoranaAsync(DvoranaId, DvoranaIdSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void ReadDvoranaAsync(int DvoranaId, bool DvoranaIdSpecified, object userState) {
+            if ((this.ReadDvoranaOperationCompleted == null)) {
+                this.ReadDvoranaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnReadDvoranaOperationCompleted);
+            }
+            this.InvokeAsync("ReadDvorana", new object[] {
+                        DvoranaId,
+                        DvoranaIdSpecified}, this.ReadDvoranaOperationCompleted, userState);
+        }
+        
+        private void OnReadDvoranaOperationCompleted(object arg) {
+            if ((this.ReadDvoranaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ReadDvoranaCompleted(this, new ReadDvoranaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http//www.tehhotel.com/RezervacijaService/ReadParkirisce", RequestNamespace="http//www.tehhotel.com/", ResponseNamespace="http//www.tehhotel.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Parkirisce ReadParkirisce(int ParkirisceId, [System.Xml.Serialization.XmlIgnoreAttribute()] bool ParkirisceIdSpecified) {
+            object[] results = this.Invoke("ReadParkirisce", new object[] {
+                        ParkirisceId,
+                        ParkirisceIdSpecified});
+            return ((Parkirisce)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ReadParkirisceAsync(int ParkirisceId, bool ParkirisceIdSpecified) {
+            this.ReadParkirisceAsync(ParkirisceId, ParkirisceIdSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void ReadParkirisceAsync(int ParkirisceId, bool ParkirisceIdSpecified, object userState) {
+            if ((this.ReadParkirisceOperationCompleted == null)) {
+                this.ReadParkirisceOperationCompleted = new System.Threading.SendOrPostCallback(this.OnReadParkirisceOperationCompleted);
+            }
+            this.InvokeAsync("ReadParkirisce", new object[] {
+                        ParkirisceId,
+                        ParkirisceIdSpecified}, this.ReadParkirisceOperationCompleted, userState);
+        }
+        
+        private void OnReadParkirisceOperationCompleted(object arg) {
+            if ((this.ReadParkirisceCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ReadParkirisceCompleted(this, new ReadParkirisceCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -2335,10 +2446,6 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private bool nadstropjeFieldSpecified;
         
-        private double povrsinaField;
-        
-        private bool povrsinaFieldSpecified;
-        
         private int stPosteljField;
         
         private bool stPosteljFieldSpecified;
@@ -2497,27 +2604,6 @@ namespace TehHotel.Gui.Test.RezervacijaService {
             }
             set {
                 this.nadstropjeFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Povrsina {
-            get {
-                return this.povrsinaField;
-            }
-            set {
-                this.povrsinaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool PovrsinaSpecified {
-            get {
-                return this.povrsinaFieldSpecified;
-            }
-            set {
-                this.povrsinaFieldSpecified = value;
             }
         }
         
@@ -3211,6 +3297,84 @@ namespace TehHotel.Gui.Test.RezervacijaService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Racun)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void ReadSobaCompletedEventHandler(object sender, ReadSobaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReadSobaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReadSobaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Soba Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Soba)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void ReadDvoranaCompletedEventHandler(object sender, ReadDvoranaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReadDvoranaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReadDvoranaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Dvorana Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Dvorana)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void ReadParkirisceCompletedEventHandler(object sender, ReadParkirisceCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ReadParkirisceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ReadParkirisceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Parkirisce Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Parkirisce)(this.results[0]));
             }
         }
     }

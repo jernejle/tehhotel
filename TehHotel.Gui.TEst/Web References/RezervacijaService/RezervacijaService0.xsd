@@ -118,7 +118,6 @@
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Internet" type="xs:boolean" />
       <xs:element minOccurs="0" name="Nadstropje" type="xs:int" />
-      <xs:element minOccurs="0" name="Povrsina" type="xs:double" />
       <xs:element minOccurs="0" name="StPostelj" type="xs:int" />
       <xs:element minOccurs="0" name="Stevilka" type="xs:int" />
       <xs:element minOccurs="0" name="Televizija" type="xs:boolean" />
@@ -390,6 +389,48 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q56="http//www.tehhotel.com/" minOccurs="0" name="ReadRacunResult" nillable="true" type="q56:Racun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSoba">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SobaId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSobaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http//www.tehhotel.com/" minOccurs="0" name="ReadSobaResult" nillable="true" type="q57:Soba" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadDvorana">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DvoranaId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadDvoranaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http//www.tehhotel.com/" minOccurs="0" name="ReadDvoranaResult" nillable="true" type="q58:Dvorana" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadParkirisce">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ParkirisceId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadParkirisceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http//www.tehhotel.com/" minOccurs="0" name="ReadParkirisceResult" nillable="true" type="q59:Parkirisce" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

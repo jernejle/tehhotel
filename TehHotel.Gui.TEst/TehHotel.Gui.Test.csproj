@@ -169,6 +169,7 @@
     <Compile Include="Controllers\DvoranaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RacunController.cs" />
+    <Compile Include="Controllers\RezervacijeController.cs" />
     <Compile Include="Controllers\SobaController.cs" />
     <Compile Include="Controllers\ParkirisceController.cs" />
     <Compile Include="Controllers\StrankaController.cs" />
@@ -278,6 +279,7 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Views\Rezervacije\Izpis.cshtml" />
     <Content Include="Web References\RezervacijaService\Dvorana.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>

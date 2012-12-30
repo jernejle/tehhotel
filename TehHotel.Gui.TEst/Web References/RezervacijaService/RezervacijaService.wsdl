@@ -79,6 +79,24 @@
   <wsdl:message name="RezervacijaService_ReadRacun_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReadRacunResponse" />
   </wsdl:message>
+  <wsdl:message name="RezervacijaService_ReadSoba_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSoba" />
+  </wsdl:message>
+  <wsdl:message name="RezervacijaService_ReadSoba_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSobaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RezervacijaService_ReadDvorana_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadDvorana" />
+  </wsdl:message>
+  <wsdl:message name="RezervacijaService_ReadDvorana_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadDvoranaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RezervacijaService_ReadParkirisce_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadParkirisce" />
+  </wsdl:message>
+  <wsdl:message name="RezervacijaService_ReadParkirisce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadParkirisceResponse" />
+  </wsdl:message>
   <wsdl:portType name="RezervacijaService">
     <wsdl:operation name="CreateRezervacija">
       <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/CreateRezervacija" message="tns:RezervacijaService_CreateRezervacija_InputMessage" />
@@ -127,6 +145,18 @@
     <wsdl:operation name="ReadRacun">
       <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadRacun" message="tns:RezervacijaService_ReadRacun_InputMessage" />
       <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadRacunResponse" message="tns:RezervacijaService_ReadRacun_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadSoba">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadSoba" message="tns:RezervacijaService_ReadSoba_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadSobaResponse" message="tns:RezervacijaService_ReadSoba_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadDvorana">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadDvorana" message="tns:RezervacijaService_ReadDvorana_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadDvoranaResponse" message="tns:RezervacijaService_ReadDvorana_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadParkirisce">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadParkirisce" message="tns:RezervacijaService_ReadParkirisce_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadParkirisceResponse" message="tns:RezervacijaService_ReadParkirisce_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

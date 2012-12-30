@@ -52,7 +52,10 @@ namespace TehHotel.Gui.Test.Controllers
                     Boolean obstaja = false;
                     foreach (RezervacijaPosebneStoritve rps in park_list)
                     {
-                        if (rps.idStoritve == parkirisceId)
+                        if (rps.idStoritve == parkirisceId && ((rps.datumOd < model.datumOd && rps.datumDo > model.datumDo) ||
+                            (rps.datumOd >= model.datumOd && rps.datumDo <= model.datumDo) ||
+                            (rps.datumOd >= model.datumOd && rps.datumOd <= model.datumDo) ||
+                            (rps.datumDo <= model.datumDo && rps.datumDo >= model.datumOd)))
                         {
                             obstaja = true;
                             break;

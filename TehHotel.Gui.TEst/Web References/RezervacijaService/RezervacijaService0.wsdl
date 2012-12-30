@@ -112,6 +112,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ReadSoba">
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ReadSoba" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadDvorana">
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ReadDvorana" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadParkirisce">
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ReadParkirisce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="RezervacijaService">
     <wsdl:port name="BasicHttpBinding_RezervacijaService" binding="tns:BasicHttpBinding_RezervacijaService">

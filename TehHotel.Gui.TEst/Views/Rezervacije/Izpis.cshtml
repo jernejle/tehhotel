@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "Izpis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Izpis rezervacij</h2>
+
+@{ if (ViewData["sobe"] != null) {
+<br />
+<h3>Izbrane rezervacije sobe</h3>
+       <table class="mojatabela">
+        <tr>
+            <th>Število postelj
+            </th>
+            <th>
+                Cena
+            </th>
+            <th>
+                Balkon
+            </th>
+            <th>
+                Številka sobe
+            </th>
+            <th>
+                Hotel Id
+            </th>
+            <th>
+                Datum od
+            </th>
+            <th>
+                Datum do
+            </th>
+        </tr>
+        @foreach (TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve item in (List<TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve>)ViewData["sobe"])
+        {
+            <tr>
+                <td>
+                    @item.soba.StPostelj
+                </td>
+                <td>
+                    @item.soba.Cena
+                </td>
+                <td>
+                    @item.soba.Balkon
+                </td>
+                <td>
+                    @item.soba.Stevilka
+                </td>
+                <td>
+                    @item.soba.HotelId
+                </td>
+                <td>
+                    @item.datumOd.ToShortDateString()
+                </td>
+                <td>
+                    @item.datumDo.ToShortDateString()
+                </td>
+            </tr>
+        }
+    </table>
+}
+}
+
+@{ if (ViewData["dvorane"] != null) {
+<br />
+<h3>Izbrane rezervacije dvorane</h3>
+       <table class="mojatabela">
+        <tr>
+            <th>Ime dvorane
+            </th>
+            <th>
+                HotelId
+            </th>
+            <th>Število ljudi
+            </th>
+            <th>
+                Površina
+            </th>
+            <th>
+                Datum od
+            </th>
+            <th>
+                Datum do
+            </th>
+        </tr>
+        @foreach (TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve item in (List<TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve>)ViewData["dvorane"])
+        {
+            <tr>
+                <td>
+                    @item.dvorana.Ime
+                </td>
+                <td>
+                    @item.dvorana.HotelId
+                </td>
+                <td>
+                    @item.dvorana.StLjudi
+                </td>
+                <td>
+                    @item.dvorana.Povrsina
+                </td>
+                <td>
+                    @item.datumOd.ToShortDateString()
+                </td>
+                <td>
+                    @item.datumDo.ToShortDateString()
+                </td>
+            </tr>
+        }
+    </table>
+}
+}
+
+@{ if (ViewData["parkirisca"] != null) {
+<br />
+<h3>Izbrane rezervacije parkirišča</h3>
+       <table class="mojatabela">
+        <tr>
+            <th>Pokrito
+            </th>
+            <th>
+                Številka parkirišča
+            </th>
+            <th>HotelId
+            </th>
+                     <th>
+                Datum od
+            </th>
+            <th>
+                Datum do
+            </th>
+        </tr>
+        @foreach (TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve item in (List<TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve>)ViewData["parkirisca"])
+        {
+            <tr>
+                <td>
+                    @item.parkirisce.Pokrito
+                </td>
+                <td>
+                    @item.parkirisce.Stevilka
+                </td>
+                <td>
+                    @item.parkirisce.HotelId
+                </td>
+                <td>
+                    @item.datumOd.ToShortDateString()
+                </td>
+                <td>
+                    @item.datumDo.ToShortDateString()
+                </td>
+            </tr>
+        }
+    </table>
+}
+}
+<div style="margin-top: 50px;">
+<form method="post" action="/Rezervacije/Pobrisi">
+    <input type="submit" name="submit" value="Počisti rezervacije" />
+</form></div>
