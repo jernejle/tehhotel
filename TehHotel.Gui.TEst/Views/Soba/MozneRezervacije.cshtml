@@ -1,10 +1,12 @@
-﻿
+﻿@model TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve
 
 @{
     ViewBag.Title = "MozneRezervacije";
 }
 
 <h2>Mozne rezervacije sobe</h2>
+
+* Če pride do prekrivanja datumov pri izbrani sobi, se rezervacija ne doda.
 
 <form method="post" action="ShraniRezervacijoSobe">
     <table class="mojatabela">
@@ -26,7 +28,7 @@
         {
             <tr>
                 <td>
-                    <input type="radio" name="soba" value="@item.Id" />
+                    <input type="radio" name="idStoritve" value="@item.Id" />
                 </td>
                 <td>
                     @item.Id
@@ -43,26 +45,29 @@
                 <td>
                     @item.StPostelj
                 </td>
-                 <td>
-                     @item.Cena
+                <td>
+                    @item.Cena
                 </td>
-                 <td>
-                     @item.Valuta
+                <td>
+                    @item.Valuta
                 </td>
-                 <td>
-                     @item.Balkon
+                <td>
+                    @item.Balkon
                 </td>
-                 <td>
-                     @item.Internet
+                <td>
+                    @item.Internet
                 </td>
-                 <td>
-                     @item.Televizija
+                <td>
+                    @item.Televizija
                 </td>
-                 <td>
-                     @item.Hladilnik
+                <td>
+                    @item.Hladilnik
                 </td>
             </tr>
         }
     </table>
+    @Html.HiddenFor(m => m.datumOd, new { value = ViewBag.rezervacijaSobe.DatumOd})
+    @Html.HiddenFor(m => m.datumDo, new { value = ViewBag.rezervacijaSobe.DatumDo})
+
     <input type="submit" name="submit" value="Izberi" />
 </form>

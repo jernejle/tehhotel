@@ -32,11 +32,7 @@ namespace TehHotel.Gui.Test.Controllers
                 PreveriAtribute(r.Fos);
                 Soba[] sobe = client.ListMozneRezervacijeSobe(r.HotelId, true, r.DatumOd, true, r.DatumDo, true, r.Fos);
                 ViewBag.sobe = sobe;
-
-                RezervacijaPosebneStoritve rps = new RezervacijaPosebneStoritve();
-                rps.datumOd = r.DatumOd;
-                rps.datumDo = r.DatumDo;
-                ViewBag.rps = rps;
+                ViewBag.rezervacijaSobe = r;
                 return View("MozneRezervacije");
             }
             ViewBag.hoteli = ListHotel();
@@ -45,24 +41,27 @@ namespace TehHotel.Gui.Test.Controllers
         }
 
         [HttpPost]
-        public ActionResult ShraniRezervacijoSobe(FormCollection form)
+        public ActionResult ShraniRezervacijoSobe(RezervacijaPosebneStoritve model)
         {
             try
             {
-                int sobaId = Convert.ToInt32(form["soba"]);
-                List<int> sobe_list = null;
+                
+                List<RezervacijaPosebneStoritve> sobe_list = null;
                 if (Session["sobe"] == null)
                 {
-                    sobe_list = new List<int>();
-                    sobe_list.Add(sobaId);
+                    sobe_list = new List<RezervacijaPosebneStoritve>();
+                    sobe_list.Add(model);
                 }
                 else
                 {
-                    sobe_list = (List<int>)Session["sobe"];
+                    sobe_list = (List<RezervacijaPosebneStoritve>)Session["sobe"];
                     Boolean obstaja = false;
-                    foreach (int id in sobe_list)
+                    foreach (RezervacijaPosebneStoritve rps in sobe_list)
                     {
-                        if (id == sobaId)
+                        if (rps.idStoritve == model.idStoritve && ((rps.datumOd < model.datumOd && rps.datumDo > model.datumDo) ||
+                            (rps.datumOd >= model.datumOd && rps.datumDo <= model.datumDo) ||
+                            (rps.datumOd >= model.datumOd && rps.datumOd <= model.datumDo) ||
+                            (rps.datumDo <= model.datumDo && rps.datumDo >= model.datumOd)))
                         {
                             obstaja = true;
                             break;
@@ -70,10 +69,11 @@ namespace TehHotel.Gui.Test.Controllers
                     }
                     if (!obstaja)
                     {
-                        sobe_list.Add(sobaId);
+                        sobe_list.Add(model);
                     }
                 }
                 Session["sobe"] = sobe_list;
+                
             }
             catch (Exception e)
             {
