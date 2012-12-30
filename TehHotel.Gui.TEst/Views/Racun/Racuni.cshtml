@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Računi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Računi stranke</h2>
+
+<table class="mojatabela">
+    <tr>
+        <th>
+            #id
+        </th>
+        <th>
+            Številka računa
+        </th>
+        <th>
+            Datum
+        </th>
+
+        <th>
+            Valuta
+        </th>
+
+        <th>
+            Cena
+        </th>
+        <th>
+            Plačano
+        </th>
+        <th>
+            Hotel
+        </th>
+    </tr>
+
+@foreach (TehHotel.Gui.Test.RezervacijaService.Racun racun in (List<TehHotel.Gui.Test.RezervacijaService.Racun>) ViewData["racuni"]) {
+    <tr>
+        <td>
+            @racun.Id
+        </td>
+        <td>
+            @racun.StevilkaRacuna
+        </td>
+        <td>
+            @racun.DatumRacuna
+        </td>
+        <td>
+            @racun.Valuta
+        </td>
+        <td>
+            @racun.SkupnaCena
+        </td>
+        <td>
+            @racun.Placano
+        </td>
+        <td>
+            @racun.HotelId
+        </td>
+        <td>
+            <a href="/Racun/Podrobnosti/@racun.Id">Podrobnosti</a>
+        </td>
+    </tr>
+}
+</table>

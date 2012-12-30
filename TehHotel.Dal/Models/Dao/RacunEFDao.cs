@@ -108,8 +108,7 @@ namespace TehHotel.Dal.Models.Dao
 
         public Racun Read(int id)
         {
-                db.Configuration.LazyLoadingEnabled = false;
-                RacunEF racunef = db.Racuni.Include("Stranka").SingleOrDefault(x => x.Id == id);
+                RacunEF racunef = db.Racuni.Include("Stranka").Include("RezervacijeSob").Include("RezervacijeSob.Soba").Include("RezervacijeDvorane").Include("RezervacijeParkirisca").SingleOrDefault(x => x.Id == id);
                 Racun rp = (racunef != null) ? Mapper.Map<RacunEF, Racun>(racunef) : null;
                 return rp;
         }

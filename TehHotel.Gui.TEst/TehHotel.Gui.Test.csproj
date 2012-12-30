@@ -168,8 +168,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DvoranaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RacunController.cs" />
     <Compile Include="Controllers\SobaController.cs" />
     <Compile Include="Controllers\ParkirisceController.cs" />
+    <Compile Include="Controllers\StrankaController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -190,6 +192,11 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\RezervacijaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\StrankaService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -271,6 +278,42 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Web References\RezervacijaService\Dvorana.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\RezervacijaService\Parkirisce.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\RezervacijaService\Racun.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\RezervacijaService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
+    <None Include="Web References\RezervacijaService\RezervacijaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\RezervacijaService\RezervacijaService0.wsdl" />
+    <None Include="Web References\RezervacijaService\RezervacijaService0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\RezervacijaService\RezervacijaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\RezervacijaService\Soba.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\StrankaService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\RezervacijaService\RezervacijaService.disco" />
+    <Content Include="Web References\StrankaService\Stranka.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\StrankaService\StrankaService.disco" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -309,20 +352,14 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Web References\RezervacijaService\Dvorana1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\RezervacijaService\Parkirisce1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\RezervacijaService\Racun1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
     <Content Include="Web References\HotelService\Hotel.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Web References\HotelService\HotelService.wsdl" />
     <Content Include="Views\Soba\MozneRezervacije.cshtml" />
+    <Content Include="Views\Stranka\Seznam.cshtml" />
+    <Content Include="Views\Racun\Podrobnosti.cshtml" />
+    <Content Include="Views\Racun\Racuni.cshtml" />
     <None Include="Web References\HotelService\HotelService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -334,34 +371,22 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
     <Content Include="Web References\HotelService\Zaposleni.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <None Include="Web References\RezervacijaService\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
     <Content Include="Views\Soba\Rezervacija.cshtml" />
-    <Content Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
     <Content Include="Views\Dvorana\Rezervacija.cshtml" />
     <Content Include="Views\Dvorana\MozneRezervacije.cshtml" />
     <Content Include="Views\Parkirisce\Rezervacija.cshtml" />
     <Content Include="Views\Parkirisce\MozneRezervacije.cshtml" />
-    <None Include="Web References\RezervacijaService\RezervacijaService.xsd">
+    <None Include="Web References\StrankaService\StrankaService.wsdl" />
+    <None Include="Web References\StrankaService\StrankaService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Web References\RezervacijaService\RezervacijaService0.wsdl" />
-    <None Include="Web References\RezervacijaService\RezervacijaService0.xsd">
+    <None Include="Web References\StrankaService\StrankaService0.wsdl" />
+    <None Include="Web References\StrankaService\StrankaService0.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Web References\RezervacijaService\RezervacijaService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Web References\RezervacijaService\Soba1.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -387,16 +412,27 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>TehHotel_Gui_Test_HotelService_HotelService</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:1476/RezervacijaService.svc%3fwsdl">
+    <WebReferenceUrl Include="http://localhost:1476/RezervacijaService.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\RezervacijaService\</RelPath>
-      <UpdateFromURL>http://localhost:1476/RezervacijaService.svc%3fwsdl</UpdateFromURL>
+      <UpdateFromURL>http://localhost:1476/RezervacijaService.svc</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>TehHotel_Gui_TEst_RezervacijaService_RezervacijaService</CachedSettingsPropName>
+      <CachedSettingsPropName>TehHotel_Gui_Test_RezervacijaService_RezervacijaService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:1476/StrankaService.svc">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\StrankaService\</RelPath>
+      <UpdateFromURL>http://localhost:1476/StrankaService.svc</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TehHotel_Gui_Test_StrankaService_StrankaService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

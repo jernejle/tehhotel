@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "Podrobnosti";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Podrobnosti računa</h2>
+
+<table class="mojatabela">
+    <tr>
+        <th>
+            #id
+        </th>
+        <th>
+            Številka računa
+        </th>
+        <th>
+            Datum
+        </th>
+
+        <th>
+            Valuta
+        </th>
+
+        <th>
+            Cena
+        </th>
+        <th>
+            Plačano
+        </th>
+        <th>
+            Hotel
+        </th>
+    </tr>
+
+@{ var racun = (TehHotel.Gui.Test.RezervacijaService.Racun)ViewData["racun"]; }
+    <tr>
+        <td>
+            @racun.Id
+        </td>
+        <td>
+            @racun.StevilkaRacuna
+        </td>
+        <td>
+            @racun.DatumRacuna
+        </td>
+        <td>
+            @racun.Valuta
+        </td>
+        <td>
+            @racun.SkupnaCena
+        </td>
+        <td>
+            @racun.Placano
+        </td>
+        <td>
+            @racun.HotelId
+        </td>
+    </tr>
+</table>
+@{ if (racun.RezervacijeSob != null && racun.RezervacijeSob.Count() != 0) {
+<br />
+<h3>Rezervacije sob</h3>
+<table class="mojatabela">
+    <tr>
+        <th>Datum od</th>
+        <th>Datum do</th>
+        <th>Številka sobe</th>
+        <th>Število postelj</th>
+        <th>Hrana</th>
+    </tr>
+    @foreach (TehHotel.Gui.Test.RezervacijaService.RezervacijaSobe rs in racun.RezervacijeSob)
+    {
+        <tr>
+            <td>@rs.DatumOd.ToShortDateString()</td>
+            <td>@rs.DatumDo.ToShortDateString()</td>
+            <td>@rs.Soba.Stevilka</td>
+            <td>@rs.Soba.StPostelj</td>
+            <td>@rs.Hrana</td>
+        </tr>
+
+    }
+</table>  
+}
+}
+
+@{ if (racun.RezervacijeDvorane != null && racun.RezervacijeDvorane.Count() != 0) {
+<br />
+<h3>Rezervacije dvoran</h3>
+    <table class="mojatabela">
+    <tr>
+        <th>Datum od</th>
+        <th>Datum do</th>
+        <th>Cena</th>
+        <th>Število ljudi</th>
+        <th>Dvorana</th>
+    </tr>
+    @foreach (TehHotel.Gui.Test.RezervacijaService.RezervacijaDvorane rd in racun.RezervacijeDvorane)
+    {
+        <tr>
+            <td>@rd.DatumOd.ToShortDateString()</td>
+            <td>@rd.DatumDo.ToShortDateString()</td>
+            <td>@rd.Cena</td>
+            <td>@rd.SteviloLjudi</td>
+            <td>@rd.Dvorana.Ime</td>
+        </tr>
+    }
+</table>  
+}
+}
+
+@{ if (racun.RezervacijeParkirisca != null && racun.RezervacijeParkirisca.Count() != 0) {
+<br />
+<h3>Rezervacije parkirišč</h3>
+    <table class="mojatabela">
+    <tr>
+        <th>Datum od</th>
+        <th>Datum do</th>
+        <th>Cena</th>
+        <th>Številka parkirišča</th>
+        <th>Pokrito</th>
+    </tr>
+    @foreach (TehHotel.Gui.Test.RezervacijaService.RezervacijaParkirisca rp in racun.RezervacijeParkirisca)
+    {
+        <tr>
+            <td>@rp.DatumOd.ToShortDateString()</td>
+            <td>@rp.DatumDo.ToShortDateString()</td>
+            <td>@rp.Cena</td>
+            <td>@rp.Parkirisce.Stevilka</td>
+            <td>@rp.Parkirisce.Pokrito</td>
+        </tr>
+    }
+</table>  
+       
+}
+}

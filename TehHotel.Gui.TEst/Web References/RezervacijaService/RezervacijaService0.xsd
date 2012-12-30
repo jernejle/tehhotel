@@ -379,4 +379,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ReadRacun">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Racunid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadRacunResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http//www.tehhotel.com/" minOccurs="0" name="ReadRacunResult" nillable="true" type="q56:Racun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
