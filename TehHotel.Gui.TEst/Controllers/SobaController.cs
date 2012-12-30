@@ -79,6 +79,7 @@ namespace TehHotel.Gui.Test.Controllers
             {
                 Response.Write(e.InnerException);
             }
+            this.ModelState.Clear();
             return RedirectToAction("Index");
         }
 
