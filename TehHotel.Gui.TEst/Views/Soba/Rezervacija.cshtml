@@ -19,13 +19,13 @@
         <b>Datum od</b>
     </div>
     <div class="editor-field">
-        @Html.EditorFor(x => x.DatumOd)
+        @Html.EditorFor(x => x.DatumOd, new {@class="datepicker"})
     </div>
     <div class="editor-label">
         <b>Datum Do</b>
     </div>
     <div class="editor-field">
-        @Html.EditorFor(x => x.DatumDo)
+        @Html.EditorFor(x => x.DatumDo, new {@class="datepicker"})
     </div>
     <br />
     
@@ -75,10 +75,3 @@
     </div>
     <input type="submit" value="Išči" />
 }
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#DatumOd, #DatumDo").datepicker({ dateFormat: 'dd.mm.yy' });
-
-    });
-</script>

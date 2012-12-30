@@ -32,9 +32,6 @@ namespace TehHotel.Contracts.Data
         public int Nadstropje { get; set; }
 
         [DataMember]
-        public Double Povrsina { get; set; }
-
-        [DataMember]
         public int StPostelj { get; set; }
 
         [DataMember]
@@ -60,7 +57,7 @@ namespace TehHotel.Contracts.Data
 
         public override string ToString()
         {
-            return string.Format("Balkon: {0}, Cena: {1}, Hladilnik: {2}, HotelId: {3}, Id: {4}, Internet: {5}, Nadstropje: {6}, Povrsina: {7}, Stevilka: {8}, StPostelj: {9}, Televizija: {10}, Valuta: {11}", Balkon, Cena, Hladilnik, HotelId, Id, Internet, Nadstropje, Povrsina, Stevilka, StPostelj, Televizija, Valuta);
+            return string.Format("Balkon: {0}, Cena: {1}, Hladilnik: {2}, HotelId: {3}, Id: {4}, Internet: {5}, Nadstropje: {6}, Stevilka: {8}, StPostelj: {9}, Televizija: {10}, Valuta: {11}", Balkon, Cena, Hladilnik, HotelId, Id, Internet, Nadstropje, Stevilka, StPostelj, Televizija, Valuta);
         }
     }
 }

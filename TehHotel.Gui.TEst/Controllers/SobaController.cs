@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TehHotel.Gui.Test.Models;
 using TehHotel.Gui.Test.Objects;
 using TehHotel.Gui.Test.RezervacijaService;
 
@@ -32,11 +33,15 @@ namespace TehHotel.Gui.Test.Controllers
                 Soba[] sobe = client.ListMozneRezervacijeSobe(r.HotelId, true, r.DatumOd, true, r.DatumDo, true, r.Fos);
                 ViewBag.sobe = sobe;
 
+                RezervacijaPosebneStoritve rps = new RezervacijaPosebneStoritve();
+                rps.datumOd = r.DatumOd;
+                rps.datumDo = r.DatumDo;
+                ViewBag.rps = rps;
                 return View("MozneRezervacije");
             }
-                ViewBag.hoteli = ListHotel();
-                return View(r);
-            
+            ViewBag.hoteli = ListHotel();
+            return View(r);
+
         }
 
         [HttpPost]
@@ -77,7 +82,8 @@ namespace TehHotel.Gui.Test.Controllers
             return RedirectToAction("Index");
         }
 
-        public HotelService.Hotel[] ListHotel(){
+        public HotelService.Hotel[] ListHotel()
+        {
             HotelService.HotelService client = new HotelService.HotelService();
             return client.ListHotel();
         }
