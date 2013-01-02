@@ -25,5 +25,8 @@ namespace TehHotel.Contracts.Service
 
         [OperationContract]
         List<Stranka> ListStranka();
+
+        [OperationContract]
+        int CreateStrankaReturnId(Stranka s);
     }
 }

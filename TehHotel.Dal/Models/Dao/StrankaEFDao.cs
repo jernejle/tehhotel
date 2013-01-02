@@ -42,6 +42,21 @@ namespace TehHotel.Dal.Models.Dao
             }
         }
 
+        public int CreateStrankaId(Stranka entity)
+        {
+            using (TehHotelContext db = new TehHotelContext())
+            {
+                if (entity != null)
+                {
+                    StrankaEF sef = Mapper.Map<Stranka, StrankaEF>(entity);
+                    db.Stranke.Add(sef);
+                    db.SaveChanges();
+                    return sef.Id;
+                }
+                return 0;
+            }
+        }
+
         public Stranka Read(int id)
         {
             using (TehHotelContext db = new TehHotelContext())

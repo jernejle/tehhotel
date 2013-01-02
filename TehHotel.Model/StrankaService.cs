@@ -37,5 +37,10 @@ namespace TehHotel.Model
         {
             return dao.List();
         }
+
+        public int CreateStrankaReturnId(Stranka s)
+        {
+            return dao.CreateStrankaId(s);
+        }
     }
 }
