@@ -115,7 +115,6 @@
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Internet" type="xs:boolean" />
       <xs:element minOccurs="0" name="Nadstropje" type="xs:int" />
-      <xs:element minOccurs="0" name="Povrsina" type="xs:double" />
       <xs:element minOccurs="0" name="StPostelj" type="xs:int" />
       <xs:element minOccurs="0" name="Stevilka" type="xs:int" />
       <xs:element minOccurs="0" name="Televizija" type="xs:boolean" />

@@ -45,7 +45,9 @@
     <Compile Include="HotelService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RezervacijaService.cs" />
+    <Compile Include="StrankaRESTService.cs" />
     <Compile Include="StrankaService.cs" />
+    <Compile Include="ZaposleniRESTService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TehHotel.Contracts\TehHotel.Contracts.csproj">

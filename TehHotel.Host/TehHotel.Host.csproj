@@ -59,6 +59,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ZaposleniRESTService.svc" />
+    <Content Include="StrankaRESTService.svc" />
     <Content Include="HotelService.svc" />
     <Content Include="RezervacijaService.svc" />
     <Content Include="StrankaService.svc" />
