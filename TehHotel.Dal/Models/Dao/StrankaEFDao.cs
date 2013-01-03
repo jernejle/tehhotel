@@ -136,5 +136,15 @@ namespace TehHotel.Dal.Models.Dao
                 return list;
             }
         }
+
+        public Stranka ReadStrankaByIdentifikacija(String IdentifikacijaTip, String IdentifikacijaVrednost)
+        {
+            using (TehHotelContext db = new TehHotelContext())
+            {
+                StrankaEF sef = db.Stranke.Where(x => x.Identifikacija.Tip == IdentifikacijaTip && x.Identifikacija.Vrednost == IdentifikacijaVrednost).FirstOrDefault();
+                Stranka str = (sef != null) ? Mapper.Map<StrankaEF, Stranka>(sef) : null;
+                return str;
+            }
+        }
     }
 }

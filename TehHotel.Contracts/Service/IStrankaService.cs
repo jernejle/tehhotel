@@ -28,5 +28,8 @@ namespace TehHotel.Contracts.Service
 
         [OperationContract]
         int CreateStrankaReturnId(Stranka s);
+
+        [OperationContract]
+        Stranka IsciStranka(String IdentifikacijaTip, String IdentifikacijaVrednost);
     }
 }

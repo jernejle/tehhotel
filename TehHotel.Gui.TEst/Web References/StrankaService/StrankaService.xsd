@@ -106,4 +106,33 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element xmlns:q11="http//www.tehhotel.com/" name="ArrayOfStranka" nillable="true" type="q11:ArrayOfStranka" />
+  <xs:element name="CreateStrankaReturnId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http//www.tehhotel.com/" minOccurs="0" name="s" nillable="true" type="q12:Stranka" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateStrankaReturnIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateStrankaReturnIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsciStranka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdentifikacijaTip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="IdentifikacijaVrednost" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsciStrankaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http//www.tehhotel.com/" minOccurs="0" name="IsciStrankaResult" nillable="true" type="q13:Stranka" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

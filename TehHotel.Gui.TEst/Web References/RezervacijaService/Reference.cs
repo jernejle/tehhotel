@@ -145,28 +145,32 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http//www.tehhotel.com/RezervacijaService/CreateRezervacija", RequestNamespace="http//www.tehhotel.com/", ResponseNamespace="http//www.tehhotel.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public Racun CreateRezervacija(int idStranka, [System.Xml.Serialization.XmlIgnoreAttribute()] bool idStrankaSpecified, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/TehHotel.Contracts.Data")] RezervacijaSobe[] rezervacijeSobe, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Rezervacije posebneRezervacije) {
+        public Racun CreateRezervacija(int idStranka, [System.Xml.Serialization.XmlIgnoreAttribute()] bool idStrankaSpecified, int hotelid, [System.Xml.Serialization.XmlIgnoreAttribute()] bool hotelidSpecified, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/TehHotel.Contracts.Data")] RezervacijaSobe[] rezervacijeSobe, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Rezervacije posebneRezervacije) {
             object[] results = this.Invoke("CreateRezervacija", new object[] {
                         idStranka,
                         idStrankaSpecified,
+                        hotelid,
+                        hotelidSpecified,
                         rezervacijeSobe,
                         posebneRezervacije});
             return ((Racun)(results[0]));
         }
         
         /// <remarks/>
-        public void CreateRezervacijaAsync(int idStranka, bool idStrankaSpecified, RezervacijaSobe[] rezervacijeSobe, Rezervacije posebneRezervacije) {
-            this.CreateRezervacijaAsync(idStranka, idStrankaSpecified, rezervacijeSobe, posebneRezervacije, null);
+        public void CreateRezervacijaAsync(int idStranka, bool idStrankaSpecified, int hotelid, bool hotelidSpecified, RezervacijaSobe[] rezervacijeSobe, Rezervacije posebneRezervacije) {
+            this.CreateRezervacijaAsync(idStranka, idStrankaSpecified, hotelid, hotelidSpecified, rezervacijeSobe, posebneRezervacije, null);
         }
         
         /// <remarks/>
-        public void CreateRezervacijaAsync(int idStranka, bool idStrankaSpecified, RezervacijaSobe[] rezervacijeSobe, Rezervacije posebneRezervacije, object userState) {
+        public void CreateRezervacijaAsync(int idStranka, bool idStrankaSpecified, int hotelid, bool hotelidSpecified, RezervacijaSobe[] rezervacijeSobe, Rezervacije posebneRezervacije, object userState) {
             if ((this.CreateRezervacijaOperationCompleted == null)) {
                 this.CreateRezervacijaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCreateRezervacijaOperationCompleted);
             }
             this.InvokeAsync("CreateRezervacija", new object[] {
                         idStranka,
                         idStrankaSpecified,
+                        hotelid,
+                        hotelidSpecified,
                         rezervacijeSobe,
                         posebneRezervacije}, this.CreateRezervacijaOperationCompleted, userState);
         }

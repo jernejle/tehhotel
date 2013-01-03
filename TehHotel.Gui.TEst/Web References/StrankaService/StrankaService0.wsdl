@@ -49,6 +49,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CreateStrankaReturnId">
+      <soap:operation soapAction="http//www.tehhotel.com/StrankaService/CreateStrankaReturnId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsciStranka">
+      <soap:operation soapAction="http//www.tehhotel.com/StrankaService/IsciStranka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="StrankaService">
     <wsdl:port name="BasicHttpBinding_StrankaService" binding="tns:BasicHttpBinding_StrankaService">

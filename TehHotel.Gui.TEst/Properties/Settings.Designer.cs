@@ -36,20 +36,20 @@ namespace TehHotel.Gui.Test.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1476/StrankaService.svc")]
-        public string TehHotel_Gui_Test_StrankaService_StrankaService {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1476/RezervacijaService.svc")]
+        public string TehHotel_Gui_Test_RezervacijaService_RezervacijaService {
             get {
-                return ((string)(this["TehHotel_Gui_Test_StrankaService_StrankaService"]));
+                return ((string)(this["TehHotel_Gui_Test_RezervacijaService_RezervacijaService"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1476/RezervacijaService.svc")]
-        public string TehHotel_Gui_Test_RezervacijaService_RezervacijaService {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1476/StrankaService.svc")]
+        public string TehHotel_Gui_Test_StrankaService_StrankaService {
             get {
-                return ((string)(this["TehHotel_Gui_Test_RezervacijaService_RezervacijaService"]));
+                return ((string)(this["TehHotel_Gui_Test_StrankaService_StrankaService"]));
             }
         }
     }

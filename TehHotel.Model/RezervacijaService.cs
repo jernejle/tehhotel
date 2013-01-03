@@ -17,7 +17,7 @@ namespace TehHotel.Model
         SobaEFDao sobadao = new SobaEFDao();
         HotelEFDao hoteldao = new HotelEFDao();
 
-        public Racun CreateRezervacija(int idStranka, List<RezervacijaSobe> rezervacijeSobe, PosebneRezervacije posebneRezervacije)
+        public Racun CreateRezervacija(int idStranka,int hotelId, List<RezervacijaSobe> rezervacijeSobe, PosebneRezervacije posebneRezervacije)
         {
             if (idStranka == 0) return null;
             Stranka s = new Stranka();
@@ -31,7 +31,6 @@ namespace TehHotel.Model
 
             if (rezervacijeSobe.Count() == 0 && posebneRezervacije == null) return null;
 
-
             double cena = 0.0;
             for(int i = 0; i < rezervacijeSobe.Count; i++) {
                 cena += rezervacijeSobe.ElementAt(i).Soba.Cena;
@@ -39,14 +38,14 @@ namespace TehHotel.Model
 
             if (posebneRezervacije != null)
             {
-                if (posebneRezervacije.RezervacijeDvorane != null)
+                if (posebneRezervacije.RezervacijeDvorane != null && posebneRezervacije.RezervacijeDvorane.Count != 0)
                 {
                     foreach (RezervacijaDvorane rd in posebneRezervacije.RezervacijeDvorane)
                     {
                         cena += Double.Parse(rd.Cena.ToString());
                     }
                 }
-                if (posebneRezervacije.RezervacijeParkirisca != null)
+                if (posebneRezervacije.RezervacijeParkirisca != null && posebneRezervacije.RezervacijeParkirisca.Count != 0)
                 {
                     foreach (RezervacijaParkirisca rp in posebneRezervacije.RezervacijeParkirisca)
                     {
@@ -61,7 +60,7 @@ namespace TehHotel.Model
             }
 
 
-            Racun rac = new Racun() { DatumRacuna = DateTime.Now, Placano = false, StevilkaRacuna = stev, Stranka = s, RezervacijeSob = rezervacijeSobe, RezervacijeDvorane = posebneRezervacije.RezervacijeDvorane, RezervacijeParkirisca = posebneRezervacije.RezervacijeParkirisca, SkupnaCena = (decimal) cena, Valuta="EUR", HotelId = 1};
+            Racun rac = new Racun() { DatumRacuna = DateTime.Now, Placano = false, StevilkaRacuna = stev, Stranka = s, RezervacijeSob = rezervacijeSobe, RezervacijeDvorane = posebneRezervacije.RezervacijeDvorane, RezervacijeParkirisca = posebneRezervacije.RezervacijeParkirisca, SkupnaCena = (decimal) cena, Valuta="EUR", HotelId = hotelId};
             bool ok = racdao.Create(rac);
             if (!ok)
             {

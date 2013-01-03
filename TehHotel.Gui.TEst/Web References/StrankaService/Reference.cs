@@ -39,6 +39,10 @@ namespace TehHotel.Gui.Test.StrankaService {
         
         private System.Threading.SendOrPostCallback ListStrankaOperationCompleted;
         
+        private System.Threading.SendOrPostCallback CreateStrankaReturnIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IsciStrankaOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -91,6 +95,12 @@ namespace TehHotel.Gui.Test.StrankaService {
         
         /// <remarks/>
         public event ListStrankaCompletedEventHandler ListStrankaCompleted;
+        
+        /// <remarks/>
+        public event CreateStrankaReturnIdCompletedEventHandler CreateStrankaReturnIdCompleted;
+        
+        /// <remarks/>
+        public event IsciStrankaCompletedEventHandler IsciStrankaCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http//www.tehhotel.com/StrankaService/CreateStranka", RequestNamespace="http//www.tehhotel.com/", ResponseNamespace="http//www.tehhotel.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -241,6 +251,68 @@ namespace TehHotel.Gui.Test.StrankaService {
             if ((this.ListStrankaCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ListStrankaCompleted(this, new ListStrankaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http//www.tehhotel.com/StrankaService/CreateStrankaReturnId", RequestNamespace="http//www.tehhotel.com/", ResponseNamespace="http//www.tehhotel.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void CreateStrankaReturnId([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Stranka s, out int CreateStrankaReturnIdResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool CreateStrankaReturnIdResultSpecified) {
+            object[] results = this.Invoke("CreateStrankaReturnId", new object[] {
+                        s});
+            CreateStrankaReturnIdResult = ((int)(results[0]));
+            CreateStrankaReturnIdResultSpecified = ((bool)(results[1]));
+        }
+        
+        /// <remarks/>
+        public void CreateStrankaReturnIdAsync(Stranka s) {
+            this.CreateStrankaReturnIdAsync(s, null);
+        }
+        
+        /// <remarks/>
+        public void CreateStrankaReturnIdAsync(Stranka s, object userState) {
+            if ((this.CreateStrankaReturnIdOperationCompleted == null)) {
+                this.CreateStrankaReturnIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCreateStrankaReturnIdOperationCompleted);
+            }
+            this.InvokeAsync("CreateStrankaReturnId", new object[] {
+                        s}, this.CreateStrankaReturnIdOperationCompleted, userState);
+        }
+        
+        private void OnCreateStrankaReturnIdOperationCompleted(object arg) {
+            if ((this.CreateStrankaReturnIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CreateStrankaReturnIdCompleted(this, new CreateStrankaReturnIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http//www.tehhotel.com/StrankaService/IsciStranka", RequestNamespace="http//www.tehhotel.com/", ResponseNamespace="http//www.tehhotel.com/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Stranka IsciStranka([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string IdentifikacijaTip, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string IdentifikacijaVrednost) {
+            object[] results = this.Invoke("IsciStranka", new object[] {
+                        IdentifikacijaTip,
+                        IdentifikacijaVrednost});
+            return ((Stranka)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IsciStrankaAsync(string IdentifikacijaTip, string IdentifikacijaVrednost) {
+            this.IsciStrankaAsync(IdentifikacijaTip, IdentifikacijaVrednost, null);
+        }
+        
+        /// <remarks/>
+        public void IsciStrankaAsync(string IdentifikacijaTip, string IdentifikacijaVrednost, object userState) {
+            if ((this.IsciStrankaOperationCompleted == null)) {
+                this.IsciStrankaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIsciStrankaOperationCompleted);
+            }
+            this.InvokeAsync("IsciStranka", new object[] {
+                        IdentifikacijaTip,
+                        IdentifikacijaVrednost}, this.IsciStrankaOperationCompleted, userState);
+        }
+        
+        private void OnIsciStrankaOperationCompleted(object arg) {
+            if ((this.IsciStrankaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IsciStrankaCompleted(this, new IsciStrankaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -708,6 +780,66 @@ namespace TehHotel.Gui.Test.StrankaService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((Stranka[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void CreateStrankaReturnIdCompletedEventHandler(object sender, CreateStrankaReturnIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CreateStrankaReturnIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CreateStrankaReturnIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public int CreateStrankaReturnIdResult {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public bool CreateStrankaReturnIdResultSpecified {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[1]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    public delegate void IsciStrankaCompletedEventHandler(object sender, IsciStrankaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IsciStrankaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IsciStrankaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Stranka Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Stranka)(this.results[0]));
             }
         }
     }

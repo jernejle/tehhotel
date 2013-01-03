@@ -7,7 +7,7 @@
 <h2>Rezervacija dvorane</h2><br />
 
 <form method="post" action="/Dvorana/MozneRezervacijeDvorane">
-Hotel id @Html.TextBoxFor(m => m.idStoritve)
+Hotel id @Html.DropDownListFor(m => m.idStoritve, (List<SelectListItem>) ViewData["hoteli"])
 Datum Od @Html.TextBoxFor(m => m.datumOd, new {@class="datepicker"}) <br />
 Datum Do @Html.TextBoxFor(m => m.datumDo, new {@class="datepicker"}) <br />
 <input type="submit" name="submit" value="Išči" />

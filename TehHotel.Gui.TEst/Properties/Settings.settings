@@ -5,11 +5,11 @@
     <Setting Name="TehHotel_Gui_Test_HotelService_HotelService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:1476/HotelService.svc</Value>
     </Setting>
-    <Setting Name="TehHotel_Gui_Test_StrankaService_StrankaService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:1476/StrankaService.svc</Value>
-    </Setting>
     <Setting Name="TehHotel_Gui_Test_RezervacijaService_RezervacijaService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:1476/RezervacijaService.svc</Value>
+    </Setting>
+    <Setting Name="TehHotel_Gui_Test_StrankaService_StrankaService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:1476/StrankaService.svc</Value>
     </Setting>
   </Settings>
 </SettingsFile>

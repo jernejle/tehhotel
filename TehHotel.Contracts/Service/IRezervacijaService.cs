@@ -12,7 +12,7 @@ namespace TehHotel.Contracts.Service
     public interface IRezervacijaService
     {
         [OperationContract]
-        Racun CreateRezervacija(int idStranka, List<RezervacijaSobe> rezervacijeSobe, PosebneRezervacije posebneRezervacije);
+        Racun CreateRezervacija(int idStranka, int hotelid, List<RezervacijaSobe> rezervacijeSobe, PosebneRezervacije posebneRezervacije);
 
         [OperationContract]
         bool DeleteRacun(int id);

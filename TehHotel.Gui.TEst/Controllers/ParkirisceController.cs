@@ -16,6 +16,7 @@ namespace TehHotel.Gui.Test.Controllers
         public ActionResult Index()
         {
             this.ModelState.Clear();
+            ViewData["hoteli"] = Helpers.Helper.GetHoteli();
             return View("Rezervacija");
         }
 

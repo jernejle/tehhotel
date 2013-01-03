@@ -1,34 +1,30 @@
-﻿@{
+﻿@model TehHotel.Gui.Test.Models.RezervacijaModel
+@{
     ViewBag.Title = "Izpis";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Izpis rezervacij</h2>
 
-@{ if (ViewData["sobe"] != null) {
-<br />
-<h3>Izbrane rezervacije sobe</h3>
-       <table class="mojatabela">
+@{ if (ViewData["sobe"] != null)
+   {
+    <br />
+    <h3>Izbrane rezervacije sobe</h3>
+    <table class="mojatabela">
         <tr>
             <th>Število postelj
             </th>
-            <th>
-                Cena
+            <th>Cena
             </th>
-            <th>
-                Balkon
+            <th>Balkon
             </th>
-            <th>
-                Številka sobe
+            <th>Številka sobe
             </th>
-            <th>
-                Hotel Id
+            <th>Hotel Id
             </th>
-            <th>
-                Datum od
+            <th>Datum od
             </th>
-            <th>
-                Datum do
+            <th>Datum do
             </th>
         </tr>
         @foreach (TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve item in (List<TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve>)ViewData["sobe"])
@@ -58,29 +54,26 @@
             </tr>
         }
     </table>
-}
+   }
 }
 
-@{ if (ViewData["dvorane"] != null) {
-<br />
-<h3>Izbrane rezervacije dvorane</h3>
-       <table class="mojatabela">
+@{ if (ViewData["dvorane"] != null)
+   {
+    <br />
+    <h3>Izbrane rezervacije dvorane</h3>
+    <table class="mojatabela">
         <tr>
             <th>Ime dvorane
             </th>
-            <th>
-                HotelId
+            <th>HotelId
             </th>
             <th>Število ljudi
             </th>
-            <th>
-                Površina
+            <th>Površina
             </th>
-            <th>
-                Datum od
+            <th>Datum od
             </th>
-            <th>
-                Datum do
+            <th>Datum do
             </th>
         </tr>
         @foreach (TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve item in (List<TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve>)ViewData["dvorane"])
@@ -107,26 +100,24 @@
             </tr>
         }
     </table>
-}
+   }
 }
 
-@{ if (ViewData["parkirisca"] != null) {
-<br />
-<h3>Izbrane rezervacije parkirišča</h3>
-       <table class="mojatabela">
+@{ if (ViewData["parkirisca"] != null)
+   {
+    <br />
+    <h3>Izbrane rezervacije parkirišča</h3>
+    <table class="mojatabela">
         <tr>
             <th>Pokrito
             </th>
-            <th>
-                Številka parkirišča
+            <th>Številka parkirišča
             </th>
             <th>HotelId
             </th>
-                     <th>
-                Datum od
+            <th>Datum od
             </th>
-            <th>
-                Datum do
+            <th>Datum do
             </th>
         </tr>
         @foreach (TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve item in (List<TehHotel.Gui.Test.Models.RezervacijaPosebneStoritve>)ViewData["parkirisca"])
@@ -150,9 +141,47 @@
             </tr>
         }
     </table>
+   }
 }
+
+@{ if (ViewData["sobe"] != null || ViewData["parkirisca"] != null || ViewData["dvorane"] != null)
+   {
+    <div style="margin-top: 50px;">
+        <form method="post" action="/Rezervacije/Pobrisi">
+            <input type="submit" name="submit" value="Počisti rezervacije" />
+            <input type="submit" name="submitrez" id="potrdirez" value="Potrdi rezervacije" />
+        </form>
+        <div style="display: none; background-color: #EFEEEF" id="dialog-form" title="Vpis stranke">
+            <form method="post" action="/Rezervacije/Rezerviraj">
+                Ime<br /> @Html.TextBoxFor(m => m.ime)<br />
+                Priimek <br />@Html.TextBoxFor(m => m.priimek) <br />
+                Datum rojstva <br />@Html.TextBoxFor(m => m.datumroj, new {@class="datepicker"})<br />
+                Država <br />@Html.TextBoxFor(m => m.drzava)<br />
+                Kraj <br />@Html.TextBoxFor(m => m.kraj)<br />
+                Ulica <br />@Html.TextBoxFor(m => m.ulica)<br />
+                Poštna štev <br />@Html.TextBoxFor(m => m.postna)<br />
+                Tip identifikacija <br />
+                <select name="identifikacijatip">
+                    <option value="emso">EMŠO</option>
+                    <option value="ostalo">Ostalo</option>
+                </select><br />
+                Identifikacija Vrednost <br />
+                @Html.TextBoxFor(m => m.identifikacijavrednost)<br />
+                Račun hotela <br /> @Html.DropDownListFor(m => m.hotelid, (List<SelectListItem>) ViewData["hoteli"])<br />
+                <input type="submit" name="submitrezervacija" value="Rezerviraj" />
+            </form>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $("#potrdirez").click(function () {
+                    $("#dialog-form").dialog({
+                        width: 350
+                    });
+                    return false;
+                });
+            });
+        </script>
+    </div>
+   }
 }
-<div style="margin-top: 50px;">
-<form method="post" action="/Rezervacije/Pobrisi">
-    <input type="submit" name="submit" value="Počisti rezervacije" />
-</form></div>
+

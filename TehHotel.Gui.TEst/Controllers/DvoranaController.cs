@@ -16,13 +16,13 @@ namespace TehHotel.Gui.Test.Controllers
         public ActionResult Index()
         {
             this.ModelState.Clear();
+            ViewData["hoteli"] = Helpers.Helper.GetHoteli();
             return View("Rezervacija");
         }
 
         [HttpPost]
         public ActionResult MozneRezervacijeDvorane(RezervacijaPosebneStoritve model)
         {
-
             if (ModelState.IsValid)
             {
                 List<Dvorana> mozne_rez = new RezervacijaService.RezervacijaService().ListMozneRezervacijeDvorane(model.idStoritve, true, model.datumOd, true, model.datumDo, true).ToList();
@@ -46,7 +46,6 @@ namespace TehHotel.Gui.Test.Controllers
                 }
                 else
                 {
-
                     dvo_list = (List<RezervacijaPosebneStoritve>)Session["dvorane"];
                     Boolean obstaja = false;
                     foreach (RezervacijaPosebneStoritve rps in dvo_list)

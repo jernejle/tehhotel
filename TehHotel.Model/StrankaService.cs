@@ -42,5 +42,10 @@ namespace TehHotel.Model
         {
             return dao.CreateStrankaId(s);
         }
+
+        public Stranka IsciStranka(String IdentifikacijaTip, String IdentifikacijaVrednost)
+        {
+            return dao.ReadStrankaByIdentifikacija(IdentifikacijaTip, IdentifikacijaVrednost);
+        }
     }
 }

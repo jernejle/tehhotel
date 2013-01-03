@@ -36,6 +36,18 @@
   <wsdl:message name="StrankaService_ListStranka_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListStrankaResponse" />
   </wsdl:message>
+  <wsdl:message name="StrankaService_CreateStrankaReturnId_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateStrankaReturnId" />
+  </wsdl:message>
+  <wsdl:message name="StrankaService_CreateStrankaReturnId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateStrankaReturnIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="StrankaService_IsciStranka_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsciStranka" />
+  </wsdl:message>
+  <wsdl:message name="StrankaService_IsciStranka_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsciStrankaResponse" />
+  </wsdl:message>
   <wsdl:portType name="StrankaService">
     <wsdl:operation name="CreateStranka">
       <wsdl:input wsaw:Action="http//www.tehhotel.com/StrankaService/CreateStranka" message="tns:StrankaService_CreateStranka_InputMessage" />
@@ -56,6 +68,14 @@
     <wsdl:operation name="ListStranka">
       <wsdl:input wsaw:Action="http//www.tehhotel.com/StrankaService/ListStranka" message="tns:StrankaService_ListStranka_InputMessage" />
       <wsdl:output wsaw:Action="http//www.tehhotel.com/StrankaService/ListStrankaResponse" message="tns:StrankaService_ListStranka_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateStrankaReturnId">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/StrankaService/CreateStrankaReturnId" message="tns:StrankaService_CreateStrankaReturnId_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/StrankaService/CreateStrankaReturnIdResponse" message="tns:StrankaService_CreateStrankaReturnId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsciStranka">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/StrankaService/IsciStranka" message="tns:StrankaService_IsciStranka_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/StrankaService/IsciStrankaResponse" message="tns:StrankaService_IsciStranka_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>
