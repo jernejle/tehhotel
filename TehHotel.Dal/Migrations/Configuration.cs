@@ -4,12 +4,14 @@ namespace TehHotel.Dal.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using MySql.Data;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TehHotel.Dal.TehHotelContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            SetSqlGenerator("MySql.Data.MySqlClient", new MySql.Data.Entity.MySqlMigrationSqlGenerator());
         }
 
         protected override void Seed(TehHotel.Dal.TehHotelContext context)

@@ -23,6 +23,10 @@ namespace TehHotel.Dal
         public DbSet<RezervacijaDvoraneEF> RezervacijeDvorane { get; set; }
         public DbSet<RezervacijaParkiriscaEF> RezervacijaParkirisca { get; set; }
 
+        public TehHotelContext() : base("TehHotelContext")
+        {
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<HotelEF>().HasMany(x => x.Sobe).WithOptional(x => x.Hotel).HasForeignKey(x => x.HotelId).WillCascadeOnDelete(true);
