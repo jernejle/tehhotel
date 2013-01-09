@@ -106,18 +106,6 @@
     <WCFMetadataStorage Include="Service References\RezervacijaServiceRef\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\HotelServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\HotelServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\HotelServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\RezervacijaServiceRef\RezervacijaService.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +116,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\RezervacijaServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelServiceReference\HotelService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
