@@ -12,7 +12,12 @@ namespace TehHotel.TestClient
     {
         static void Main(string[] args)
         {
-            HotelServiceClient client = new HotelServiceClient();
+
+            HotelServiceReference.HotelServiceClient client = new HotelServiceClient();
+            //RemoteHotelService.HotelServiceClient client = new RemoteHotelService.HotelServiceClient();
+            Console.WriteLine(client.ListHotel().Count());
+            Console.WriteLine("DONE");
+            Console.ReadLine();
             //Console.WriteLine(client.ListZaposleniByHotel(0).Count());
             //Console.WriteLine("DONE");
             //Console.ReadLine();

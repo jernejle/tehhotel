@@ -134,16 +134,17 @@ namespace TehHotel.Dal.Models.Dao
         {
             using (TehHotelContext db = new TehHotelContext())
             {
-                var query = from x in db.Hoteli
+                List<HotelEF> query = db.Hoteli
+                                .Include("Parkirisca")
                                 .Include("Sobe")
                                 .Include("Dvorane")
-                                .Include("Parkirisca")
                                 .Include("Osebje")
-                            select x;
+
+                                .ToList();
                 List<Hotel> list = new List<Hotel>();
                 if (query.Count() != 0)
                 {
-                    foreach (var item in query.ToList())
+                    foreach (var item in query)
                     {
                         list.Add(Mapper.Map<HotelEF, Hotel>(item));
                     }

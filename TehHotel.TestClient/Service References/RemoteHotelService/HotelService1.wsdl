@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http//www.tehhotel.com/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http//www.tehhotel.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http//www.tehhotel.com/Imports">
+      <xsd:import schemaLocation="http://164.8.251.93/SOATravel/hotel2/HotelService.svc?xsd=xsd0" namespace="http//www.tehhotel.com/" />
+      <xsd:import schemaLocation="http://164.8.251.93/SOATravel/hotel2/HotelService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="HotelService_CreateHotel_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHotel" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_CreateHotel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ReadHotel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadHotel" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ReadHotel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_UpdateHotel_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHotel" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_UpdateHotel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_DeleteHotel_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteHotel" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_DeleteHotel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ListHotel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListHotel" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ListHotel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListHotelResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ListHotelByKraj_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListHotelByKraj" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ListHotelByKraj_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListHotelByKrajResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ListHotelByDrzava_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListHotelByDrzava" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ListHotelByDrzava_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListHotelByDrzavaResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_AddSoba_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSoba" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_AddSoba_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSobaResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_RemoveSoba_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSoba" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_RemoveSoba_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSobaResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_AddDvorana_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDvorana" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_AddDvorana_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDvoranaResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_RemoveDvorana_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDvorana" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_RemoveDvorana_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveDvoranaResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_AddParkirisce_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddParkirisce" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_AddParkirisce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddParkirisceResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_RemoveParkirisce_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveParkirisce" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_RemoveParkirisce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveParkirisceResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_CreateZaposleni_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateZaposleni" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_CreateZaposleni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateZaposleniResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ReadZaposleni_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadZaposleni" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ReadZaposleni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadZaposleniResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_UpdateZaposleni_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateZaposleni" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_UpdateZaposleni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateZaposleniResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_DeleteZaposleni_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteZaposleni" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_DeleteZaposleni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteZaposleniResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ListZaposleni_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListZaposleni" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ListZaposleni_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListZaposleniResponse" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ListZaposleniByHotel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListZaposleniByHotel" />
+  </wsdl:message>
+  <wsdl:message name="HotelService_ListZaposleniByHotel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListZaposleniByHotelResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HotelService">
+    <wsdl:operation name="CreateHotel">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/CreateHotel" message="tns:HotelService_CreateHotel_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/CreateHotelResponse" message="tns:HotelService_CreateHotel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadHotel">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/ReadHotel" message="tns:HotelService_ReadHotel_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/ReadHotelResponse" message="tns:HotelService_ReadHotel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHotel">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/UpdateHotel" message="tns:HotelService_UpdateHotel_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/UpdateHotelResponse" message="tns:HotelService_UpdateHotel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteHotel">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/DeleteHotel" message="tns:HotelService_DeleteHotel_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/DeleteHotelResponse" message="tns:HotelService_DeleteHotel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListHotel">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/ListHotel" message="tns:HotelService_ListHotel_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/ListHotelResponse" message="tns:HotelService_ListHotel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListHotelByKraj">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/ListHotelByKraj" message="tns:HotelService_ListHotelByKraj_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/ListHotelByKrajResponse" message="tns:HotelService_ListHotelByKraj_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListHotelByDrzava">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/ListHotelByDrzava" message="tns:HotelService_ListHotelByDrzava_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/ListHotelByDrzavaResponse" message="tns:HotelService_ListHotelByDrzava_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSoba">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/AddSoba" message="tns:HotelService_AddSoba_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/AddSobaResponse" message="tns:HotelService_AddSoba_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSoba">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/RemoveSoba" message="tns:HotelService_RemoveSoba_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/RemoveSobaResponse" message="tns:HotelService_RemoveSoba_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDvorana">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/AddDvorana" message="tns:HotelService_AddDvorana_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/AddDvoranaResponse" message="tns:HotelService_AddDvorana_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveDvorana">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/RemoveDvorana" message="tns:HotelService_RemoveDvorana_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/RemoveDvoranaResponse" message="tns:HotelService_RemoveDvorana_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddParkirisce">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/AddParkirisce" message="tns:HotelService_AddParkirisce_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/AddParkirisceResponse" message="tns:HotelService_AddParkirisce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveParkirisce">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/RemoveParkirisce" message="tns:HotelService_RemoveParkirisce_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/RemoveParkirisceResponse" message="tns:HotelService_RemoveParkirisce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateZaposleni">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/CreateZaposleni" message="tns:HotelService_CreateZaposleni_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/CreateZaposleniResponse" message="tns:HotelService_CreateZaposleni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadZaposleni">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/ReadZaposleni" message="tns:HotelService_ReadZaposleni_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/ReadZaposleniResponse" message="tns:HotelService_ReadZaposleni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateZaposleni">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/UpdateZaposleni" message="tns:HotelService_UpdateZaposleni_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/UpdateZaposleniResponse" message="tns:HotelService_UpdateZaposleni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteZaposleni">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/DeleteZaposleni" message="tns:HotelService_DeleteZaposleni_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/DeleteZaposleniResponse" message="tns:HotelService_DeleteZaposleni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListZaposleni">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/ListZaposleni" message="tns:HotelService_ListZaposleni_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/ListZaposleniResponse" message="tns:HotelService_ListZaposleni_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListZaposleniByHotel">
+      <wsdl:input wsaw:Action="http//www.tehhotel.com/HotelService/ListZaposleniByHotel" message="tns:HotelService_ListZaposleniByHotel_InputMessage" />
+      <wsdl:output wsaw:Action="http//www.tehhotel.com/HotelService/ListZaposleniByHotelResponse" message="tns:HotelService_ListZaposleniByHotel_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

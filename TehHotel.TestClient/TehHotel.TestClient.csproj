@@ -50,6 +50,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\RemoteHotelService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\RemoteStrankaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\RezervacijaServiceRef\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -72,6 +82,31 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\HotelServiceReference\TehHotel.TestClient.HotelServiceReference.Zaposleni.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RemoteHotelService\HotelService.wsdl" />
+    <None Include="Service References\RemoteHotelService\HotelService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteHotelService\HotelService1.wsdl" />
+    <None Include="Service References\RemoteHotelService\HotelService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteHotelService\TehHotel.TestClient.RemoteHotelService.Hotel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RemoteHotelService\TehHotel.TestClient.RemoteHotelService.Zaposleni.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\RemoteStrankaService\StrankaService.wsdl" />
+    <None Include="Service References\RemoteStrankaService\StrankaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteStrankaService\StrankaService1.wsdl" />
+    <None Include="Service References\RemoteStrankaService\StrankaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\RemoteStrankaService\TehHotel.TestClient.RemoteStrankaService.Stranka.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\RezervacijaServiceRef\RezervacijaService.wsdl" />
@@ -103,6 +138,8 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\HotelServiceReference\" />
+    <WCFMetadataStorage Include="Service References\RemoteHotelService\" />
+    <WCFMetadataStorage Include="Service References\RemoteStrankaService\" />
     <WCFMetadataStorage Include="Service References\RezervacijaServiceRef\" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +168,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\HotelServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RemoteStrankaService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RemoteStrankaService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RemoteStrankaService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RemoteHotelService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RemoteHotelService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\RemoteHotelService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

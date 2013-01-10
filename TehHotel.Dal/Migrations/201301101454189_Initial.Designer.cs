@@ -8,7 +8,7 @@ namespace TehHotel.Dal.Migrations
     {
         string IMigrationMetadata.Id
         {
-            get { return "201301081543421_Initial"; }
+            get { return "201301101454189_Initial"; }
         }
         
         string IMigrationMetadata.Source
