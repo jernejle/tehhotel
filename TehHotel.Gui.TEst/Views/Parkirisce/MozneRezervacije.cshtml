@@ -6,7 +6,8 @@
 
 <h2>Mozne rezervacije parkirišča</h2>
 
-<form method="post" action="ShraniRezervacijoParkirisca">
+@{ if (ViewBag.Data != null && ViewBag.Data.Count != 0) {
+        <form method="post" action="ShraniRezervacijoParkirisca">
     <table class="mojatabela">
         <tr>
             <th>Izberi
@@ -22,10 +23,10 @@
         {
             <tr>
                 <td>
-                    <input type="radio" name="idStoritve" value="@item.Id" />
+                    <input type="radio" name="idStoritve" value="@item.IdParkirisce" />
                 </td>
                 <td>
-                    @item.Id
+                    @item.IdParkirisce
                 </td>
                 <td>
                     @item.Stevilka
@@ -39,4 +40,8 @@
     @Html.HiddenFor(m => m.datumOd)
     @Html.HiddenFor(m => m.datumDo)
     <input type="submit" name="submit" value="Izberi" />
-</form>
+</form>   
+   } else {
+        @: <div class="napaka">Ni rezervacij za prikaz!</div>
+   }
+}

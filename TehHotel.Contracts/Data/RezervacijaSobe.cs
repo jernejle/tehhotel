@@ -24,7 +24,7 @@ namespace TehHotel.Contracts.Data
             this.Soba = new Soba(idSoba);
         }
 
-        [DataMember]
+        [DataMember(Name="RezervacijaSobe")]
         public int Id { get; set; }
 
         [DataMember]

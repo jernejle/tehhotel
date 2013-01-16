@@ -10,7 +10,7 @@ namespace TehHotel.Contracts.Data
     [DataContract(Name = "RezervacijaParkirisca", Namespace = "http//www.tehhotel.com/", IsReference = true)]
     public class RezervacijaParkirisca
     {
-        [DataMember]
+        [DataMember(Name="RezervacijaParkirisca")]
         public int Id { get; set; }
 
         [DataMember]

@@ -22,7 +22,7 @@ namespace TehHotel.Contracts.Data
             Id = id;
         }
 
-        [DataMember]
+        [DataMember(Name="IdSoba")]
         public int Id { get; set; }
 
         [DataMember]

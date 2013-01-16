@@ -29,13 +29,13 @@ namespace TehHotel.Gui.Test.Controllers
                 ViewBag.Data = mozne_rez;
                 return View("MozneRezervacije");
             }
-            return View("Rezervacija");
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public ActionResult ShraniRezervacijoDvorane(RezervacijaPosebneStoritve model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && model.idStoritve != 0)
             {
                 int dvoranaId = model.idStoritve;
                 List<RezervacijaPosebneStoritve> dvo_list = null;
@@ -65,10 +65,6 @@ namespace TehHotel.Gui.Test.Controllers
                     }
                 }
                 Session["dvorane"] = dvo_list;
-            }
-            else
-            {
-                View("MozneRezervacije");
             }
             this.ModelState.Clear();
             return RedirectToAction("Index");

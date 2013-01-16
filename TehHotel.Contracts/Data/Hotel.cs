@@ -21,7 +21,7 @@ namespace TehHotel.Contracts.Data
             Id = id;
         }
 
-        [DataMember]
+        [DataMember(Name="IdHotel")]
         public int Id { get; set; }
 
         [DataMember]

@@ -13,7 +13,7 @@
       <xs:element minOccurs="0" name="DatumOd" type="xs:dateTime" />
       <xs:element xmlns:q1="http//www.tehhotel.com/" minOccurs="0" name="Hotel" nillable="true" type="q1:Hotel" />
       <xs:element minOccurs="0" name="Hrana" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="RezervacijaSobe" type="xs:int" />
       <xs:element xmlns:q2="http//www.tehhotel.com/" minOccurs="0" name="Soba" nillable="true" type="q2:Soba" />
       <xs:element xmlns:q3="http//www.tehhotel.com/" minOccurs="0" name="Stranka" nillable="true" type="q3:Stranka" />
     </xs:sequence>
