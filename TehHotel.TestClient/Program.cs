@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TehHotel.TestClient.HotelServiceReference;
 using TehHotel.TestClient.RezervacijaServiceRef;
+using TehHotel.TestClient.HotelSecure;
 
 namespace TehHotel.TestClient
 {
@@ -12,9 +13,10 @@ namespace TehHotel.TestClient
     {
         static void Main(string[] args)
         {
-
-            HotelServiceReference.HotelServiceClient client = new HotelServiceClient();
+            HotelSecure.HotelServiceClient client = new HotelSecure.HotelServiceClient();
+            //HotelServiceReference.HotelServiceClient client = new HotelServiceClient();
             //RemoteHotelService.HotelServiceClient client = new RemoteHotelService.HotelServiceClient();
+            //Console.WriteLine(client.ListHotel().Count());
             Console.WriteLine(client.ListHotel().Count());
             Console.WriteLine("DONE");
             Console.ReadLine();

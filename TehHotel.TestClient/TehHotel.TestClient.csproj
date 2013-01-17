@@ -45,6 +45,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\HotelSecure\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\HotelServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +74,20 @@
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelSecure\HotelServiceSecure.wsdl" />
+    <None Include="Service References\HotelSecure\HotelServiceSecure.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelSecure\HotelServiceSecure1.wsdl" />
+    <None Include="Service References\HotelSecure\HotelServiceSecure1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\HotelSecure\TehHotel.TestClient.HotelSecure.Hotel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\HotelSecure\TehHotel.TestClient.HotelSecure.Zaposleni.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\HotelServiceReference\HotelService.wsdl" />
     <None Include="Service References\HotelServiceReference\HotelService.xsd">
@@ -137,6 +156,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\HotelSecure\" />
     <WCFMetadataStorage Include="Service References\HotelServiceReference\" />
     <WCFMetadataStorage Include="Service References\RemoteHotelService\" />
     <WCFMetadataStorage Include="Service References\RemoteStrankaService\" />
@@ -192,6 +212,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\RemoteHotelService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelSecure\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelSecure\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\HotelSecure\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
