@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HotelServiceSecure.cs" />
     <Compile Include="HotelService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RezervacijaService.cs" />

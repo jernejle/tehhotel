@@ -59,6 +59,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HotelServiceSecure.svc" />
     <Content Include="Dll\mysql.data.dll" />
     <Content Include="Dll\mysql.data.entity.dll" />
     <Content Include="Dll\mysql.visualstudio.dll" />
