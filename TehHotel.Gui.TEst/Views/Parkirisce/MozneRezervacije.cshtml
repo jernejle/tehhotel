@@ -6,42 +6,46 @@
 
 <h2>Mozne rezervacije parkirišča</h2>
 
-@{ if (ViewBag.Data != null && ViewBag.Data.Count != 0) {
-        <form method="post" action="ShraniRezervacijoParkirisca">
-    <table class="mojatabela">
-        <tr>
-            <th>Izberi
-            </th>
-            <th>#Id
-            </th>
-            <th>Številka
-            </th>
-            <th>Pokrito
-            </th>
-        </tr>
-        @foreach (var item in ViewBag.Data)
-        {
+@{ if (ViewBag.Data != null && ViewBag.Data.Count != 0)
+   {
+    using (Html.BeginForm("ShraniRezervacijoParkirisca", "Parkirisce", FormMethod.Post))
+    {
+        <table class="mojatabela">
             <tr>
-                <td>
-                    <input type="radio" name="idStoritve" value="@item.IdParkirisce" />
-                </td>
-                <td>
-                    @item.IdParkirisce
-                </td>
-                <td>
-                    @item.Stevilka
-                </td>
-                <td>
-                    @item.Pokrito
-                </td>
+                <th>Izberi
+                </th>
+                <th>#Id
+                </th>
+                <th>Številka
+                </th>
+                <th>Pokrito
+                </th>
             </tr>
-        }
-    </table>
-    @Html.HiddenFor(m => m.datumOd)
-    @Html.HiddenFor(m => m.datumDo)
-    <input type="submit" name="submit" value="Izberi" />
-</form>   
-   } else {
-        @: <div class="napaka">Ni rezervacij za prikaz!</div>
+            @foreach (var item in ViewBag.Data)
+            {
+                <tr>
+                    <td>
+                        <input type="radio" name="idStoritve" value="@item.IdParkirisce" />
+                    </td>
+                    <td>
+                        @item.IdParkirisce
+                    </td>
+                    <td>
+                        @item.Stevilka
+                    </td>
+                    <td>
+                        @item.Pokrito
+                    </td>
+                </tr>
+            }
+        </table>
+        @Html.HiddenFor(m => m.datumOd)
+        @Html.HiddenFor(m => m.datumDo)
+        <input type="submit" name="submit" value="Izberi" />
+    }
+   }
+   else
+   {
+    @:<div class="napaka">Ni rezervacij za prikaz!</div>
    }
 }
