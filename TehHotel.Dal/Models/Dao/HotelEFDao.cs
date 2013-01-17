@@ -52,10 +52,10 @@ namespace TehHotel.Dal.Models.Dao
             using (TehHotelContext db = new TehHotelContext())
             {
                 var query = from x in db.Hoteli
+                                .Include("Parkirisca")
                                 .Include("Naslov")
                                 .Include("Sobe")
                                 .Include("Dvorane")
-                                .Include("Parkirisca")
                                 .Include("Osebje")
                             where x.Id == id
                             select x;
@@ -94,10 +94,10 @@ namespace TehHotel.Dal.Models.Dao
             using (TehHotelContext db = new TehHotelContext())
             {
                 var query = from x in db.Hoteli
+                                .Include("Parkirisca")
                                 .Include("Naslov")
                                 .Include("Sobe")
                                 .Include("Dvorane")
-                                .Include("Parkirisca")
                                 .Include("Osebje")
                             where x.Id == id
                             select x;
@@ -136,10 +136,10 @@ namespace TehHotel.Dal.Models.Dao
             {
                 List<HotelEF> query = db.Hoteli
                                 .Include("Parkirisca")
+                                .Include("Naslov")
                                 .Include("Sobe")
                                 .Include("Dvorane")
                                 .Include("Osebje")
-
                                 .ToList();
                 List<Hotel> list = new List<Hotel>();
                 if (query.Count() != 0)
