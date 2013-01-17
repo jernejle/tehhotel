@@ -769,12 +769,20 @@ table input {
     width: 40px;
 }
 
+.vsebina {
+    
+}
+
+.mojatabela {
+    margin-top: 30px;
+}
+
 .mojatabela td {
-    padding-left: 10px;
+    padding: 5px 50px 10px 0;
 }
 
 .mojatabela th {
-    padding: 10px;
+    padding: 0px 50px 10px 0; 
 }
 
 .napaka {
@@ -782,3 +790,11 @@ table input {
     margin-top: 30px;
     font-size: 14px;
 }
+
+.iskanje {
+    margin-top: 20px;
+}
+
+    .iskanje input {
+        width: 120px;
+    }

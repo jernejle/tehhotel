@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Podrobnosti";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Podrobnosti hotela</h2>
+
+@{ if (ViewData["hotel"] != null)
+   {
+    <table class="mojatabela">
+        <tr>
+            <th>Ime hotela</th>
+            <th>Zvezdice</th>
+            <th>Kuhinja</th>
+            <th>Bazen</th>
+            <th>Kraj</th>
+            <th>Država</th>
+            <th>Število sob</th>
+            <th>Število dvoran</th>
+            <th>Število parkirišč</th>
+        </tr>
+        @{ TehHotel.Gui.Test.HotelService.Hotel item = (TehHotel.Gui.Test.HotelService.Hotel) ViewData["hotel"];
+            <tr>
+                <td>
+                     @item.Ime
+                </td>
+                <td>
+                    @{ for (int i = 0; i < item.Zvezdice; i++)
+                       {
+                        @Html.Raw("*");
+                       }
+                    }
+                </td>
+                <td>
+                    @item.Kuhinja
+                </td>
+                <td>
+                    @item.Bazen
+                </td>
+                <td>
+                    @item.Naslov.Kraj
+                </td>
+                <td>
+                    @item.Naslov.Drzava
+                </td>
+                <td>
+                    @item.Sobe.Count()
+                </td>
+                <td>
+                    @item.Dvorane.Count()
+                </td>
+                <td>
+                    @item.Parkirisca.Count()
+                </td>
+            </tr>
+        }
+    </table>
+
+   }
+}

@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Izpis";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hoteli</h2>
+<div class="iskanje">
+    <form method="post" action="/Hotel/IskanjeHotelov/">
+        Država hotela
+    <input type="text" name="drzava" />
+        Kraj hotela
+    <input type="text" name="kraj" /> &nbsp; <input type="submit" name="isci" value="Išči" />
+    </form>
+</div>
+
+@{ if (ViewData["hoteli"] != null)
+   {
+    <div class="vsebina">
+    <table class="mojatabela">
+        <tr>
+            <th>Ime hotela</th>
+            <th>Zvezdice</th>
+            <th>Kuhinja</th>
+            <th>Bazen</th>
+            <th>Kraj</th>
+            <th>Država</th>
+        </tr>
+        @foreach (var item in (List<TehHotel.Gui.Test.HotelService.Hotel>)ViewData["hoteli"])
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(@item.Ime, "Podrobnosti/" + @item.IdHotel)
+                </td>
+                <td>
+                    @{ for (int i = 0; i < item.Zvezdice; i++)
+                       {
+                        @Html.Raw("*");
+                       }
+                    }
+                </td>
+                <td>
+                    @item.Kuhinja
+                </td>
+                <td>
+                    @item.Bazen
+                </td>
+                <td>
+                    @item.Naslov.Kraj
+                </td>
+                <td>
+                    @item.Naslov.Drzava
+                </td>
+            </tr>
+        }
+    </table>
+        </div>
+}
+}

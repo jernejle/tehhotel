@@ -168,6 +168,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DvoranaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\RacunController.cs" />
     <Compile Include="Controllers\RezervacijeController.cs" />
     <Compile Include="Controllers\SobaController.cs" />
@@ -345,6 +346,8 @@
     <Content Include="Views\Parkirisce\Rezervacija.cshtml" />
     <Content Include="Views\Parkirisce\MozneRezervacije.cshtml" />
     <Content Include="Web References\HotelService\HotelService.wsdl" />
+    <Content Include="Views\Hotel\Izpis.cshtml" />
+    <Content Include="Views\Hotel\Podrobnosti.cshtml" />
     <None Include="Web References\HotelService\HotelService.xsd">
       <SubType>Designer</SubType>
     </None>
