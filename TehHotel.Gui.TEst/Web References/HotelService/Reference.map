@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://localhost:1476/HotelService.svc?xsd=xsd0" filename="HotelService.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost:1476/HotelService.svc?wsdl=wsdl0" filename="HotelService.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://localhost:1476/HotelService.svc?xsd=xsd1" filename="HotelService0.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost:1476/HotelService.svc?wsdl" filename="HotelService0.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://localhost:1476/HotelService.svc?disco" filename="HotelService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://164.8.251.93/SOATravel/hotel2/HotelService.svc?wsdl" filename="HotelService.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://164.8.251.93/SOATravel/hotel2/HotelService.svc?disco" filename="HotelService.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93/SOATravel/hotel2/HotelService.svc?xsd=xsd1" filename="HotelService.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://164.8.251.93/SOATravel/hotel2/HotelService.svc?wsdl=wsdl0" filename="HotelService0.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93/SOATravel/hotel2/HotelService.svc?xsd=xsd0" filename="HotelService0.xsd" />
   </Results>
 </DiscoveryClientResultsFile>

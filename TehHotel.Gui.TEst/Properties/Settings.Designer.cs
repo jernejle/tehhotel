@@ -26,7 +26,7 @@ namespace TehHotel.Gui.Test.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1476/HotelService.svc")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://164.8.251.93/SOATravel/hotel2/HotelService.svc")]
         public string TehHotel_Gui_Test_HotelService_HotelService {
             get {
                 return ((string)(this["TehHotel_Gui_Test_HotelService_HotelService"]));
@@ -36,7 +36,7 @@ namespace TehHotel.Gui.Test.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1476/RezervacijaService.svc")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://164.8.251.93/SOATravel/hotel2/RezervacijaService.svc")]
         public string TehHotel_Gui_Test_RezervacijaService_RezervacijaService {
             get {
                 return ((string)(this["TehHotel_Gui_Test_RezervacijaService_RezervacijaService"]));
@@ -46,7 +46,7 @@ namespace TehHotel.Gui.Test.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:1476/StrankaService.svc")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://164.8.251.93/SOATravel/hotel2/StrankaService.svc")]
         public string TehHotel_Gui_Test_StrankaService_StrankaService {
             get {
                 return ((string)(this["TehHotel_Gui_Test_StrankaService_StrankaService"]));

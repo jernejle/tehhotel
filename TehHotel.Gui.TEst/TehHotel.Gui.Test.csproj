@@ -352,9 +352,9 @@
     <Content Include="Views\Dvorana\MozneRezervacije.cshtml" />
     <Content Include="Views\Parkirisce\Rezervacija.cshtml" />
     <Content Include="Views\Parkirisce\MozneRezervacije.cshtml" />
-    <Content Include="Web References\HotelService\HotelService.wsdl" />
     <Content Include="Views\Hotel\Izpis.cshtml" />
     <Content Include="Views\Hotel\Podrobnosti.cshtml" />
+    <Content Include="Web References\HotelService\HotelService.wsdl" />
     <None Include="Web References\HotelService\HotelService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -406,10 +406,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:1476/HotelService.svc">
+    <WebReferenceUrl Include="http://164.8.251.93/SOATravel/hotel2/HotelService.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\HotelService\</RelPath>
-      <UpdateFromURL>http://localhost:1476/HotelService.svc</UpdateFromURL>
+      <UpdateFromURL>http://164.8.251.93/SOATravel/hotel2/HotelService.svc</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -417,10 +417,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>TehHotel_Gui_Test_HotelService_HotelService</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:1476/RezervacijaService.svc">
+    <WebReferenceUrl Include="http://164.8.251.93/SOATravel/hotel2/RezervacijaService.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\RezervacijaService\</RelPath>
-      <UpdateFromURL>http://localhost:1476/RezervacijaService.svc</UpdateFromURL>
+      <UpdateFromURL>http://164.8.251.93/SOATravel/hotel2/RezervacijaService.svc</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -428,10 +428,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>TehHotel_Gui_Test_RezervacijaService_RezervacijaService</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:1476/StrankaService.svc">
+    <WebReferenceUrl Include="http://164.8.251.93/SOATravel/hotel2/StrankaService.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\StrankaService\</RelPath>
-      <UpdateFromURL>http://localhost:1476/StrankaService.svc</UpdateFromURL>
+      <UpdateFromURL>http://164.8.251.93/SOATravel/hotel2/StrankaService.svc</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
