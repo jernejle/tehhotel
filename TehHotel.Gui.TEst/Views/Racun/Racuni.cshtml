@@ -35,7 +35,7 @@
 @foreach (TehHotel.Gui.Test.RezervacijaService.Racun racun in (List<TehHotel.Gui.Test.RezervacijaService.Racun>) ViewData["racuni"]) {
     <tr>
         <td>
-            @racun.Id
+            @racun.IdRacun
         </td>
         <td>
             @racun.StevilkaRacuna
@@ -53,10 +53,10 @@
             @racun.Placano
         </td>
         <td>
-            @racun.HotelId
+            @Html.ActionLink(@racun.HotelId.ToString(), "Podrobnosti/" + @racun.HotelId,"Hotel")
         </td>
         <td>
-            <a href="/Racun/Podrobnosti/@racun.Id">Podrobnosti</a>
+            <a href="/Racun/Podrobnosti/@racun.IdRacun">Podrobnosti</a>
         </td>
     </tr>
 }

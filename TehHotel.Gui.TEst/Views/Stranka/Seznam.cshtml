@@ -31,7 +31,7 @@
 @foreach (TehHotel.Gui.Test.StrankaService.Stranka stranka in (List<TehHotel.Gui.Test.StrankaService.Stranka>) ViewData["stranke"]) {
     <tr>
         <td>
-            @stranka.Id
+            @stranka.IdStranka
         </td>
         <td>
             @stranka.Ime
@@ -46,7 +46,7 @@
             @stranka.Naslov.Ulica @stranka.Naslov.Kraj
         </td>
         <td>
-            <a href="/Racun/Stranka/@stranka.Id">Poglej račune stranke</a>
+            <a href="/Racun/Stranka/@stranka.IdStranka">Poglej račune stranke</a>
         </td>
     </tr>
 }

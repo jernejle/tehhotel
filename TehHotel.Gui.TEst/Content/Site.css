@@ -773,16 +773,22 @@ table input {
     
 }
 
+.vsebina input {
+    width: 120px;
+}
+
 .mojatabela {
     margin-top: 30px;
 }
 
 .mojatabela td {
     padding: 5px 50px 10px 0;
+    text-align: center;
 }
 
 .mojatabela th {
     padding: 0px 50px 10px 0; 
+    text-align: center;
 }
 
 .napaka {
