@@ -53,12 +53,12 @@ namespace TehHotel.Model
 
         public List<Hotel> ListHotelByKraj(string kraj)
         {
-            return hdao.List().Where(x => x.Naslov.Kraj == kraj).ToList();
+            return hdao.List().Where(x => x.Naslov.Kraj.ToLower() == kraj.ToLower()).ToList();
         }
 
         public List<Hotel> ListHotelByDrzava(string drzava)
         {
-            return hdao.List().Where(x => x.Naslov.Drzava == drzava).ToList();
+            return hdao.List().Where(x => x.Naslov.Drzava.ToLower() == drzava.ToLower()).ToList();
         }
 
         public bool AddSoba(int hotelId, Soba s)
