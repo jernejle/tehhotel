@@ -16,7 +16,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Bazen" type="xs:boolean" />
       <xs:element xmlns:q3="http//www.tehhotel.com/" minOccurs="0" name="Dvorane" nillable="true" type="q3:ArrayOfDvorana" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdHotel" type="xs:int" />
       <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Kuhinja" type="xs:boolean" />
       <xs:element xmlns:q4="http//www.tehhotel.com/" minOccurs="0" name="Naslov" nillable="true" type="q4:Naslov" />
@@ -36,7 +36,7 @@
   <xs:complexType name="Dvorana">
     <xs:sequence>
       <xs:element minOccurs="0" name="HotelId" type="xs:int" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdDvorana" type="xs:int" />
       <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Povrsina" type="xs:double" />
       <xs:element minOccurs="0" name="StLjudi" type="xs:int" />
@@ -48,7 +48,7 @@
   <xs:complexType name="Naslov">
     <xs:sequence>
       <xs:element minOccurs="0" name="Drzava" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdNaslov" type="xs:int" />
       <xs:element minOccurs="0" name="Kraj" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PostnaStevilka" type="xs:int" />
       <xs:element minOccurs="0" name="Ulica" nillable="true" type="xs:string" />
@@ -67,7 +67,7 @@
       <xs:element minOccurs="0" name="DatumZaposlitve" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="HotelId" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdZaposleni" type="xs:int" />
       <xs:element xmlns:q15="http//www.tehhotel.com/" minOccurs="0" name="Identifikacija" nillable="true" type="q15:Identifikacija" />
       <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Izobrazba" nillable="true" type="xs:string" />
@@ -83,7 +83,7 @@
   <xs:element xmlns:q17="http//www.tehhotel.com/" name="Zaposleni" nillable="true" type="q17:Zaposleni" />
   <xs:complexType name="Identifikacija">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdIdentifikacija" type="xs:int" />
       <xs:element minOccurs="0" name="Tip" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Vrednost" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -98,7 +98,7 @@
   <xs:complexType name="Parkirisce">
     <xs:sequence>
       <xs:element minOccurs="0" name="HotelId" type="xs:int" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdParkirisce" type="xs:int" />
       <xs:element minOccurs="0" name="Pokrito" type="xs:boolean" />
       <xs:element minOccurs="0" name="Stevilka" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -116,7 +116,7 @@
       <xs:element minOccurs="0" name="Cena" type="xs:double" />
       <xs:element minOccurs="0" name="Hladilnik" type="xs:boolean" />
       <xs:element minOccurs="0" name="HotelId" type="xs:int" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdSoba" type="xs:int" />
       <xs:element minOccurs="0" name="Internet" type="xs:boolean" />
       <xs:element minOccurs="0" name="Nadstropje" type="xs:int" />
       <xs:element minOccurs="0" name="StPostelj" type="xs:int" />
@@ -129,7 +129,7 @@
   <xs:complexType name="Stranka">
     <xs:sequence>
       <xs:element minOccurs="0" name="DatumRojstva" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdStranka" type="xs:int" />
       <xs:element xmlns:q25="http//www.tehhotel.com/" minOccurs="0" name="Identifikacija" nillable="true" type="q25:Identifikacija" />
       <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
       <xs:element xmlns:q26="http//www.tehhotel.com/" minOccurs="0" name="Naslov" nillable="true" type="q26:Naslov" />
@@ -158,7 +158,7 @@
       <xs:element minOccurs="0" name="DatumDo" type="xs:dateTime" />
       <xs:element minOccurs="0" name="DatumOd" type="xs:dateTime" />
       <xs:element xmlns:q33="http//www.tehhotel.com/" minOccurs="0" name="Dvorana" nillable="true" type="q33:Dvorana" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdRezervacijaDvorane" type="xs:int" />
       <xs:element minOccurs="0" name="ImePosebneStoritve" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SteviloLjudi" type="xs:int" />
       <xs:element xmlns:q34="http//www.tehhotel.com/" minOccurs="0" name="Stranka" nillable="true" type="q34:Stranka" />
@@ -178,9 +178,9 @@
       <xs:element minOccurs="0" name="Cena" type="xs:decimal" />
       <xs:element minOccurs="0" name="DatumDo" type="xs:dateTime" />
       <xs:element minOccurs="0" name="DatumOd" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="ImePosebneStoritve" nillable="true" type="xs:string" />
       <xs:element xmlns:q38="http//www.tehhotel.com/" minOccurs="0" name="Parkirisce" nillable="true" type="q38:Parkirisce" />
+      <xs:element minOccurs="0" name="RezervacijaParkirisca" type="xs:int" />
       <xs:element xmlns:q39="http//www.tehhotel.com/" minOccurs="0" name="Stranka" nillable="true" type="q39:Stranka" />
     </xs:sequence>
     <xs:attribute ref="ser:Id" />
@@ -198,7 +198,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="DatumRacuna" type="xs:dateTime" />
       <xs:element minOccurs="0" name="HotelId" type="xs:int" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdRacun" type="xs:int" />
       <xs:element minOccurs="0" name="Placano" type="xs:boolean" />
       <xs:element xmlns:q42="http//www.tehhotel.com/" minOccurs="0" name="RezervacijeDvorane" nillable="true" type="q42:ArrayOfRezervacijaDvorane" />
       <xs:element xmlns:q43="http//www.tehhotel.com/" minOccurs="0" name="RezervacijeParkirisca" nillable="true" type="q43:ArrayOfRezervacijaParkirisca" />

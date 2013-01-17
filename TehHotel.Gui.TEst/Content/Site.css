@@ -776,3 +776,9 @@ table input {
 .mojatabela th {
     padding: 10px;
 }
+
+.napaka {
+    color: red;
+    margin-top: 30px;
+    font-size: 14px;
+}

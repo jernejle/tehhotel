@@ -26,7 +26,7 @@ namespace TehHotel.Gui.Test.RezervacijaService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_RezervacijaService", Namespace="http://tempuri.org/")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="RezervacijaServiceEndpoint", Namespace="http://tempuri.org/")]
     public partial class RezervacijaService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback CreateRezervacijaOperationCompleted;
@@ -695,9 +695,9 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private string hranaField;
         
-        private int idField;
+        private int rezervacijaSobe1Field;
         
-        private bool idFieldSpecified;
+        private bool rezervacijaSobe1FieldSpecified;
         
         private Soba sobaField;
         
@@ -768,23 +768,24 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        public int Id {
+        [System.Xml.Serialization.XmlElementAttribute("RezervacijaSobe")]
+        public int RezervacijaSobe1 {
             get {
-                return this.idField;
+                return this.rezervacijaSobe1Field;
             }
             set {
-                this.idField = value;
+                this.rezervacijaSobe1Field = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool RezervacijaSobe1Specified {
             get {
-                return this.idFieldSpecified;
+                return this.rezervacijaSobe1FieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.rezervacijaSobe1FieldSpecified = value;
             }
         }
         
@@ -825,9 +826,9 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private Dvorana[] dvoraneField;
         
-        private int idField;
+        private int idHotelField;
         
-        private bool idFieldSpecified;
+        private bool idHotelFieldSpecified;
         
         private string imeField;
         
@@ -880,23 +881,23 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        public int Id {
+        public int IdHotel {
             get {
-                return this.idField;
+                return this.idHotelField;
             }
             set {
-                this.idField = value;
+                this.idHotelField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdHotelSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idHotelFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idHotelFieldSpecified = value;
             }
         }
         
@@ -1010,9 +1011,9 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private bool hotelIdFieldSpecified;
         
-        private int idField;
+        private int idDvoranaField;
         
-        private bool idFieldSpecified;
+        private bool idDvoranaFieldSpecified;
         
         private string imeField;
         
@@ -1024,7 +1025,7 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private bool stLjudiFieldSpecified;
         
-        private string id1Field;
+        private string idField;
         
         private string refField;
         
@@ -1050,23 +1051,23 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        public int Id {
+        public int IdDvorana {
             get {
-                return this.idField;
+                return this.idDvoranaField;
             }
             set {
-                this.idField = value;
+                this.idDvoranaField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdDvoranaSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idDvoranaFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idDvoranaFieldSpecified = value;
             }
         }
         
@@ -1124,13 +1125,13 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("Id", Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
-        public string Id1 {
+        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
+        public string Id {
             get {
-                return this.id1Field;
+                return this.idField;
             }
             set {
-                this.id1Field = value;
+                this.idField = value;
             }
         }
         
@@ -1379,9 +1380,9 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private bool hotelIdFieldSpecified;
         
-        private int idField;
+        private int idRacunField;
         
-        private bool idFieldSpecified;
+        private bool idRacunFieldSpecified;
         
         private bool placanoField;
         
@@ -1405,7 +1406,7 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private string valutaField;
         
-        private string id1Field;
+        private string idField;
         
         private string refField;
         
@@ -1452,23 +1453,23 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        public int Id {
+        public int IdRacun {
             get {
-                return this.idField;
+                return this.idRacunField;
             }
             set {
-                this.idField = value;
+                this.idRacunField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdRacunSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idRacunFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idRacunFieldSpecified = value;
             }
         }
         
@@ -1592,13 +1593,13 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("Id", Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
-        public string Id1 {
+        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
+        public string Id {
             get {
-                return this.id1Field;
+                return this.idField;
             }
             set {
-                this.id1Field = value;
+                this.idField = value;
             }
         }
         
@@ -1636,9 +1637,9 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private Dvorana dvoranaField;
         
-        private int idField;
+        private int idRezervacijaDvoraneField;
         
-        private bool idFieldSpecified;
+        private bool idRezervacijaDvoraneFieldSpecified;
         
         private string imePosebneStoritveField;
         
@@ -1648,7 +1649,7 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private Stranka strankaField;
         
-        private string id1Field;
+        private string idField;
         
         private string refField;
         
@@ -1727,23 +1728,23 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        public int Id {
+        public int IdRezervacijaDvorane {
             get {
-                return this.idField;
+                return this.idRezervacijaDvoraneField;
             }
             set {
-                this.idField = value;
+                this.idRezervacijaDvoraneField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdRezervacijaDvoraneSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idRezervacijaDvoraneFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idRezervacijaDvoraneFieldSpecified = value;
             }
         }
         
@@ -1791,13 +1792,13 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("Id", Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
-        public string Id1 {
+        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
+        public string Id {
             get {
-                return this.id1Field;
+                return this.idField;
             }
             set {
-                this.id1Field = value;
+                this.idField = value;
             }
         }
         
@@ -1825,9 +1826,9 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private bool datumRojstvaFieldSpecified;
         
-        private int idField;
+        private int idStrankaField;
         
-        private bool idFieldSpecified;
+        private bool idStrankaFieldSpecified;
         
         private Identifikacija identifikacijaField;
         
@@ -1837,7 +1838,7 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private string priimekField;
         
-        private string id1Field;
+        private string idField;
         
         private string refField;
         
@@ -1863,23 +1864,23 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        public int Id {
+        public int IdStranka {
             get {
-                return this.idField;
+                return this.idStrankaField;
             }
             set {
-                this.idField = value;
+                this.idStrankaField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdStrankaSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idStrankaFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idStrankaFieldSpecified = value;
             }
         }
         
@@ -1928,13 +1929,13 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("Id", Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
-        public string Id1 {
+        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
+        public string Id {
             get {
-                return this.id1Field;
+                return this.idField;
             }
             set {
-                this.id1Field = value;
+                this.idField = value;
             }
         }
         
@@ -1958,32 +1959,32 @@ namespace TehHotel.Gui.Test.RezervacijaService {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http//www.tehhotel.com/")]
     public partial class Identifikacija {
         
-        private int idField;
+        private int idIdentifikacijaField;
         
-        private bool idFieldSpecified;
+        private bool idIdentifikacijaFieldSpecified;
         
         private string tipField;
         
         private string vrednostField;
         
         /// <remarks/>
-        public int Id {
+        public int IdIdentifikacija {
             get {
-                return this.idField;
+                return this.idIdentifikacijaField;
             }
             set {
-                this.idField = value;
+                this.idIdentifikacijaField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdIdentifikacijaSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idIdentifikacijaFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idIdentifikacijaFieldSpecified = value;
             }
         }
         
@@ -2020,9 +2021,9 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private string drzavaField;
         
-        private int idField;
+        private int idNaslovField;
         
-        private bool idFieldSpecified;
+        private bool idNaslovFieldSpecified;
         
         private string krajField;
         
@@ -2044,23 +2045,23 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        public int Id {
+        public int IdNaslov {
             get {
-                return this.idField;
+                return this.idNaslovField;
             }
             set {
-                this.idField = value;
+                this.idNaslovField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdNaslovSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idNaslovFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idNaslovFieldSpecified = value;
             }
         }
         
@@ -2128,17 +2129,17 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private bool datumOdFieldSpecified;
         
-        private int idField;
-        
-        private bool idFieldSpecified;
-        
         private string imePosebneStoritveField;
         
         private Parkirisce parkirisceField;
         
+        private int rezervacijaParkirisca1Field;
+        
+        private bool rezervacijaParkirisca1FieldSpecified;
+        
         private Stranka strankaField;
         
-        private string id1Field;
+        private string idField;
         
         private string refField;
         
@@ -2206,27 +2207,6 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        public int Id {
-            get {
-                return this.idField;
-            }
-            set {
-                this.idField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
-            get {
-                return this.idFieldSpecified;
-            }
-            set {
-                this.idFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public string ImePosebneStoritve {
             get {
@@ -2249,6 +2229,28 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("RezervacijaParkirisca")]
+        public int RezervacijaParkirisca1 {
+            get {
+                return this.rezervacijaParkirisca1Field;
+            }
+            set {
+                this.rezervacijaParkirisca1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RezervacijaParkirisca1Specified {
+            get {
+                return this.rezervacijaParkirisca1FieldSpecified;
+            }
+            set {
+                this.rezervacijaParkirisca1FieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
         public Stranka Stranka {
             get {
@@ -2260,13 +2262,13 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("Id", Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
-        public string Id1 {
+        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
+        public string Id {
             get {
-                return this.id1Field;
+                return this.idField;
             }
             set {
-                this.id1Field = value;
+                this.idField = value;
             }
         }
         
@@ -2294,9 +2296,9 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private bool hotelIdFieldSpecified;
         
-        private int idField;
+        private int idParkirisceField;
         
-        private bool idFieldSpecified;
+        private bool idParkirisceFieldSpecified;
         
         private bool pokritoField;
         
@@ -2326,23 +2328,23 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        public int Id {
+        public int IdParkirisce {
             get {
-                return this.idField;
+                return this.idParkirisceField;
             }
             set {
-                this.idField = value;
+                this.idParkirisceField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdParkirisceSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idParkirisceFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idParkirisceFieldSpecified = value;
             }
         }
         
@@ -2438,9 +2440,9 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private bool hotelIdFieldSpecified;
         
-        private int idField;
+        private int idSobaField;
         
-        private bool idFieldSpecified;
+        private bool idSobaFieldSpecified;
         
         private bool internetField;
         
@@ -2549,23 +2551,23 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        public int Id {
+        public int IdSoba {
             get {
-                return this.idField;
+                return this.idSobaField;
             }
             set {
-                this.idField = value;
+                this.idSobaField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdSobaSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idSobaFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idSobaFieldSpecified = value;
             }
         }
         
@@ -2708,9 +2710,9 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         
         private bool hotelIdFieldSpecified;
         
-        private int idField;
+        private int idZaposleniField;
         
-        private bool idFieldSpecified;
+        private bool idZaposleniFieldSpecified;
         
         private Identifikacija identifikacijaField;
         
@@ -2812,23 +2814,23 @@ namespace TehHotel.Gui.Test.RezervacijaService {
         }
         
         /// <remarks/>
-        public int Id {
+        public int IdZaposleni {
             get {
-                return this.idField;
+                return this.idZaposleniField;
             }
             set {
-                this.idField = value;
+                this.idZaposleniField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdZaposleniSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idZaposleniFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idZaposleniFieldSpecified = value;
             }
         }
         

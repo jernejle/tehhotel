@@ -10,7 +10,7 @@ namespace TehHotel.Contracts.Data
     [DataContract(Name = "Dvorana", Namespace = "http//www.tehhotel.com/", IsReference = true)]
     public class Dvorana
     {
-        [DataMember]
+        [DataMember(Name="IdDvorana")]
         public int Id { get; set; }
 
         [DataMember]

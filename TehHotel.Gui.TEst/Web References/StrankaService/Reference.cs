@@ -26,7 +26,7 @@ namespace TehHotel.Gui.Test.StrankaService {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.17929")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_StrankaService", Namespace="http://tempuri.org/")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="StrankaServiceEndpoint", Namespace="http://tempuri.org/")]
     public partial class StrankaService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback CreateStrankaOperationCompleted;
@@ -347,9 +347,9 @@ namespace TehHotel.Gui.Test.StrankaService {
         
         private bool datumRojstvaFieldSpecified;
         
-        private int idField;
+        private int idStrankaField;
         
-        private bool idFieldSpecified;
+        private bool idStrankaFieldSpecified;
         
         private Identifikacija identifikacijaField;
         
@@ -359,7 +359,7 @@ namespace TehHotel.Gui.Test.StrankaService {
         
         private string priimekField;
         
-        private string id1Field;
+        private string idField;
         
         private string refField;
         
@@ -385,23 +385,23 @@ namespace TehHotel.Gui.Test.StrankaService {
         }
         
         /// <remarks/>
-        public int Id {
+        public int IdStranka {
             get {
-                return this.idField;
+                return this.idStrankaField;
             }
             set {
-                this.idField = value;
+                this.idStrankaField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdStrankaSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idStrankaFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idStrankaFieldSpecified = value;
             }
         }
         
@@ -450,13 +450,13 @@ namespace TehHotel.Gui.Test.StrankaService {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute("Id", Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
-        public string Id1 {
+        [System.Xml.Serialization.XmlAttributeAttribute(Form=System.Xml.Schema.XmlSchemaForm.Qualified, Namespace="http://schemas.microsoft.com/2003/10/Serialization/", DataType="ID")]
+        public string Id {
             get {
-                return this.id1Field;
+                return this.idField;
             }
             set {
-                this.id1Field = value;
+                this.idField = value;
             }
         }
         
@@ -480,32 +480,32 @@ namespace TehHotel.Gui.Test.StrankaService {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http//www.tehhotel.com/")]
     public partial class Identifikacija {
         
-        private int idField;
+        private int idIdentifikacijaField;
         
-        private bool idFieldSpecified;
+        private bool idIdentifikacijaFieldSpecified;
         
         private string tipField;
         
         private string vrednostField;
         
         /// <remarks/>
-        public int Id {
+        public int IdIdentifikacija {
             get {
-                return this.idField;
+                return this.idIdentifikacijaField;
             }
             set {
-                this.idField = value;
+                this.idIdentifikacijaField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdIdentifikacijaSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idIdentifikacijaFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idIdentifikacijaFieldSpecified = value;
             }
         }
         
@@ -542,9 +542,9 @@ namespace TehHotel.Gui.Test.StrankaService {
         
         private string drzavaField;
         
-        private int idField;
+        private int idNaslovField;
         
-        private bool idFieldSpecified;
+        private bool idNaslovFieldSpecified;
         
         private string krajField;
         
@@ -566,23 +566,23 @@ namespace TehHotel.Gui.Test.StrankaService {
         }
         
         /// <remarks/>
-        public int Id {
+        public int IdNaslov {
             get {
-                return this.idField;
+                return this.idNaslovField;
             }
             set {
-                this.idField = value;
+                this.idNaslovField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool IdSpecified {
+        public bool IdNaslovSpecified {
             get {
-                return this.idFieldSpecified;
+                return this.idNaslovFieldSpecified;
             }
             set {
-                this.idFieldSpecified = value;
+                this.idNaslovFieldSpecified = value;
             }
         }
         

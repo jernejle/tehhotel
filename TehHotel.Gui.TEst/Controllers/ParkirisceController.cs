@@ -29,15 +29,15 @@ namespace TehHotel.Gui.Test.Controllers
                 ViewBag.Data = mozne_rez;
                 return View("MozneRezervacije");
             }
-                
-            return View("Rezervacija");
+
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
         public ActionResult ShraniRezervacijoParkirisca(RezervacijaPosebneStoritve model)
         {
 
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && model.idStoritve != 0)
             {
                 int parkirisceId = model.idStoritve;
                 List<RezervacijaPosebneStoritve> park_list = null;
@@ -68,9 +68,8 @@ namespace TehHotel.Gui.Test.Controllers
                     }
                 }
                 Session["parkirisca"] = park_list;
-                return RedirectToAction("Index");
             }
-            return View("MozneRezervacije");
+            return RedirectToAction("Index");
         }
 
     }

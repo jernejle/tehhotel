@@ -73,7 +73,7 @@ namespace TehHotel.Gui.Test.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("Izpis");
+                return RedirectToAction("Index");
             }
 
             List<RezervacijaPosebneStoritve> rezervacije_sob = (List<RezervacijaPosebneStoritve>) Session["sobe"];
@@ -103,7 +103,7 @@ namespace TehHotel.Gui.Test.Controllers
                 rez_dvorane = new List<RezervacijaDvorane>();
                 foreach (RezervacijaPosebneStoritve rs in rezervacije_dvor)
                 {
-                    RezervacijaDvorane rd = new RezervacijaDvorane() { DatumDo = rs.datumDo, DatumOd = rs.datumOd, ImePosebneStoritve = "Rezervacija dvorane", Cena = 1000, SteviloLjudi = 100, CenaSpecified = true, DatumDoSpecified = true, DatumOdSpecified = true, Dvorana = new Dvorana() { Id = rs.idStoritve, IdSpecified = true }, SteviloLjudiSpecified = true, Stranka = null };
+                    RezervacijaDvorane rd = new RezervacijaDvorane() { DatumDo = rs.datumDo, DatumOd = rs.datumOd, ImePosebneStoritve = "Rezervacija dvorane", Cena = 1000, SteviloLjudi = 100, CenaSpecified = true, DatumDoSpecified = true, DatumOdSpecified = true, Dvorana = new Dvorana() { IdDvorana = rs.idStoritve, IdDvoranaSpecified = true }, SteviloLjudiSpecified = true, Stranka = null };
                     rez_dvorane.Add(rd);
                 }
                 r.RezervacijeDvorane = rez_dvorane.ToArray();
@@ -117,7 +117,7 @@ namespace TehHotel.Gui.Test.Controllers
                 rez_parkirisca = new List<RezervacijaParkirisca>();
                 foreach (RezervacijaPosebneStoritve rs in rezervacije_park)
                 {
-                    RezervacijaParkirisca rp = new RezervacijaParkirisca() { Cena = 100, DatumDo = rs.datumDo, DatumOd = rs.datumOd, Parkirisce = new Parkirisce() { Id = rs.idStoritve, IdSpecified = true }, ImePosebneStoritve = "Rezervacija parkirisca", Stranka = null, CenaSpecified = true, DatumDoSpecified = true, DatumOdSpecified = true };
+                    RezervacijaParkirisca rp = new RezervacijaParkirisca() { Cena = 100, DatumDo = rs.datumDo, DatumOd = rs.datumOd, Parkirisce = new Parkirisce() { IdParkirisce = rs.idStoritve, IdParkirisceSpecified = true }, ImePosebneStoritve = "Rezervacija parkirisca", Stranka = null, CenaSpecified = true, DatumDoSpecified = true, DatumOdSpecified = true };
                     rez_parkirisca.Add(rp);
                 }
                 r.RezervacijeParkirisca = rez_parkirisca.ToArray();
@@ -130,7 +130,7 @@ namespace TehHotel.Gui.Test.Controllers
             int strankaId = 0;
             try
             {
-                strankaId = strObj.Id;
+                strankaId = strObj.IdStranka;
             }
             catch
             {
@@ -143,8 +143,9 @@ namespace TehHotel.Gui.Test.Controllers
             }
 
             client.CreateRezervacija(strankaId, true, model.hotelid,true, rez_sobe.ToArray(), r);
-            this.ModelState.Clear();
-            return RedirectToAction("Index", "Stranka");
+            ModelState.Clear();
+
+            return RedirectToAction("Pobrisi");
         }
 
     }

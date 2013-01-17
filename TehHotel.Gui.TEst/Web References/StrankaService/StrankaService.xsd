@@ -11,7 +11,7 @@
   <xs:complexType name="Stranka">
     <xs:sequence>
       <xs:element minOccurs="0" name="DatumRojstva" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdStranka" type="xs:int" />
       <xs:element xmlns:q2="http//www.tehhotel.com/" minOccurs="0" name="Identifikacija" nillable="true" type="q2:Identifikacija" />
       <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
       <xs:element xmlns:q3="http//www.tehhotel.com/" minOccurs="0" name="Naslov" nillable="true" type="q3:Naslov" />
@@ -23,7 +23,7 @@
   <xs:element xmlns:q4="http//www.tehhotel.com/" name="Stranka" nillable="true" type="q4:Stranka" />
   <xs:complexType name="Identifikacija">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdIdentifikacija" type="xs:int" />
       <xs:element minOccurs="0" name="Tip" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Vrednost" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -32,7 +32,7 @@
   <xs:complexType name="Naslov">
     <xs:sequence>
       <xs:element minOccurs="0" name="Drzava" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdNaslov" type="xs:int" />
       <xs:element minOccurs="0" name="Kraj" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PostnaStevilka" type="xs:int" />
       <xs:element minOccurs="0" name="Ulica" nillable="true" type="xs:string" />

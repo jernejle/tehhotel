@@ -17,7 +17,7 @@ namespace TehHotel.Gui.Test.Helpers
             {
                 SelectListItem i = new SelectListItem();
                 i.Text = h.Ime;
-                i.Value = h.Id.ToString();
+                i.Value = h.IdHotel.ToString();
                 sl.Add(i);
             }
             return sl;
