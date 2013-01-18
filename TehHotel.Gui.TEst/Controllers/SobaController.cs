@@ -28,15 +28,15 @@ namespace TehHotel.Gui.Test.Controllers
         {
             if (ModelState.IsValid)
             {
-                RezervacijaService.RezervacijaService client = new RezervacijaService.RezervacijaService();
-                PreveriAtribute(r.Fos);
-                Soba[] sobe = client.ListMozneRezervacijeSobe(r.HotelId, true, r.DatumOd, true, r.DatumDo, true, r.Fos);
-                ViewBag.sobe = sobe;
-                ViewBag.rezervacijaSobe = r;
-                return View("MozneRezervacije");
+                    RezervacijaService.RezervacijaService client = new RezervacijaService.RezervacijaService();
+                    PreveriAtribute(r.Fos);
+                    Soba[] sobe = client.ListMozneRezervacijeSobe(r.HotelId, true, r.DatumOd, true, r.DatumDo, true, r.Fos);
+                    ViewBag.sobe = sobe;
+                    ViewBag.rezervacijaSobe = r;
+                    return View("MozneRezervacije");
             }
             ViewBag.hoteli = ListHotel();
-            return View(r);
+            return View("Rezervacija", r);
 
         }
 
