@@ -8,12 +8,16 @@
 <br />
 
 <div class="vsebina">
-    <form method="post" action="/Parkirisce/MozneRezervacije">
-        Hotel id @Html.DropDownListFor(m => m.idStoritve, (List<SelectListItem>)ViewData["hoteli"])<br />
-        Datum Od @Html.TextBoxFor(m => m.datumOd, new { @class = "datepicker" })
+    @using (Html.BeginForm("MozneRezervacije", "Parkirisce", FormMethod.Post))
+    {
+        @:Hotel
+        @Html.DropDownListFor(m => m.idStoritve, (List<SelectListItem>)ViewData["hoteli"])<br />
+        @:Datum Od 
+        @Html.TextBoxFor(m => m.datumOd, new { @class = "datepicker" })
         <br />
-        Datum Do @Html.TextBoxFor(m => m.datumDo, new { @class = "datepicker" })
+        @:Datum Do
+        @Html.TextBoxFor(m => m.datumDo, new { @class = "datepicker" })
         <br />
         <input type="submit" name="submit" value="Išči" />
-    </form>
+    }
 </div>

@@ -56,7 +56,7 @@
             @Html.ActionLink(@racun.HotelId.ToString(), "Podrobnosti/" + @racun.HotelId,"Hotel")
         </td>
         <td>
-            <a href="/Racun/Podrobnosti/@racun.IdRacun">Podrobnosti</a>
+            @Html.ActionLink("Podrobnosti","Podrobnosti/"+@racun.IdRacun,"Racun")
         </td>
     </tr>
 }
