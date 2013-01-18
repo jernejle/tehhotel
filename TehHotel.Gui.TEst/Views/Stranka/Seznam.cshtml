@@ -46,7 +46,7 @@
             @stranka.Naslov.Ulica @stranka.Naslov.Kraj
         </td>
         <td>
-            <a href="/Racun/Stranka/@stranka.IdStranka">Poglej račune stranke</a>
+            @Html.ActionLink("Poglej račune stranke", "Stranka/" + @stranka.IdStranka, "Racun")
         </td>
     </tr>
 }
