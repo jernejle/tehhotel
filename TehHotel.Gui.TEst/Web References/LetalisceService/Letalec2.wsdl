@@ -1,0 +1,1587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.foreach-airlines.com/services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Letalec2" targetNamespace="http://www.foreach-airlines.com/services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.foreach-airlines.com/services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Modeli" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/RentACar2_Poslovalnice" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/RentACar2_Vozila" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/RentACar2_Rezervacije" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/RentACar2_Stranke" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/Pogodbe.letalecJAVA" />
+      <xs:element name="vrniLetalisca">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniLetaliscaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="vrniLetaliscaResult" nillable="true" type="q1:ArrayOfLetalisce" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="izbrisiLetalisce">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="idLetalisca" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="izbrisiLetalisceResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dodajLetalisce">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="n" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="k" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ko" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dodajLetalisceResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateLetalisce">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="LetID" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="n" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="k" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="ko" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateLetalisceResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obremenjenostLetala">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="LetID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obremenjenostLetalaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="obremenjenostLetalaResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="izbrisiLet">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="LetID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="izbrisiLetResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dodajZival">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ime" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="vrsta" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="st" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="teza" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dodajZivalResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateObremenjenost">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="LetID" type="xs:int" />
+            <xs:element minOccurs="0" name="novaobremenjenost" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateObremenjenostResponse">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vsiDodatki">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vsiDodatkiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="vsiDodatkiResult" nillable="true" type="q2:ArrayOfDodatek" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vsaLetalisca">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vsaLetaliscaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="vsaLetaliscaResult" nillable="true" type="q3:ArrayOfLetalisce" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vsaLetala">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vsaLetalaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="vsaLetalaResult" nillable="true" type="q4:ArrayOfLetalo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="izbraniRedniLeti">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="letalisceOdhodaID" type="xs:int" />
+            <xs:element minOccurs="0" name="letaliscePrihodaID" type="xs:int" />
+            <xs:element minOccurs="0" name="datum" type="xs:dateTime" />
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="potovalniRazred" type="q5:PotovalniRazred" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="izbraniRedniLetiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="izbraniRedniLetiResult" nillable="true" type="q6:ArrayOfLet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="izbraniPovratniLeti">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="letalisceOdhodaID" type="xs:int" />
+            <xs:element minOccurs="0" name="letaliscePrihodaID" type="xs:int" />
+            <xs:element minOccurs="0" name="datumTja" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="datumNazaj" type="xs:dateTime" />
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="potovalniRazred" type="q7:PotovalniRazred" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="izbraniPovratniLetiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="izbraniPovratniLetiResult" nillable="true" type="q8:ArrayOfLet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="izbraniCarterskiLeti">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="letalisceOdhodaID" type="xs:int" />
+            <xs:element minOccurs="0" name="letaliscePrihodaID" type="xs:int" />
+            <xs:element minOccurs="0" name="datum" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="izbraniCarterskiLetiResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="izbraniCarterskiLetiResult" nillable="true" type="q9:ArrayOfLet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="nakupKarteZaZival">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="letID" type="xs:int" />
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="zival" nillable="true" type="q10:Zival" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="nakupKarteZaZivalResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="nakupKarteZaZivalResult" nillable="true" type="q11:KartaZaZival" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="nakupEnosmerneKarte">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="oseba" nillable="true" type="q12:Oseba" />
+            <xs:element minOccurs="0" name="letID" type="xs:int" />
+            <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="potovalniRazred" type="q13:PotovalniRazred" />
+            <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="prtljaga" type="q14:Prtljaga" />
+            <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="seznamDodatkov" nillable="true" type="q15:ArrayOfint" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="nakupEnosmerneKarteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="nakupEnosmerneKarteResult" nillable="true" type="q16:KartaZaOsebo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="nakupPovratneKarte">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="oseba" nillable="true" type="q17:Oseba" />
+            <xs:element minOccurs="0" name="letTjaID" type="xs:int" />
+            <xs:element minOccurs="0" name="letNazajID" type="xs:int" />
+            <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="potovalniRazred" type="q18:PotovalniRazred" />
+            <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="prtljaga" type="q19:Prtljaga" />
+            <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="seznamDodatkov" nillable="true" type="q20:ArrayOfint" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="nakupPovratneKarteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="nakupPovratneKarteResult" nillable="true" type="q21:ArrayOfKartaZaOsebo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rezervacijaEnosmerneKarte">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="oseba" nillable="true" type="q22:Oseba" />
+            <xs:element minOccurs="0" name="letID" type="xs:int" />
+            <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="potovalniRazred" type="q23:PotovalniRazred" />
+            <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="prtljaga" type="q24:Prtljaga" />
+            <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="seznamDodatkov" nillable="true" type="q25:ArrayOfint" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rezervacijaEnosmerneKarteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="rezervacijaEnosmerneKarteResult" nillable="true" type="q26:KartaZaOsebo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rezervacijaPovratneKarte">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="oseba" nillable="true" type="q27:Oseba" />
+            <xs:element minOccurs="0" name="letTjaID" type="xs:int" />
+            <xs:element minOccurs="0" name="letNazajID" type="xs:int" />
+            <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="potovalniRazred" type="q28:PotovalniRazred" />
+            <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="prtljaga" type="q29:Prtljaga" />
+            <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="seznamDodatkov" nillable="true" type="q30:ArrayOfint" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rezervacijaPovratneKarteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="rezervacijaPovratneKarteResult" nillable="true" type="q31:ArrayOfKartaZaOsebo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rezerviraneKarte">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="emso" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rezerviraneKarteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="rezerviraneKarteResult" nillable="true" type="q32:ArrayOfKartaZaOsebo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kupljeneKarte">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="emso" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kupljeneKarteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="kupljeneKarteResult" nillable="true" type="q33:ArrayOfKartaZaOsebo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kupljeneKarteZaZivali">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="emsoLastnika" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="kupljeneKarteZaZivaliResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="kupljeneKarteZaZivaliResult" nillable="true" type="q34:ArrayOfKartaZaZival" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="preklicRezervacije">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="serijskaStevilkaKarte" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="preklicRezervacijeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="preklicRezervacijeResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="zakupCarterja">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="organizacija" nillable="true" type="q35:Organizacija" />
+            <xs:element minOccurs="0" name="letID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="zakupCarterjaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="zakupCarterjaResult" nillable="true" type="q36:NarocilnicaZaCarter" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="preklicCarterja">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="serijskaStevilkaNarocilnice" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="preklicCarterjaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="preklicCarterjaResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="steviloProstihMest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="letID" type="xs:int" />
+            <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="potovalniRazred" type="q37:PotovalniRazred" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="steviloProstihMestResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="steviloProstihMestResult" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniPoslovalniceRENT">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniPoslovalniceRENTResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/RentACar2_Poslovalnice" minOccurs="0" name="vrniPoslovalniceRENTResult" nillable="true" type="q38:ArrayOfPoslovalnica" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniVozilaRENT">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="idPoslovalnice" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniVozilaRENTResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/RentACar2_Vozila" minOccurs="0" name="vrniVozilaRENTResult" nillable="true" type="q39:ArrayOfVozilo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rezervirajVoziloRENT">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/RentACar2_Rezervacije" minOccurs="0" name="t" nillable="true" type="q40:Rezervacija" />
+            <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Modeli" minOccurs="0" name="x" nillable="true" type="q41:Oseba" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="rezervirajVoziloRENTResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="rezervirajVoziloRENTResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniRezervacijeRENT">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="idOsebe" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniRezervacijeRENTResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/RentACar2_Rezervacije" minOccurs="0" name="vrniRezervacijeRENTResult" nillable="true" type="q42:ArrayOfRezervacija" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniStrankoRENT">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniStrankoRENTResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/RentACar2_Stranke" minOccurs="0" name="vrniStrankoRENTResult" nillable="true" type="q43:Stranka" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniVseStrankeRENT">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniVseStrankeRENTResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/RentACar2_Stranke" minOccurs="0" name="vrniVseStrankeRENTResult" nillable="true" type="q44:ArrayOfStranka" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniLeteJavaJAVA">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="letalisceOd" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="letalisceDo" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="datum" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="vrniLeteJavaJAVAResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Pogodbe.letalecJAVA" minOccurs="0" name="vrniLeteJavaJAVAResult" nillable="true" type="q45:ArrayOflet" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Modeli" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Modeli" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfLetalisce">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Letalisce" nillable="true" type="tns:Letalisce" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfLetalisce" nillable="true" type="tns:ArrayOfLetalisce" />
+      <xs:complexType name="Letalisce">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Drzava" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Koda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Kraj" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Naziv" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Letalisce" nillable="true" type="tns:Letalisce" />
+      <xs:complexType name="ArrayOfDodatek">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Dodatek" nillable="true" type="tns:Dodatek" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDodatek" nillable="true" type="tns:ArrayOfDodatek" />
+      <xs:complexType name="Dodatek">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Naziv" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Znesek" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Dodatek" nillable="true" type="tns:Dodatek" />
+      <xs:complexType name="ArrayOfLetalo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Letalo" nillable="true" type="tns:Letalo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfLetalo" nillable="true" type="tns:ArrayOfLetalo" />
+      <xs:complexType name="Letalo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="LetalskaDruzba" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MaxTezaPrtljage" type="xs:int" />
+          <xs:element minOccurs="0" name="SerijskaStevilka" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tip" type="tns:TipLetala" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Letalo" nillable="true" type="tns:Letalo" />
+      <xs:simpleType name="TipLetala">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Airbus" />
+          <xs:enumeration value="Boeing" />
+          <xs:enumeration value="Convair" />
+          <xs:enumeration value="Douglas" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TipLetala" nillable="true" type="tns:TipLetala" />
+      <xs:simpleType name="PotovalniRazred">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BusinessClass" />
+          <xs:enumeration value="EconomyClass" />
+          <xs:enumeration value="FirstClass" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="PotovalniRazred" nillable="true" type="tns:PotovalniRazred" />
+      <xs:complexType name="ArrayOfLet">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Let" nillable="true" type="tns:Let" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfLet" nillable="true" type="tns:ArrayOfLet" />
+      <xs:complexType name="Let">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CenaAHIV" type="xs:double" />
+          <xs:element minOccurs="0" name="CenaBusinessClassKarte" type="xs:double" />
+          <xs:element minOccurs="0" name="CenaEconomyClassKarte" type="xs:double" />
+          <xs:element minOccurs="0" name="CenaFirstClassKarte" type="xs:double" />
+          <xs:element minOccurs="0" name="CenaPETC" type="xs:double" />
+          <xs:element minOccurs="0" name="Datum" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="LetalisceDo" nillable="true" type="tns:Letalisce" />
+          <xs:element minOccurs="0" name="LetalisceOd" nillable="true" type="tns:Letalisce" />
+          <xs:element minOccurs="0" name="Letalo" nillable="true" type="tns:Letalo" />
+          <xs:element minOccurs="0" name="SteviloBusinessClassMest" type="xs:int" />
+          <xs:element minOccurs="0" name="SteviloEconomyClassMest" type="xs:int" />
+          <xs:element minOccurs="0" name="SteviloFirstClassMest" type="xs:int" />
+          <xs:element minOccurs="0" name="Tip" type="tns:TipLeta" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Let" nillable="true" type="tns:Let" />
+      <xs:simpleType name="TipLeta">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Charter" />
+          <xs:enumeration value="Regular" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="TipLeta" nillable="true" type="tns:TipLeta" />
+      <xs:complexType name="Zival">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EmsoLastnika" type="xs:int" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StMikrocipa" type="xs:int" />
+          <xs:element minOccurs="0" name="Teza" type="xs:int" />
+          <xs:element minOccurs="0" name="Vrsta" type="tns:VrstaZivali" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Zival" nillable="true" type="tns:Zival" />
+      <xs:simpleType name="VrstaZivali">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Macka" />
+          <xs:enumeration value="Pes" />
+          <xs:enumeration value="Drugo" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="VrstaZivali" nillable="true" type="tns:VrstaZivali" />
+      <xs:complexType name="KartaZaZival">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Let" nillable="true" type="tns:Let" />
+          <xs:element minOccurs="0" name="SerijskaStevilka" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Zival" nillable="true" type="tns:Zival" />
+          <xs:element minOccurs="0" name="Znesek" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KartaZaZival" nillable="true" type="tns:KartaZaZival" />
+      <xs:complexType name="Oseba">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Drzava" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EMSO" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Kraj" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Naziv" type="tns:NazivOsebe" />
+          <xs:element minOccurs="0" name="NazivBanke" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostnaSt" type="xs:int" />
+          <xs:element minOccurs="0" name="Priimek" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TRR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ulica" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Oseba" nillable="true" type="tns:Oseba" />
+      <xs:simpleType name="NazivOsebe">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Mr" />
+          <xs:enumeration value="Mrs" />
+          <xs:enumeration value="Ms" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="NazivOsebe" nillable="true" type="tns:NazivOsebe" />
+      <xs:simpleType name="Prtljaga">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Od10Do20" />
+          <xs:enumeration value="Od20Do30" />
+          <xs:enumeration value="Od30Do40" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="Prtljaga" nillable="true" type="tns:Prtljaga" />
+      <xs:complexType name="KartaZaOsebo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Kupec" nillable="true" type="tns:Oseba" />
+          <xs:element minOccurs="0" name="Let" nillable="true" type="tns:Let" />
+          <xs:element minOccurs="0" name="PotovalniRazred" type="tns:PotovalniRazred" />
+          <xs:element minOccurs="0" name="Prtljaga" type="tns:Prtljaga" />
+          <xs:element minOccurs="0" name="Sedez" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SerijskaStevilka" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SeznamDodatkov" nillable="true" type="tns:ArrayOfDodatek" />
+          <xs:element minOccurs="0" name="StanjePlacila" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ugodnost" nillable="true" type="tns:Ugodnost" />
+          <xs:element minOccurs="0" name="Znesek" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KartaZaOsebo" nillable="true" type="tns:KartaZaOsebo" />
+      <xs:complexType name="Ugodnost">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Naziv" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pogoj" type="xs:int" />
+          <xs:element minOccurs="0" name="Popust" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Ugodnost" nillable="true" type="tns:Ugodnost" />
+      <xs:complexType name="ArrayOfKartaZaOsebo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="KartaZaOsebo" nillable="true" type="tns:KartaZaOsebo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfKartaZaOsebo" nillable="true" type="tns:ArrayOfKartaZaOsebo" />
+      <xs:complexType name="ArrayOfKartaZaZival">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="KartaZaZival" nillable="true" type="tns:KartaZaZival" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfKartaZaZival" nillable="true" type="tns:ArrayOfKartaZaZival" />
+      <xs:complexType name="Organizacija">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Davcna" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Drzava" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Kraj" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Naziv" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="NazivBanke" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostnaSt" type="xs:int" />
+          <xs:element minOccurs="0" name="TRR" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ulica" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Organizacija" nillable="true" type="tns:Organizacija" />
+      <xs:complexType name="NarocilnicaZaCarter">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Let" nillable="true" type="tns:Let" />
+          <xs:element minOccurs="0" name="Organizacija" nillable="true" type="tns:Organizacija" />
+          <xs:element minOccurs="0" name="SerijskaStevilka" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StanjePlacila" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ugodnost" nillable="true" type="tns:Ugodnost" />
+          <xs:element minOccurs="0" name="Znesek" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="NarocilnicaZaCarter" nillable="true" type="tns:NarocilnicaZaCarter" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfint">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RentACar2_Poslovalnice" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RentACar2_Poslovalnice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfPoslovalnica">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Poslovalnica" nillable="true" type="tns:Poslovalnica" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPoslovalnica" nillable="true" type="tns:ArrayOfPoslovalnica" />
+      <xs:complexType name="Poslovalnica">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Drzava" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdPoslovalnica" type="xs:int" />
+          <xs:element minOccurs="0" name="Kraj" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Naziv" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostnaStevilka" type="xs:int" />
+          <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ulica" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Poslovalnica" nillable="true" type="tns:Poslovalnica" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RentACar2_Vozila" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RentACar2_Vozila" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfVozilo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Vozilo" nillable="true" type="tns:Vozilo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfVozilo" nillable="true" type="tns:ArrayOfVozilo" />
+      <xs:complexType name="Vozilo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CenaDan" type="xs:double" />
+          <xs:element minOccurs="0" name="Gorivo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdPoslovalnica" type="xs:int" />
+          <xs:element minOccurs="0" name="IdVozilo" type="xs:int" />
+          <xs:element minOccurs="0" name="Klima" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Letnik" type="xs:int" />
+          <xs:element minOccurs="0" name="Menjalnik" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MocMotorja" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Naziv" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Razpolozljivost" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SteviloOseb" type="xs:int" />
+          <xs:element minOccurs="0" name="SteviloVrat" type="xs:int" />
+          <xs:element minOccurs="0" name="Tip" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Vinjeta" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Vozilo" nillable="true" type="tns:Vozilo" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RentACar2_Rezervacije" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RentACar2_Rezervacije" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Rezervacija">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DatumPrevzema" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DatumVracila" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="IdRezervacija" type="xs:int" />
+          <xs:element minOccurs="0" name="IdStranka" type="xs:int" />
+          <xs:element minOccurs="0" name="IdVozilo" type="xs:int" />
+          <xs:element minOccurs="0" name="PrevzemIdPoslovalnica" type="xs:int" />
+          <xs:element minOccurs="0" name="VraciloIdPoslovalnica" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Rezervacija" nillable="true" type="tns:Rezervacija" />
+      <xs:complexType name="ArrayOfRezervacija">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Rezervacija" nillable="true" type="tns:Rezervacija" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfRezervacija" nillable="true" type="tns:ArrayOfRezervacija" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RentACar2_Stranke" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RentACar2_Stranke" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Stranka">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Drzava" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Emso" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Idstranka" type="xs:int" />
+          <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Kraj" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PostnaStevilka" type="xs:int" />
+          <xs:element minOccurs="0" name="Priimek" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Ulica" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Stranka" nillable="true" type="tns:Stranka" />
+      <xs:complexType name="ArrayOfStranka">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Stranka" nillable="true" type="tns:Stranka" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfStranka" nillable="true" type="tns:ArrayOfStranka" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pogodbe.letalecJAVA" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pogodbe.letalecJAVA" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" />
+      <xs:complexType name="ArrayOflet">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="let" nillable="true" type="tns:let" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOflet" nillable="true" type="tns:ArrayOflet" />
+      <xs:complexType name="let">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q1:PropertyChangedEventHandler" />
+          <xs:element name="cenaLetaField" type="xs:double" />
+          <xs:element name="fromLetalisceField" nillable="true" type="xs:string" />
+          <xs:element name="iDLetField" type="xs:int" />
+          <xs:element name="nazivLetaField" nillable="true" type="xs:string" />
+          <xs:element name="nazivLetalaField" nillable="true" type="xs:string" />
+          <xs:element name="odhodCasField" nillable="true" type="xs:string" />
+          <xs:element name="odhodDatumField" nillable="true" type="xs:string" />
+          <xs:element name="prestopiField" type="xs:int" />
+          <xs:element name="prevoznikField" nillable="true" type="xs:string" />
+          <xs:element name="prihodCasField" nillable="true" type="xs:string" />
+          <xs:element name="prihodDatumField" nillable="true" type="xs:string" />
+          <xs:element name="razdaljaField" type="xs:int" />
+          <xs:element name="seznamSedezevField" nillable="true" type="tns:ArrayOfsedez" />
+          <xs:element name="stKartField" type="xs:int" />
+          <xs:element name="stProstihKartField" type="xs:int" />
+          <xs:element name="toLetalisceField" nillable="true" type="xs:string" />
+          <xs:element name="vrstaLetaField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="let" nillable="true" type="tns:let" />
+      <xs:complexType name="ArrayOfsedez">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="sedez" nillable="true" type="tns:sedez" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfsedez" nillable="true" type="tns:ArrayOfsedez" />
+      <xs:complexType name="sedez">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q2:PropertyChangedEventHandler" />
+          <xs:element name="cenaField" type="xs:double" />
+          <xs:element name="iDSedezField" type="xs:int" />
+          <xs:element name="kupecField" nillable="true" type="tns:kupec" />
+          <xs:element name="oznakaField" nillable="true" type="xs:string" />
+          <xs:element name="prostField" type="xs:boolean" />
+          <xs:element name="razredField" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="sedez" nillable="true" type="tns:sedez" />
+      <xs:complexType name="kupec">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q3:PropertyChangedEventHandler" />
+          <xs:element name="datumRojstvaField" nillable="true" type="xs:string" />
+          <xs:element name="drzavljanstvoField" nillable="true" type="xs:string" />
+          <xs:element name="emailField" nillable="true" type="xs:string" />
+          <xs:element name="gesloField" nillable="true" type="xs:string" />
+          <xs:element name="iDKupecField" type="xs:int" />
+          <xs:element name="naslovField" nillable="true" type="xs:string" />
+          <xs:element name="nazivField" nillable="true" type="xs:string" />
+          <xs:element name="stevecLetovField" type="xs:int" />
+          <xs:element name="telField" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="kupec" nillable="true" type="tns:kupec" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System.ComponentModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xs:complexType name="PropertyChangedEventHandler">
+        <xs:complexContent mixed="false">
+          <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System" base="q1:MulticastDelegate" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="PropertyChangedEventHandler" nillable="true" type="tns:PropertyChangedEventHandler" />
+    </xs:schema>
+    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/System" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="MulticastDelegate">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Delegate" />
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="MulticastDelegate" nillable="true" type="tns:MulticastDelegate" />
+      <xs:complexType name="Delegate">
+        <xs:sequence>
+          <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip" />
+        </xs:sequence>
+        <xs:attribute ref="ser:FactoryType" />
+      </xs:complexType>
+      <xs:element name="Delegate" nillable="true" type="tns:Delegate" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ForeachAirlines_vrniLetalisca_InputMessage">
+    <wsdl:part name="parameters" element="tns:vrniLetalisca" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniLetalisca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vrniLetaliscaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_izbrisiLetalisce_InputMessage">
+    <wsdl:part name="parameters" element="tns:izbrisiLetalisce" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_izbrisiLetalisce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:izbrisiLetalisceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_dodajLetalisce_InputMessage">
+    <wsdl:part name="parameters" element="tns:dodajLetalisce" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_dodajLetalisce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:dodajLetalisceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_updateLetalisce_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateLetalisce" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_updateLetalisce_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateLetalisceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_obremenjenostLetala_InputMessage">
+    <wsdl:part name="parameters" element="tns:obremenjenostLetala" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_obremenjenostLetala_OutputMessage">
+    <wsdl:part name="parameters" element="tns:obremenjenostLetalaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_izbrisiLet_InputMessage">
+    <wsdl:part name="parameters" element="tns:izbrisiLet" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_izbrisiLet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:izbrisiLetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_dodajZival_InputMessage">
+    <wsdl:part name="parameters" element="tns:dodajZival" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_dodajZival_OutputMessage">
+    <wsdl:part name="parameters" element="tns:dodajZivalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_updateObremenjenost_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateObremenjenost" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_updateObremenjenost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateObremenjenostResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vsiDodatki_InputMessage">
+    <wsdl:part name="parameters" element="tns:vsiDodatki" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vsiDodatki_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vsiDodatkiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vsaLetalisca_InputMessage">
+    <wsdl:part name="parameters" element="tns:vsaLetalisca" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vsaLetalisca_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vsaLetaliscaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vsaLetala_InputMessage">
+    <wsdl:part name="parameters" element="tns:vsaLetala" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vsaLetala_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vsaLetalaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_izbraniRedniLeti_InputMessage">
+    <wsdl:part name="parameters" element="tns:izbraniRedniLeti" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_izbraniRedniLeti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:izbraniRedniLetiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_izbraniPovratniLeti_InputMessage">
+    <wsdl:part name="parameters" element="tns:izbraniPovratniLeti" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_izbraniPovratniLeti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:izbraniPovratniLetiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_izbraniCarterskiLeti_InputMessage">
+    <wsdl:part name="parameters" element="tns:izbraniCarterskiLeti" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_izbraniCarterskiLeti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:izbraniCarterskiLetiResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_nakupKarteZaZival_InputMessage">
+    <wsdl:part name="parameters" element="tns:nakupKarteZaZival" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_nakupKarteZaZival_OutputMessage">
+    <wsdl:part name="parameters" element="tns:nakupKarteZaZivalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_nakupEnosmerneKarte_InputMessage">
+    <wsdl:part name="parameters" element="tns:nakupEnosmerneKarte" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_nakupEnosmerneKarte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:nakupEnosmerneKarteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_nakupPovratneKarte_InputMessage">
+    <wsdl:part name="parameters" element="tns:nakupPovratneKarte" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_nakupPovratneKarte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:nakupPovratneKarteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_rezervacijaEnosmerneKarte_InputMessage">
+    <wsdl:part name="parameters" element="tns:rezervacijaEnosmerneKarte" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_rezervacijaEnosmerneKarte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:rezervacijaEnosmerneKarteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_rezervacijaPovratneKarte_InputMessage">
+    <wsdl:part name="parameters" element="tns:rezervacijaPovratneKarte" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_rezervacijaPovratneKarte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:rezervacijaPovratneKarteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_rezerviraneKarte_InputMessage">
+    <wsdl:part name="parameters" element="tns:rezerviraneKarte" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_rezerviraneKarte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:rezerviraneKarteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_kupljeneKarte_InputMessage">
+    <wsdl:part name="parameters" element="tns:kupljeneKarte" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_kupljeneKarte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:kupljeneKarteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_kupljeneKarteZaZivali_InputMessage">
+    <wsdl:part name="parameters" element="tns:kupljeneKarteZaZivali" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_kupljeneKarteZaZivali_OutputMessage">
+    <wsdl:part name="parameters" element="tns:kupljeneKarteZaZivaliResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_preklicRezervacije_InputMessage">
+    <wsdl:part name="parameters" element="tns:preklicRezervacije" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_preklicRezervacije_OutputMessage">
+    <wsdl:part name="parameters" element="tns:preklicRezervacijeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_zakupCarterja_InputMessage">
+    <wsdl:part name="parameters" element="tns:zakupCarterja" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_zakupCarterja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:zakupCarterjaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_preklicCarterja_InputMessage">
+    <wsdl:part name="parameters" element="tns:preklicCarterja" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_preklicCarterja_OutputMessage">
+    <wsdl:part name="parameters" element="tns:preklicCarterjaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_steviloProstihMest_InputMessage">
+    <wsdl:part name="parameters" element="tns:steviloProstihMest" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_steviloProstihMest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:steviloProstihMestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniPoslovalniceRENT_InputMessage">
+    <wsdl:part name="parameters" element="tns:vrniPoslovalniceRENT" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniPoslovalniceRENT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vrniPoslovalniceRENTResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniVozilaRENT_InputMessage">
+    <wsdl:part name="parameters" element="tns:vrniVozilaRENT" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniVozilaRENT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vrniVozilaRENTResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_rezervirajVoziloRENT_InputMessage">
+    <wsdl:part name="parameters" element="tns:rezervirajVoziloRENT" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_rezervirajVoziloRENT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:rezervirajVoziloRENTResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniRezervacijeRENT_InputMessage">
+    <wsdl:part name="parameters" element="tns:vrniRezervacijeRENT" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniRezervacijeRENT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vrniRezervacijeRENTResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniStrankoRENT_InputMessage">
+    <wsdl:part name="parameters" element="tns:vrniStrankoRENT" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniStrankoRENT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vrniStrankoRENTResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniVseStrankeRENT_InputMessage">
+    <wsdl:part name="parameters" element="tns:vrniVseStrankeRENT" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniVseStrankeRENT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vrniVseStrankeRENTResponse" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniLeteJavaJAVA_InputMessage">
+    <wsdl:part name="parameters" element="tns:vrniLeteJavaJAVA" />
+  </wsdl:message>
+  <wsdl:message name="ForeachAirlines_vrniLeteJavaJAVA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:vrniLeteJavaJAVAResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ForeachAirlines">
+    <wsdl:operation name="vrniLetalisca">
+      <wsdl:input wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/vrniLetalisca" message="tns:ForeachAirlines_vrniLetalisca_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/vrniLetaliscaResponse" message="tns:ForeachAirlines_vrniLetalisca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="izbrisiLetalisce">
+      <wsdl:input wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/izbrisiLetalisce" message="tns:ForeachAirlines_izbrisiLetalisce_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/izbrisiLetalisceResponse" message="tns:ForeachAirlines_izbrisiLetalisce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="dodajLetalisce">
+      <wsdl:input wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/dodajLetalisce" message="tns:ForeachAirlines_dodajLetalisce_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/dodajLetalisceResponse" message="tns:ForeachAirlines_dodajLetalisce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateLetalisce">
+      <wsdl:input wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/updateLetalisce" message="tns:ForeachAirlines_updateLetalisce_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/updateLetalisceResponse" message="tns:ForeachAirlines_updateLetalisce_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="obremenjenostLetala">
+      <wsdl:input wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/obremenjenostLetala" message="tns:ForeachAirlines_obremenjenostLetala_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/obremenjenostLetalaResponse" message="tns:ForeachAirlines_obremenjenostLetala_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="izbrisiLet">
+      <wsdl:input wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/izbrisiLet" message="tns:ForeachAirlines_izbrisiLet_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/izbrisiLetResponse" message="tns:ForeachAirlines_izbrisiLet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="dodajZival">
+      <wsdl:input wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/dodajZival" message="tns:ForeachAirlines_dodajZival_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/dodajZivalResponse" message="tns:ForeachAirlines_dodajZival_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateObremenjenost">
+      <wsdl:input wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/updateObremenjenost" message="tns:ForeachAirlines_updateObremenjenost_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.foreach-airlines.com/services/ForeachAirlines/updateObremenjenostResponse" message="tns:ForeachAirlines_updateObremenjenost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vsiDodatki">
+      <wsdl:input wsaw:Action="vsiDodatki" message="tns:ForeachAirlines_vsiDodatki_InputMessage" />
+      <wsdl:output wsaw:Action="vsiDodatkiReply" message="tns:ForeachAirlines_vsiDodatki_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vsaLetalisca">
+      <wsdl:input wsaw:Action="vsaLetalisca" message="tns:ForeachAirlines_vsaLetalisca_InputMessage" />
+      <wsdl:output wsaw:Action="vsaLetaliscaReply" message="tns:ForeachAirlines_vsaLetalisca_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vsaLetala">
+      <wsdl:input wsaw:Action="vsaLetala" message="tns:ForeachAirlines_vsaLetala_InputMessage" />
+      <wsdl:output wsaw:Action="vsaLetalaReply" message="tns:ForeachAirlines_vsaLetala_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="izbraniRedniLeti">
+      <wsdl:input wsaw:Action="izbraniRedniLeti" message="tns:ForeachAirlines_izbraniRedniLeti_InputMessage" />
+      <wsdl:output wsaw:Action="izbraniRedniLetiReply" message="tns:ForeachAirlines_izbraniRedniLeti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="izbraniPovratniLeti">
+      <wsdl:input wsaw:Action="izbraniPovratniLeti" message="tns:ForeachAirlines_izbraniPovratniLeti_InputMessage" />
+      <wsdl:output wsaw:Action="izbraniPovratniLetiReply" message="tns:ForeachAirlines_izbraniPovratniLeti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="izbraniCarterskiLeti">
+      <wsdl:input wsaw:Action="izbraniCarterskiLeti" message="tns:ForeachAirlines_izbraniCarterskiLeti_InputMessage" />
+      <wsdl:output wsaw:Action="izbraniCarterskiLeriReply" message="tns:ForeachAirlines_izbraniCarterskiLeti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="nakupKarteZaZival">
+      <wsdl:input wsaw:Action="nakupKarteZaZival" message="tns:ForeachAirlines_nakupKarteZaZival_InputMessage" />
+      <wsdl:output wsaw:Action="nakupKarteZaZivalReply" message="tns:ForeachAirlines_nakupKarteZaZival_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="nakupEnosmerneKarte">
+      <wsdl:input wsaw:Action="nakupEnosmerneKarte" message="tns:ForeachAirlines_nakupEnosmerneKarte_InputMessage" />
+      <wsdl:output wsaw:Action="nakupEnosmerneKarteReply" message="tns:ForeachAirlines_nakupEnosmerneKarte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="nakupPovratneKarte">
+      <wsdl:input wsaw:Action="nakupPovratneKarte" message="tns:ForeachAirlines_nakupPovratneKarte_InputMessage" />
+      <wsdl:output wsaw:Action="nakupPovratneKarteReply" message="tns:ForeachAirlines_nakupPovratneKarte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="rezervacijaEnosmerneKarte">
+      <wsdl:input wsaw:Action="rezervacijaEnosmerneKarte" message="tns:ForeachAirlines_rezervacijaEnosmerneKarte_InputMessage" />
+      <wsdl:output wsaw:Action="rezervacijaEnosmerneKarteReply" message="tns:ForeachAirlines_rezervacijaEnosmerneKarte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="rezervacijaPovratneKarte">
+      <wsdl:input wsaw:Action="rezervacijaPovratneKarte" message="tns:ForeachAirlines_rezervacijaPovratneKarte_InputMessage" />
+      <wsdl:output wsaw:Action="rezervacijaPovratneKarteReply" message="tns:ForeachAirlines_rezervacijaPovratneKarte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="rezerviraneKarte">
+      <wsdl:input wsaw:Action="rezerviraneKarte" message="tns:ForeachAirlines_rezerviraneKarte_InputMessage" />
+      <wsdl:output wsaw:Action="rezerviraneKarteReply" message="tns:ForeachAirlines_rezerviraneKarte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="kupljeneKarte">
+      <wsdl:input wsaw:Action="kupljeneneKarte" message="tns:ForeachAirlines_kupljeneKarte_InputMessage" />
+      <wsdl:output wsaw:Action="kupljeneKarteReply" message="tns:ForeachAirlines_kupljeneKarte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="kupljeneKarteZaZivali">
+      <wsdl:input wsaw:Action="kupljeneKarteZaZivali" message="tns:ForeachAirlines_kupljeneKarteZaZivali_InputMessage" />
+      <wsdl:output wsaw:Action="kupljeneKarteZaZivaliReply" message="tns:ForeachAirlines_kupljeneKarteZaZivali_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="preklicRezervacije">
+      <wsdl:input wsaw:Action="preklicRezervacije" message="tns:ForeachAirlines_preklicRezervacije_InputMessage" />
+      <wsdl:output wsaw:Action="preklicRezervacijeReply" message="tns:ForeachAirlines_preklicRezervacije_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="zakupCarterja">
+      <wsdl:input wsaw:Action="zakupCarterja" message="tns:ForeachAirlines_zakupCarterja_InputMessage" />
+      <wsdl:output wsaw:Action="zakupCarterjaReply" message="tns:ForeachAirlines_zakupCarterja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="preklicCarterja">
+      <wsdl:input wsaw:Action="preklicCarterja" message="tns:ForeachAirlines_preklicCarterja_InputMessage" />
+      <wsdl:output wsaw:Action="preklicCarterjaReply" message="tns:ForeachAirlines_preklicCarterja_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="steviloProstihMest">
+      <wsdl:input wsaw:Action="steviloProstihMest" message="tns:ForeachAirlines_steviloProstihMest_InputMessage" />
+      <wsdl:output wsaw:Action="teviloProstihMestReply" message="tns:ForeachAirlines_steviloProstihMest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vrniPoslovalniceRENT">
+      <wsdl:input wsaw:Action="vrniPoslovalniceRENT" message="tns:ForeachAirlines_vrniPoslovalniceRENT_InputMessage" />
+      <wsdl:output wsaw:Action="vrniPoslovalniceRENTReply" message="tns:ForeachAirlines_vrniPoslovalniceRENT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vrniVozilaRENT">
+      <wsdl:input wsaw:Action="vrniVozilaRENT" message="tns:ForeachAirlines_vrniVozilaRENT_InputMessage" />
+      <wsdl:output wsaw:Action="vrniVozilaRENTReply" message="tns:ForeachAirlines_vrniVozilaRENT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="rezervirajVoziloRENT">
+      <wsdl:input wsaw:Action="rezervirajVoziloRENT" message="tns:ForeachAirlines_rezervirajVoziloRENT_InputMessage" />
+      <wsdl:output wsaw:Action="rezervirajVoziloRENTReply" message="tns:ForeachAirlines_rezervirajVoziloRENT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vrniRezervacijeRENT">
+      <wsdl:input wsaw:Action="vrniRezervacijeRENT" message="tns:ForeachAirlines_vrniRezervacijeRENT_InputMessage" />
+      <wsdl:output wsaw:Action="vrniRezervacijeRENTReply" message="tns:ForeachAirlines_vrniRezervacijeRENT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vrniStrankoRENT">
+      <wsdl:input wsaw:Action="vrniStrankoRENT" message="tns:ForeachAirlines_vrniStrankoRENT_InputMessage" />
+      <wsdl:output wsaw:Action="vrniStrankoReply" message="tns:ForeachAirlines_vrniStrankoRENT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vrniVseStrankeRENT">
+      <wsdl:input wsaw:Action="vrniVseStrankeRENT" message="tns:ForeachAirlines_vrniVseStrankeRENT_InputMessage" />
+      <wsdl:output wsaw:Action="vrniVseStrankeRENTReply" message="tns:ForeachAirlines_vrniVseStrankeRENT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="vrniLeteJavaJAVA">
+      <wsdl:input wsaw:Action="vrniLeteJavaJAVA" message="tns:ForeachAirlines_vrniLeteJavaJAVA_InputMessage" />
+      <wsdl:output wsaw:Action="JAVAReply" message="tns:ForeachAirlines_vrniLeteJavaJAVA_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ForeachAirlines" type="tns:ForeachAirlines">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="vrniLetalisca">
+      <soap:operation soapAction="http://www.foreach-airlines.com/services/ForeachAirlines/vrniLetalisca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="izbrisiLetalisce">
+      <soap:operation soapAction="http://www.foreach-airlines.com/services/ForeachAirlines/izbrisiLetalisce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dodajLetalisce">
+      <soap:operation soapAction="http://www.foreach-airlines.com/services/ForeachAirlines/dodajLetalisce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateLetalisce">
+      <soap:operation soapAction="http://www.foreach-airlines.com/services/ForeachAirlines/updateLetalisce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obremenjenostLetala">
+      <soap:operation soapAction="http://www.foreach-airlines.com/services/ForeachAirlines/obremenjenostLetala" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="izbrisiLet">
+      <soap:operation soapAction="http://www.foreach-airlines.com/services/ForeachAirlines/izbrisiLet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dodajZival">
+      <soap:operation soapAction="http://www.foreach-airlines.com/services/ForeachAirlines/dodajZival" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateObremenjenost">
+      <soap:operation soapAction="http://www.foreach-airlines.com/services/ForeachAirlines/updateObremenjenost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vsiDodatki">
+      <soap:operation soapAction="vsiDodatki" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vsaLetalisca">
+      <soap:operation soapAction="vsaLetalisca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vsaLetala">
+      <soap:operation soapAction="vsaLetala" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="izbraniRedniLeti">
+      <soap:operation soapAction="izbraniRedniLeti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="izbraniPovratniLeti">
+      <soap:operation soapAction="izbraniPovratniLeti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="izbraniCarterskiLeti">
+      <soap:operation soapAction="izbraniCarterskiLeti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nakupKarteZaZival">
+      <soap:operation soapAction="nakupKarteZaZival" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nakupEnosmerneKarte">
+      <soap:operation soapAction="nakupEnosmerneKarte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nakupPovratneKarte">
+      <soap:operation soapAction="nakupPovratneKarte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rezervacijaEnosmerneKarte">
+      <soap:operation soapAction="rezervacijaEnosmerneKarte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rezervacijaPovratneKarte">
+      <soap:operation soapAction="rezervacijaPovratneKarte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rezerviraneKarte">
+      <soap:operation soapAction="rezerviraneKarte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kupljeneKarte">
+      <soap:operation soapAction="kupljeneneKarte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="kupljeneKarteZaZivali">
+      <soap:operation soapAction="kupljeneKarteZaZivali" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="preklicRezervacije">
+      <soap:operation soapAction="preklicRezervacije" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="zakupCarterja">
+      <soap:operation soapAction="zakupCarterja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="preklicCarterja">
+      <soap:operation soapAction="preklicCarterja" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="steviloProstihMest">
+      <soap:operation soapAction="steviloProstihMest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vrniPoslovalniceRENT">
+      <soap:operation soapAction="vrniPoslovalniceRENT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vrniVozilaRENT">
+      <soap:operation soapAction="vrniVozilaRENT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rezervirajVoziloRENT">
+      <soap:operation soapAction="rezervirajVoziloRENT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vrniRezervacijeRENT">
+      <soap:operation soapAction="vrniRezervacijeRENT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vrniStrankoRENT">
+      <soap:operation soapAction="vrniStrankoRENT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vrniVseStrankeRENT">
+      <soap:operation soapAction="vrniVseStrankeRENT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vrniLeteJavaJAVA">
+      <soap:operation soapAction="vrniLeteJavaJAVA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Letalec2">
+    <wsdl:port name="BasicHttpBinding_ForeachAirlines" binding="tns:BasicHttpBinding_ForeachAirlines">
+      <soap:address location="http://164.8.251.93/SOATravel/letalec2/ForeachAirlines.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
