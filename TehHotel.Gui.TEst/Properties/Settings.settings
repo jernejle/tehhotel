@@ -11,5 +11,14 @@
     <Setting Name="TehHotel_Gui_Test_StrankaService_StrankaService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:1476/StrankaService.svc</Value>
     </Setting>
+    <Setting Name="TehHotel_Gui_Test_RentACarStrankeService_Stranke" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc</Value>
+    </Setting>
+    <Setting Name="TehHotel_Gui_Test_RentACarRezervacijeService_Rezervacije" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc</Value>
+    </Setting>
+    <Setting Name="TehHotel_Gui_Test_RentACarVozilaService_Vozila" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.8.251.93/SOATravel/rentacar2/RentACar2_Vozila.Vozila.svc</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

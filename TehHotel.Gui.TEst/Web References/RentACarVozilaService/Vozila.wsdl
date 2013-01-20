@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Vozila" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Vozila.Vozila.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Vozila.Vozila.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Vozila.Vozila.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RentACar2_Vozila" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IVozila_dodajVozilo_InputMessage">
+    <wsdl:part name="parameters" element="tns:dodajVozilo" />
+  </wsdl:message>
+  <wsdl:message name="IVozila_dodajVozilo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:dodajVoziloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVozila_spremeniVozilo_InputMessage">
+    <wsdl:part name="parameters" element="tns:spremeniVozilo" />
+  </wsdl:message>
+  <wsdl:message name="IVozila_spremeniVozilo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:spremeniVoziloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVozila_odstraniVozilo_InputMessage">
+    <wsdl:part name="parameters" element="tns:odstraniVozilo" />
+  </wsdl:message>
+  <wsdl:message name="IVozila_odstraniVozilo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:odstraniVoziloResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVozila_pregledVsehVozil_InputMessage">
+    <wsdl:part name="parameters" element="tns:pregledVsehVozil" />
+  </wsdl:message>
+  <wsdl:message name="IVozila_pregledVsehVozil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:pregledVsehVozilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVozila_pregledRazpolozljivihVozil_InputMessage">
+    <wsdl:part name="parameters" element="tns:pregledRazpolozljivihVozil" />
+  </wsdl:message>
+  <wsdl:message name="IVozila_pregledRazpolozljivihVozil_OutputMessage">
+    <wsdl:part name="parameters" element="tns:pregledRazpolozljivihVozilResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVozila_pregledVozilPoPoslovalnici_InputMessage">
+    <wsdl:part name="parameters" element="tns:pregledVozilPoPoslovalnici" />
+  </wsdl:message>
+  <wsdl:message name="IVozila_pregledVozilPoPoslovalnici_OutputMessage">
+    <wsdl:part name="parameters" element="tns:pregledVozilPoPoslovalniciResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IVozila">
+    <wsdl:operation name="dodajVozilo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVozila/dodajVozilo" message="tns:IVozila_dodajVozilo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVozila/dodajVoziloResponse" message="tns:IVozila_dodajVozilo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spremeniVozilo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVozila/spremeniVozilo" message="tns:IVozila_spremeniVozilo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVozila/spremeniVoziloResponse" message="tns:IVozila_spremeniVozilo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="odstraniVozilo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVozila/odstraniVozilo" message="tns:IVozila_odstraniVozilo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVozila/odstraniVoziloResponse" message="tns:IVozila_odstraniVozilo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="pregledVsehVozil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVozila/pregledVsehVozil" message="tns:IVozila_pregledVsehVozil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVozila/pregledVsehVozilResponse" message="tns:IVozila_pregledVsehVozil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="pregledRazpolozljivihVozil">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVozila/pregledRazpolozljivihVozil" message="tns:IVozila_pregledRazpolozljivihVozil_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVozila/pregledRazpolozljivihVozilResponse" message="tns:IVozila_pregledRazpolozljivihVozil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="pregledVozilPoPoslovalnici">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVozila/pregledVozilPoPoslovalnici" message="tns:IVozila_pregledVozilPoPoslovalnici_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVozila/pregledVozilPoPoslovalniciResponse" message="tns:IVozila_pregledVozilPoPoslovalnici_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IVozila" type="tns:IVozila">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="dodajVozilo">
+      <soap:operation soapAction="http://tempuri.org/IVozila/dodajVozilo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spremeniVozilo">
+      <soap:operation soapAction="http://tempuri.org/IVozila/spremeniVozilo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="odstraniVozilo">
+      <soap:operation soapAction="http://tempuri.org/IVozila/odstraniVozilo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pregledVsehVozil">
+      <soap:operation soapAction="http://tempuri.org/IVozila/pregledVsehVozil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pregledRazpolozljivihVozil">
+      <soap:operation soapAction="http://tempuri.org/IVozila/pregledRazpolozljivihVozil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pregledVozilPoPoslovalnici">
+      <soap:operation soapAction="http://tempuri.org/IVozila/pregledVozilPoPoslovalnici" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Vozila">
+    <wsdl:port name="BasicHttpBinding_IVozila" binding="tns:BasicHttpBinding_IVozila">
+      <soap:address location="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Vozila.Vozila.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
