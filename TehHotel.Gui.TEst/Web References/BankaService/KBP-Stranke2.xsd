@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.feri.uni-mb.si/soa/KBP/kredit" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Kredit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="StevilkaKredita" type="xs:integer" />
+        <xs:element name="Vrednostkredita" type="xs:double" />
+        <xs:element name="Valuta" type="xs:string" />
+        <xs:element name="ObrestnaMera" type="xs:decimal" />
+        <xs:element name="VrstaObrestneMere" type="xs:string" />
+        <xs:element name="DatumSklenitve" type="xs:date" />
+        <xs:element name="DatumZapadlosti" type="xs:date" />
+        <xs:element name="DatumZadnjegaPlacila" type="xs:date" />
+        <xs:element name="OstanekDolga" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

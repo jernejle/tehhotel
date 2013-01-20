@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.feri.uni-mb.si/soa/KBP/intranet" elementFormDefault="qualified" targetNamespace="http://www.feri.uni-mb.si/soa/KBP/intranet" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="prijava" type="tns:prijava" />
+  <xs:element name="prijavaResponse" type="tns:prijavaResponse" />
+  <xs:complexType name="prijava">
+    <xs:sequence>
+      <xs:element minOccurs="0" form="unqualified" name="uporabniskoIme" type="xs:string" />
+      <xs:element minOccurs="0" form="unqualified" name="geslo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="prijavaResponse">
+    <xs:sequence>
+      <xs:element form="unqualified" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

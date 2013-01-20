@@ -112,6 +112,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ReadRacunStranka">
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ReadRacunStranka" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ReadSoba">
       <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ReadSoba" style="document" />
       <wsdl:input>

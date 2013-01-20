@@ -52,5 +52,25 @@ namespace TehHotel.Gui.Test.Properties {
                 return ((string)(this["TehHotel_Gui_Test_StrankaService_StrankaService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://164.8.251.93:8080/KBP-Banka/KBP-Stranke")]
+        public string TehHotel_Gui_Test_BankaService_KBP_Stranke {
+            get {
+                return ((string)(this["TehHotel_Gui_Test_BankaService_KBP_Stranke"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://164.8.251.93:8080/KBP_Prijava/KBP_Prijava")]
+        public string TehHotel_Gui_Test_BankaSecureService_KBP_Prijava {
+            get {
+                return ((string)(this["TehHotel_Gui_Test_BankaSecureService_KBP_Prijava"]));
+            }
+        }
     }
 }

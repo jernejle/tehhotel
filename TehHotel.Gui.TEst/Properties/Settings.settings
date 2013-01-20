@@ -11,5 +11,11 @@
     <Setting Name="TehHotel_Gui_Test_StrankaService_StrankaService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:1476/StrankaService.svc</Value>
     </Setting>
+    <Setting Name="TehHotel_Gui_Test_BankaService_KBP_Stranke" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.8.251.93:8080/KBP-Banka/KBP-Stranke</Value>
+    </Setting>
+    <Setting Name="TehHotel_Gui_Test_BankaSecureService_KBP_Prijava" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.8.251.93:8080/KBP_Prijava/KBP_Prijava</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

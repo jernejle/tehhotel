@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=3" filename="KBP-Stranke.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=6" filename="KBP-Stranke0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?wsdl" filename="KBP-Stranke.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=2" filename="KBP-Stranke1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=5" filename="KBP-Stranke2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=8" filename="KBP-Stranke3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=7" filename="KBP-Stranke4.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=1" filename="KBP-Stranke5.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=4" filename="KBP-Stranke6.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

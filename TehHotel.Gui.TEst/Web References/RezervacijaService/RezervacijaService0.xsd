@@ -393,6 +393,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ReadRacunStranka">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StrankaId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadRacunStrankaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http//www.tehhotel.com/" minOccurs="0" name="ReadRacunStrankaResult" nillable="true" type="q57:Racun" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ReadSoba">
     <xs:complexType>
       <xs:sequence>
@@ -403,7 +417,7 @@
   <xs:element name="ReadSobaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q57="http//www.tehhotel.com/" minOccurs="0" name="ReadSobaResult" nillable="true" type="q57:Soba" />
+        <xs:element xmlns:q58="http//www.tehhotel.com/" minOccurs="0" name="ReadSobaResult" nillable="true" type="q58:Soba" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -417,7 +431,7 @@
   <xs:element name="ReadDvoranaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q58="http//www.tehhotel.com/" minOccurs="0" name="ReadDvoranaResult" nillable="true" type="q58:Dvorana" />
+        <xs:element xmlns:q59="http//www.tehhotel.com/" minOccurs="0" name="ReadDvoranaResult" nillable="true" type="q59:Dvorana" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -431,7 +445,7 @@
   <xs:element name="ReadParkirisceResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q59="http//www.tehhotel.com/" minOccurs="0" name="ReadParkirisceResult" nillable="true" type="q59:Parkirisce" />
+        <xs:element xmlns:q60="http//www.tehhotel.com/" minOccurs="0" name="ReadParkirisceResult" nillable="true" type="q60:Parkirisce" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

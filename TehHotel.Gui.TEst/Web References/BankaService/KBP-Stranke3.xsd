@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns4="http://www.feri.uni-mb.si/soa/KBP/pregledPrometa" xmlns:ns5="http://www.feri.uni-mb.si/soa/KBP/placiloSKartico" xmlns:ns2="http://www.feri.uni-mb.si/soa/KBP/odgovor" xmlns:ns1="http://www.feri.uni-mb.si/soa/KBP/izdaniRacun" xmlns:ns6="http://www.feri.uni-mb.si/soa/KBP/kredit" xmlns:ns3="http://www.feri.uni-mb.si/soa/KBP/prenosDenarja" xmlns:tns="http://www.feri.uni-mb.si/soa/KBP" elementFormDefault="qualified" targetNamespace="http://www.feri.uni-mb.si/soa/KBP" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=6" namespace="http://www.feri.uni-mb.si/soa/KBP/izdaniRacun" />
+  <xs:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=4" namespace="http://www.feri.uni-mb.si/soa/KBP/odgovor" />
+  <xs:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=1" namespace="http://www.feri.uni-mb.si/soa/KBP/prenosDenarja" />
+  <xs:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=2" namespace="http://www.feri.uni-mb.si/soa/KBP/pregledPrometa" />
+  <xs:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=3" namespace="http://www.feri.uni-mb.si/soa/KBP/placiloSKartico" />
+  <xs:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=5" namespace="http://www.feri.uni-mb.si/soa/KBP/kredit" />
+  <xs:element name="avtomatskoPlacevanjeRacuna" nillable="true" type="tns:avtomatskoPlacevanjeRacuna" />
+  <xs:element name="avtomatskoPlacevanjeRacunaResponse" nillable="true" type="tns:avtomatskoPlacevanjeRacunaResponse" />
+  <xs:element name="izdajRacun" nillable="true" type="tns:izdajRacun" />
+  <xs:element name="izdajRacunResponse" nillable="true" type="tns:izdajRacunResponse" />
+  <xs:element name="placajRacun" nillable="true" type="tns:placajRacun" />
+  <xs:element name="placajRacunResponse" nillable="true" type="tns:placajRacunResponse" />
+  <xs:element name="placiloSKartico" nillable="true" type="tns:placiloSKartico" />
+  <xs:element name="placiloSKarticoResponse" nillable="true" type="tns:placiloSKarticoResponse" />
+  <xs:element name="pregledKreditovNaRacunu" nillable="true" type="tns:pregledKreditovNaRacunu" />
+  <xs:element name="pregledKreditovNaRacunuResponse" nillable="true" type="tns:pregledKreditovNaRacunuResponse" />
+  <xs:element name="pregledNeplacanihIzdanihRacunov" nillable="true" type="tns:pregledNeplacanihIzdanihRacunov" />
+  <xs:element name="pregledNeplacanihIzdanihRacunovResponse" nillable="true" type="tns:pregledNeplacanihIzdanihRacunovResponse" />
+  <xs:element name="pregledNeplacanihRacunov" nillable="true" type="tns:pregledNeplacanihRacunov" />
+  <xs:element name="pregledNeplacanihRacunovResponse" nillable="true" type="tns:pregledNeplacanihRacunovResponse" />
+  <xs:element name="pregledPlacanihIzdanihRacunov" nillable="true" type="tns:pregledPlacanihIzdanihRacunov" />
+  <xs:element name="pregledPlacanihIzdanihRacunovResponse" nillable="true" type="tns:pregledPlacanihIzdanihRacunovResponse" />
+  <xs:element name="pregledPlacanihRacunov" nillable="true" type="tns:pregledPlacanihRacunov" />
+  <xs:element name="pregledPlacanihRacunovResponse" nillable="true" type="tns:pregledPlacanihRacunovResponse" />
+  <xs:element name="pregledPlacilSKartico" nillable="true" type="tns:pregledPlacilSKartico" />
+  <xs:element name="pregledPlacilSKarticoResponse" nillable="true" type="tns:pregledPlacilSKarticoResponse" />
+  <xs:element name="pregledPrometa" nillable="true" type="tns:pregledPrometa" />
+  <xs:element name="pregledPrometaResponse" nillable="true" type="tns:pregledPrometaResponse" />
+  <xs:element name="pregledStanja" nillable="true" type="tns:pregledStanja" />
+  <xs:element name="pregledStanjaResponse" nillable="true" type="tns:pregledStanjaResponse" />
+  <xs:element name="preklicAvtomatskegaPlacevanjaRacuna" nillable="true" type="tns:preklicAvtomatskegaPlacevanjaRacuna" />
+  <xs:element name="preklicAvtomatskegaPlacevanjaRacunaResponse" nillable="true" type="tns:preklicAvtomatskegaPlacevanjaRacunaResponse" />
+  <xs:element name="preklicNeplacanegaRacuna" nillable="true" type="tns:preklicNeplacanegaRacuna" />
+  <xs:element name="preklicNeplacanegaRacunaResponse" nillable="true" type="tns:preklicNeplacanegaRacunaResponse" />
+  <xs:element name="prenosDenarja" nillable="true" type="tns:prenosDenarja" />
+  <xs:element name="prenosDenarjaResponse" nillable="true" type="tns:prenosDenarjaResponse" />
+  <xs:complexType name="preklicNeplacanegaRacuna">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns1:IzdaniRacun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="preklicNeplacanegaRacunaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:Odgovor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledPlacanihIzdanihRacunov">
+    <xs:sequence>
+      <xs:element minOccurs="0" form="unqualified" name="stevilkaTRR" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledPlacanihIzdanihRacunovResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:IzdaniRacun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="placajRacun">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns1:IzdaniRacun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="placajRacunResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:Odgovor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledPlacanihRacunov">
+    <xs:sequence>
+      <xs:element minOccurs="0" form="unqualified" name="stevilkaTRR" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledPlacanihRacunovResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:IzdaniRacun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="prenosDenarja">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns3:PrenosDenarja" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="prenosDenarjaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:Odgovor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="izdajRacun">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns1:IzdaniRacun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="izdajRacunResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:Odgovor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledNeplacanihIzdanihRacunov">
+    <xs:sequence>
+      <xs:element minOccurs="0" form="unqualified" name="stevilkaTRR" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledNeplacanihIzdanihRacunovResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:IzdaniRacun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledStanja">
+    <xs:sequence>
+      <xs:element minOccurs="0" form="unqualified" name="stevilkaTRR" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledStanjaResponse">
+    <xs:sequence>
+      <xs:element form="unqualified" name="return" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledPrometa">
+    <xs:sequence>
+      <xs:element minOccurs="0" form="unqualified" name="stevilkaTRR" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledPrometaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns4:PregledPrometa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="avtomatskoPlacevanjeRacuna">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns1:IzdaniRacun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="avtomatskoPlacevanjeRacunaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:Odgovor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledPlacilSKartico">
+    <xs:sequence>
+      <xs:element minOccurs="0" form="unqualified" name="stevilkaKartice" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledPlacilSKarticoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns5:PlaciloSKartico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledKreditovNaRacunu">
+    <xs:sequence>
+      <xs:element minOccurs="0" form="unqualified" name="stevilkaTRR" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledKreditovNaRacunuResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns6:Kredit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="placiloSKartico">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns5:PlaciloSKartico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="placiloSKarticoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:Odgovor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="preklicAvtomatskegaPlacevanjaRacuna">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns1:IzdaniRacun" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="preklicAvtomatskegaPlacevanjaRacunaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="ns2:Odgovor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledNeplacanihRacunov">
+    <xs:sequence>
+      <xs:element minOccurs="0" form="unqualified" name="stevilkaTRR" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pregledNeplacanihRacunovResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="ns1:IzdaniRacun" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

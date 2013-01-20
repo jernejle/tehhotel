@@ -178,6 +178,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Models\BancniRacun.cs" />
     <Compile Include="Models\RezervacijaModel.cs" />
     <Compile Include="Models\RezervacijaPosebneStoritve.cs" />
     <Compile Include="ViewModel\RezervacijaSobeObj.cs" />
@@ -186,6 +187,16 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\BankaSecureService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\BankaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\HotelService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -301,11 +312,19 @@
     <Content Include="Web References\RezervacijaService\Racun.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\RezervacijaService\Reference.map">
+    <Content Include="Web References\BankaSecureService\KBP_Prijava.wsdl" />
+    <None Include="Web References\BankaSecureService\KBP_Prijava.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\BankaSecureService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Web References\RezervacijaService\RezervacijaService.disco" />
+    <None Include="Web References\RezervacijaService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RezervacijaService\RezervacijaService.disco" />
     <Content Include="Web References\StrankaService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -355,6 +374,50 @@
     <Content Include="Web References\HotelService\HotelService.wsdl" />
     <Content Include="Views\Hotel\Izpis.cshtml" />
     <Content Include="Views\Hotel\Podrobnosti.cshtml" />
+    <Content Include="Web References\BankaService\IzdaniRacun.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\BankaService\KBP-Stranke.wsdl" />
+    <None Include="Web References\BankaService\KBP-Stranke.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\BankaService\Kredit.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\BankaService\Odgovor.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\BankaService\PlaciloSKartico.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\BankaService\PregledPrometa.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\BankaService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <None Include="Web References\HotelService\HotelService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -369,11 +432,11 @@
     <Content Include="Web References\HotelService\Zaposleni.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
+    <None Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
     <None Include="Web References\RezervacijaService\RezervacijaService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Web References\RezervacijaService\RezervacijaService0.wsdl" />
+    <None Include="Web References\RezervacijaService\RezervacijaService0.wsdl" />
     <None Include="Web References\RezervacijaService\RezervacijaService0.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -406,6 +469,28 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\BankaService\</RelPath>
+      <UpdateFromURL>http://164.8.251.93:8080/KBP-Banka/KBP-Stranke%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TehHotel_Gui_Test_BankaService_KBP_Stranke</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://164.8.251.93:8080/KBP_Prijava/KBP_Prijava%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\BankaSecureService\</RelPath>
+      <UpdateFromURL>http://164.8.251.93:8080/KBP_Prijava/KBP_Prijava%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TehHotel_Gui_Test_BankaSecureService_KBP_Prijava</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:1476/HotelService.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\HotelService\</RelPath>

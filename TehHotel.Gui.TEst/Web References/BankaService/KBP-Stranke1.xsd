@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.feri.uni-mb.si/soa/KBP/pregledPrometa" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PregledPrometa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="StevilkaRacuna" type="xs:string" />
+        <xs:element name="ZnesekTransakcije" type="xs:decimal" />
+        <xs:element name="ValutaTransakcije" type="xs:string" />
+        <xs:element name="CasTransakcije" type="xs:dateTime" />
+        <xs:element name="NacinPlacila" type="xs:string" />
+        <xs:element name="VrstaTransakcije" type="xs:string" />
+        <xs:element name="Dodatno" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
