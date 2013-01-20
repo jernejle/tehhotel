@@ -766,7 +766,7 @@ tr.pager td {
 }
 
 table input {
-    width: 40px;
+    width: 80px;
 }
 
 .vsebina {
@@ -803,4 +803,27 @@ table input {
 
     .iskanje input {
         width: 120px;
+    }
+
+.let {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 500px;
+    border: 1px solid black;
+}
+
+.letnaslov {
+    background-color: #d4d4d4;
+    padding: 15px;
+}
+
+.letinfo {
+    border-top: 1px solid black;
+    padding: 10px;
+    display: none;
+}
+
+    .letinfo li {
+        padding: 3px;
     }

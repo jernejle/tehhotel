@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "IskanjeLeta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Iskanje leta</h2>
+<br />
+@using (Html.BeginForm("IsciLete", "Letalisce", FormMethod.Post))
+{
+    <div class="editor-label">
+        <b>Letim iz</b>
+    </div>
+    <div class="editor-field">
+        @Html.DropDownList("idvzlet", (List<SelectListItem>)ViewData["letalisca"])
+    </div>
+    <br />
+    <div class="editor-label">
+        <b>Letim v</b>
+    </div>
+    <div class="editor-field">
+        @Html.DropDownList("idpristanek", (List<SelectListItem>)ViewData["letalisca"])
+    </div>
+    <br />
+    <div class="editor-label">
+        <b>Tip leta</b>
+    </div>
+    <div class="editor-field">
+        @Html.Raw("Redni let")
+        @Html.CheckBox("redni")
+        <br />
+        @Html.Raw("Čarterski let")
+        @Html.CheckBox("carterski")<br />
+        @Html.Raw("Povratni let")
+        @Html.CheckBox("povratni", false, new { @id = "povratnicb" })<br />
+    </div>
+    <br />
+    <div class="editor-label">
+        <b>Datum odhoda </b>
+    </div>
+    <div class="editor-field">
+        @Html.TextBox("datumodhoda", "", new { @class = "datepicker" })
+    </div>
+    <div id="povratek" style="display: none">
+        <div class="editor-label">
+            <b>Datum povratka</b>
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("datumpovratka", "", new { @class = "datepicker" })
+        </div>
+    </div>
+    <br />
+    <div class="editor-label">
+        <b>Razred </b>
+    </div>
+    <div class="editor-field">
+        @Html.DropDownList("razred", (List<SelectListItem>)ViewData["razredi"])
+    </div>
+    <br />
+    <div class="editor-field">
+        <input type="submit" name="iscilete" value="Išči lete" />
+    </div>    
+}
+
+<script>
+    $(function () {
+        $("#povratnicb").click(function () {
+            $("#povratek").toggle();
+        });
+    });
+</script>

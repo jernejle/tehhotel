@@ -147,29 +147,35 @@
 @{ if (ViewData["sobe"] != null || ViewData["parkirisca"] != null || ViewData["dvorane"] != null)
    {
     <div style="margin-top: 50px;">
-        <form method="post" action="/Rezervacije/Pobrisi">
+        @using (@Html.BeginForm("Pobrisi", "Rezervacije"))
+        {
             <input type="submit" name="submit" value="Počisti rezervacije" />
             <input type="submit" name="submitrez" id="potrdirez" value="Potrdi rezervacije" />
-        </form>
+        }
         <div style="display: none; background-color: #EFEEEF" id="dialog-form" title="Vpis stranke">
-            <form method="post" action="/Rezervacije/Rezerviraj">
-                Ime<br /> @Html.TextBoxFor(m => m.ime)<br />
-                Priimek <br />@Html.TextBoxFor(m => m.priimek) <br />
-                Datum rojstva <br />@Html.TextBoxFor(m => m.datumroj, new {@class="datepicker"})<br />
-                Država <br />@Html.TextBoxFor(m => m.drzava)<br />
-                Kraj <br />@Html.TextBoxFor(m => m.kraj)<br />
-                Ulica <br />@Html.TextBoxFor(m => m.ulica)<br />
-                Poštna štev <br />@Html.TextBoxFor(m => m.postna)<br />
-                Tip identifikacija <br />
+            @using (@Html.BeginForm("Rezerviraj", "Rezervacije"))
+            {
+                @:Ime<br /> 
+                @Html.TextBoxFor(m => m.ime)<br />
+                @:Priimek <br />
+                @Html.TextBoxFor(m => m.priimek) <br />
+                @:Datum rojstva <br />
+                @Html.TextBoxFor(m => m.datumroj, new { @class = "datepicker" })<br />
+                @:Država <br />
+                @Html.TextBoxFor(m => m.drzava)<br />
+                @:Kraj <br />@Html.TextBoxFor(m => m.kraj)<br />
+                @:Ulica <br />@Html.TextBoxFor(m => m.ulica)<br />
+                @:Poštna štev <br />@Html.TextBoxFor(m => m.postna)<br />
+                @:Tip identifikacija <br />
                 <select name="identifikacijatip">
                     <option value="EMSO">EMŠO</option>
                     <option value="OSTALO">Ostalo</option>
                 </select><br />
-                Identifikacija Vrednost <br />
+                @:Identifikacija Vrednost <br />
                 @Html.TextBoxFor(m => m.identifikacijavrednost)<br />
-                Račun hotela <br /> @Html.DropDownListFor(m => m.hotelid, (List<SelectListItem>) ViewData["hoteli"])<br />
+                @:Račun hotela <br /> @Html.DropDownListFor(m => m.hotelid, (List<SelectListItem>)ViewData["hoteli"])<br/>
                 <input type="submit" name="submitrezervacija" value="Rezerviraj" />
-            </form>
+            }
         </div>
         <script type="text/javascript">
             $(function () {

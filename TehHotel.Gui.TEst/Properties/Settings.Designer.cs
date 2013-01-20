@@ -52,7 +52,7 @@ namespace TehHotel.Gui.Test.Properties {
                 return ((string)(this["TehHotel_Gui_Test_StrankaService_StrankaService"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
@@ -62,7 +62,7 @@ namespace TehHotel.Gui.Test.Properties {
                 return ((string)(this["TehHotel_Gui_Test_RentACarStrankeService_Stranke"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
@@ -82,5 +82,16 @@ namespace TehHotel.Gui.Test.Properties {
                 return ((string)(this["TehHotel_Gui_Test_RentACarVozilaService_Vozila"]));
             }
         }
+
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://164.8.251.93/SOATravel/letalec2/ForeachAirlines.svc")]
+        public string TehHotel_Gui_Test_LetalisceService_Letalec2 {
+            get {
+                return ((string)(this["TehHotel_Gui_Test_LetalisceService_Letalec2"]));
+            }
+        }
+
     }
 }
