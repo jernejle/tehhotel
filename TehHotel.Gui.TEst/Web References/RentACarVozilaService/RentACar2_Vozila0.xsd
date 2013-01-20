@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Vozila.Vozila.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RentACar2_Vozila" />
+  <xs:element name="dodajVozilo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RentACar2_Vozila" minOccurs="0" name="vozilo" nillable="true" type="q1:Vozilo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dodajVoziloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dodajVoziloResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spremeniVozilo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idVozilo" type="xs:int" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RentACar2_Vozila" minOccurs="0" name="vozilo" nillable="true" type="q2:Vozilo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spremeniVoziloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spremeniVoziloResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="odstraniVozilo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idVozilo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="odstraniVoziloResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="odstraniVoziloResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pregledVsehVozil">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pregledVsehVozilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RentACar2_Vozila" minOccurs="0" name="pregledVsehVozilResult" nillable="true" type="q3:ArrayOfVozilo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pregledRazpolozljivihVozil">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pregledRazpolozljivihVozilResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RentACar2_Vozila" minOccurs="0" name="pregledRazpolozljivihVozilResult" nillable="true" type="q4:ArrayOfVozilo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pregledVozilPoPoslovalnici">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPoslovalnica" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pregledVozilPoPoslovalniciResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RentACar2_Vozila" minOccurs="0" name="pregledVozilPoPoslovalniciResult" nillable="true" type="q5:ArrayOfVozilo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

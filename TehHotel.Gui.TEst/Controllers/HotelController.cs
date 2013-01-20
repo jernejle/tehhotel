@@ -17,7 +17,7 @@ namespace TehHotel.Gui.Test.Controllers
             List<Hotel> hoteli = null;
             try {
                 hoteli = new HotelService.HotelService().ListHotel().ToList();
-            } catch (Exception e) {}
+            } catch (Exception) {}
             ViewData["hoteli"] = hoteli;
             return View("Izpis");
         }
@@ -29,7 +29,7 @@ namespace TehHotel.Gui.Test.Controllers
             {
                 hotel = new HotelService.HotelService().ReadHotel(Id, true);
             }
-            catch (Exception e) { }
+            catch (Exception) { }
             ViewData["hotel"] = hotel;
             return View("Podrobnosti");
         }
@@ -52,7 +52,7 @@ namespace TehHotel.Gui.Test.Controllers
                 {
                     ViewData["hoteli"] = new HotelService.HotelService().ListHotelByDrzava(drzava).ToList();
                 }
-                catch (Exception e) { }
+                catch (Exception) { }
                 return View("Izpis");
             }
 

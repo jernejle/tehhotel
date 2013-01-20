@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Rezervacije" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RentACar2_Rezervacije" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRezervacije_dodajRezervacijo_InputMessage">
+    <wsdl:part name="parameters" element="tns:dodajRezervacijo" />
+  </wsdl:message>
+  <wsdl:message name="IRezervacije_dodajRezervacijo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:dodajRezervacijoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRezervacije_spremeniRezervacijo_InputMessage">
+    <wsdl:part name="parameters" element="tns:spremeniRezervacijo" />
+  </wsdl:message>
+  <wsdl:message name="IRezervacije_spremeniRezervacijo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:spremeniRezervacijoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRezervacije_prekliciRezervacijo_InputMessage">
+    <wsdl:part name="parameters" element="tns:prekliciRezervacijo" />
+  </wsdl:message>
+  <wsdl:message name="IRezervacije_prekliciRezervacijo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:prekliciRezervacijoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRezervacije_pregledVsehRezervacij_InputMessage">
+    <wsdl:part name="parameters" element="tns:pregledVsehRezervacij" />
+  </wsdl:message>
+  <wsdl:message name="IRezervacije_pregledVsehRezervacij_OutputMessage">
+    <wsdl:part name="parameters" element="tns:pregledVsehRezervacijResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRezervacije_izdajRacun_InputMessage">
+    <wsdl:part name="parameters" element="tns:izdajRacun" />
+  </wsdl:message>
+  <wsdl:message name="IRezervacije_izdajRacun_OutputMessage">
+    <wsdl:part name="parameters" element="tns:izdajRacunResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRezervacije">
+    <wsdl:operation name="dodajRezervacijo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRezervacije/dodajRezervacijo" message="tns:IRezervacije_dodajRezervacijo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRezervacije/dodajRezervacijoResponse" message="tns:IRezervacije_dodajRezervacijo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spremeniRezervacijo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRezervacije/spremeniRezervacijo" message="tns:IRezervacije_spremeniRezervacijo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRezervacije/spremeniRezervacijoResponse" message="tns:IRezervacije_spremeniRezervacijo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="prekliciRezervacijo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRezervacije/prekliciRezervacijo" message="tns:IRezervacije_prekliciRezervacijo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRezervacije/prekliciRezervacijoResponse" message="tns:IRezervacije_prekliciRezervacijo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="pregledVsehRezervacij">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRezervacije/pregledVsehRezervacij" message="tns:IRezervacije_pregledVsehRezervacij_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRezervacije/pregledVsehRezervacijResponse" message="tns:IRezervacije_pregledVsehRezervacij_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="izdajRacun">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRezervacije/izdajRacun" message="tns:IRezervacije_izdajRacun_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRezervacije/izdajRacunResponse" message="tns:IRezervacije_izdajRacun_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IRezervacije" type="tns:IRezervacije">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="dodajRezervacijo">
+      <soap:operation soapAction="http://tempuri.org/IRezervacije/dodajRezervacijo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spremeniRezervacijo">
+      <soap:operation soapAction="http://tempuri.org/IRezervacije/spremeniRezervacijo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="prekliciRezervacijo">
+      <soap:operation soapAction="http://tempuri.org/IRezervacije/prekliciRezervacijo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pregledVsehRezervacij">
+      <soap:operation soapAction="http://tempuri.org/IRezervacije/pregledVsehRezervacij" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="izdajRacun">
+      <soap:operation soapAction="http://tempuri.org/IRezervacije/izdajRacun" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Rezervacije">
+    <wsdl:port name="BasicHttpBinding_IRezervacije" binding="tns:BasicHttpBinding_IRezervacije">
+      <soap:address location="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

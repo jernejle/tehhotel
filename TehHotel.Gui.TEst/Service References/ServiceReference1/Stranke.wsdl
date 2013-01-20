@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Stranke" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RentACar2_Stranke" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IStranke_dodajStranko_InputMessage">
+    <wsdl:part name="parameters" element="tns:dodajStranko" />
+  </wsdl:message>
+  <wsdl:message name="IStranke_dodajStranko_OutputMessage">
+    <wsdl:part name="parameters" element="tns:dodajStrankoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStranke_odstraniStranko_InputMessage">
+    <wsdl:part name="parameters" element="tns:odstraniStranko" />
+  </wsdl:message>
+  <wsdl:message name="IStranke_odstraniStranko_OutputMessage">
+    <wsdl:part name="parameters" element="tns:odstraniStrankoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStranke_spremeniStranko_InputMessage">
+    <wsdl:part name="parameters" element="tns:spremeniStranko" />
+  </wsdl:message>
+  <wsdl:message name="IStranke_spremeniStranko_OutputMessage">
+    <wsdl:part name="parameters" element="tns:spremeniStrankoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStranke_pregledVsehStrank_InputMessage">
+    <wsdl:part name="parameters" element="tns:pregledVsehStrank" />
+  </wsdl:message>
+  <wsdl:message name="IStranke_pregledVsehStrank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:pregledVsehStrankResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IStranke">
+    <wsdl:operation name="dodajStranko">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStranke/dodajStranko" message="tns:IStranke_dodajStranko_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStranke/dodajStrankoResponse" message="tns:IStranke_dodajStranko_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="odstraniStranko">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStranke/odstraniStranko" message="tns:IStranke_odstraniStranko_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStranke/odstraniStrankoResponse" message="tns:IStranke_odstraniStranko_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spremeniStranko">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStranke/spremeniStranko" message="tns:IStranke_spremeniStranko_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStranke/spremeniStrankoResponse" message="tns:IStranke_spremeniStranko_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="pregledVsehStrank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStranke/pregledVsehStrank" message="tns:IStranke_pregledVsehStrank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStranke/pregledVsehStrankResponse" message="tns:IStranke_pregledVsehStrank_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IStranke" type="tns:IStranke">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="dodajStranko">
+      <soap:operation soapAction="http://tempuri.org/IStranke/dodajStranko" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="odstraniStranko">
+      <soap:operation soapAction="http://tempuri.org/IStranke/odstraniStranko" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="spremeniStranko">
+      <soap:operation soapAction="http://tempuri.org/IStranke/spremeniStranko" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pregledVsehStrank">
+      <soap:operation soapAction="http://tempuri.org/IStranke/pregledVsehStrank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Stranke">
+    <wsdl:port name="BasicHttpBinding_IStranke" binding="tns:BasicHttpBinding_IStranke">
+      <soap:address location="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

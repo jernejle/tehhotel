@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc?xsd=xsd1" filename="RentACar2_Rezervacije.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc?wsdl" filename="Rezervacije.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc?xsd=xsd0" filename="RentACar2_Rezervacije0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc?xsd=xsd2" filename="RentACar2_Rezervacije1.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>
