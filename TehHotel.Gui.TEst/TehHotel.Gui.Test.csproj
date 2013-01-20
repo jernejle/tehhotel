@@ -291,8 +291,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Images\plane_landing.ico" />
-    <Content Include="Images\plane_off.ico" />
     <Content Include="Images\reserve.ico" />
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
