@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TehHotel.Contracts.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TehHotel.Contracts.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1476/RezervacijaServiceSecure.svc?xsd=xsd0" namespace="http//www.tehhotel.com/" />
+  <xs:complexType name="ArrayOfRezervacijaSobe">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RezervacijaSobe" nillable="true" type="tns:RezervacijaSobe" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRezervacijaSobe" nillable="true" type="tns:ArrayOfRezervacijaSobe" />
+  <xs:complexType name="RezervacijaSobe">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatumDo" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DatumOd" type="xs:dateTime" />
+      <xs:element xmlns:q1="http//www.tehhotel.com/" minOccurs="0" name="Hotel" nillable="true" type="q1:Hotel" />
+      <xs:element minOccurs="0" name="Hrana" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RezervacijaSobe" type="xs:int" />
+      <xs:element xmlns:q2="http//www.tehhotel.com/" minOccurs="0" name="Soba" nillable="true" type="q2:Soba" />
+      <xs:element xmlns:q3="http//www.tehhotel.com/" minOccurs="0" name="Stranka" nillable="true" type="q3:Stranka" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RezervacijaSobe" nillable="true" type="tns:RezervacijaSobe" />
+</xs:schema>

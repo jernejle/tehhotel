@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Results>
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://164.8.251.93:8080/KBP_Prijava/KBP_Prijava?wsdl" filename="KBP_Prijava.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93:8080/KBP_Prijava/KBP_Prijava?xsd=1" filename="KBP_Prijava.xsd" />
-  </Results>
-</DiscoveryClientResultsFile>

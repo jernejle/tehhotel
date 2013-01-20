@@ -29,8 +29,8 @@ namespace TehHotel.Gui.Test.Controllers
             bancniRacuni.Add(new BancniRacun("teh-gregor", "123456", "SI56251000000001202"));
             bancniRacuni.Add(new BancniRacun("teh-jernej", "123456", "SI56251000000001203"));
 
-            RezervacijaService.RezervacijaService rclient = new RezervacijaService.RezervacijaService();
-            rclient.ListRacun(1, true);
+            RezervacijaServiceSecure.RezervacijaServiceClient rclient = new RezervacijaServiceSecure.RezervacijaServiceClient();
+           
             BankaService.KBPStranke client = new BankaService.KBPStranke();
 
             foreach (BancniRacun b in bancniRacuni)
@@ -43,9 +43,7 @@ namespace TehHotel.Gui.Test.Controllers
                 {
                     foreach (BankaService.IzdaniRacun bracun in bankaRacuni)
                     {
-                        bool rezultat;
-                        bool nekaj = true;
-                        rclient.PlacajRacun(bracun.Racun.StevilkaRacuna, true, out rezultat, out nekaj);
+                        rclient.PlacajRacun(bracun.Racun.StevilkaRacuna);
                     }
                 }
             }
