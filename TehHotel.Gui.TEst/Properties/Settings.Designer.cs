@@ -66,16 +66,6 @@ namespace TehHotel.Gui.Test.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://164.8.251.93:8080/KBP_Prijava/KBP_Prijava")]
-        public string TehHotel_Gui_Test_BankaSecureService_KBP_Prijava {
-            get {
-                return ((string)(this["TehHotel_Gui_Test_BankaSecureService_KBP_Prijava"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://164.8.251.93/SOATravel/letalec2/ForeachAirlines.svc")]
         public string TehHotel_Gui_Test_LetalisceService_Letalec2 {
             get {
