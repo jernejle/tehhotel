@@ -1,0 +1,182 @@
+﻿@{
+    ViewBag.Title = "MozniLeti";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Možni leti</h2>
+<br />
+
+@{ if (ViewData["redni"] != null)
+   {
+
+       foreach (TehHotel.Gui.Test.LetalisceService.Let let in (List<TehHotel.Gui.Test.LetalisceService.Let>)ViewData["redni"])
+       {
+    <div class="let">
+        <div class="letmain">
+            <div class="letnaslov">
+                <input type="hidden" name="letid" class="letid" value="@let.ID" />
+                <input type="hidden" name="tipkarte" class="tipkarte" value="@let.Tip" />
+                <input type="hidden" name="datumtja" class="datumtja" value="@let.Datum" />
+
+                <b>@let.Datum</b><br />
+                (<b>Iz:</b> @let.LetalisceOd.Naziv - @let.LetalisceOd.Koda <b>Na:</b>
+                @let.LetalisceDo.Naziv - @let.LetalisceDo.Koda) - <b>@let.Tip</b>
+                <div style="float: right; margin-top: -7px">
+                    <img src="~/Images/reserve.ico" class="reserve" height="30" width="30" />
+                </div>
+            </div>
+            <div class="letinfo">
+                <ul>
+                    <li>Letalo: @let.Letalo.LetalskaDruzba - @let.Letalo.SerijskaStevilka</li>
+                    <li>Cena first class: <span class="cenafirstclass">@let.CenaFirstClassKarte</span>
+                    </li>
+                    <li>Cena business class: <span class="cenabusinessclass">@let.CenaBusinessClassKarte</span>
+                    </li>
+                    <li>Cena economy class: <span class="cenaeconomyclass">@let.CenaEconomyClassKarte</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+       }
+
+    <div id="modalw" style="display: none; background-color: #efeeef" title="Rezervacija letalske karte">
+        @using (@Html.BeginForm("KupiKarto", "Letalisce", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td>Ime</td>
+                    <td>@Html.Hidden("letid") @Html.Hidden("tipkarte") @Html.TextBox("ime")</td>
+                </tr>
+                <tr>
+                    <td>Priimek</td>
+                    <td>@Html.TextBox("priimek")</td>
+                </tr>
+                <tr>
+                    <td>Ulica</td>
+                    <td>@Html.TextBox("ulica")</td>
+                </tr>
+                <tr>
+                    <td>Kraj</td>
+                    <td>@Html.TextBox("kraj")</td>
+                </tr>
+                <tr>
+                    <td>Poštna številka</td>
+                    <td>@Html.TextBox("postna")</td>
+                </tr>
+                <tr>
+                    <td>Država</td>
+                    <td>@Html.TextBox("drzava")</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>@Html.TextBox("email")</td>
+                </tr>
+                <tr>
+                    <td>EMSO</td>
+                    <td>@Html.TextBox("emso")</td>
+                </tr>
+                <tr>
+                    <td>Naziv</td>
+                    <td>@Html.DropDownList("naziv", (List<SelectListItem>)ViewData["nazivi"])</td>
+                </tr>
+                <tr>
+                    <td>Naziv banke</td>
+                    <td>@Html.TextBox("nazivbanke")</td>
+                </tr>
+                <tr>
+                    <td>TRR</td>
+                    <td>@Html.TextBox("TRR")</td>
+                </tr>
+                <tr>
+                    <td>Telefon</td>
+                    <td>@Html.TextBox("telefon")</td>
+                </tr>
+                <tr>
+                    <td>Datum odhoda</td>
+                    <td>@Html.TextBox("datumtja")</td>
+                </tr>
+                <tr class="datumprihoda">
+                    <td>Datum prihoda</td>
+                    <td>@Html.TextBox("datumnazaj")</td>
+                </tr>
+                <tr>
+                    <td>Razred</td>
+                    <td>
+                        @Html.DropDownList("razred", (List<SelectListItem>)ViewData["razredi"])
+                    </td>
+                </tr>
+                <tr>
+                    <td>Prtljaga</td>
+                    <td>
+                        @Html.DropDownList("prtljaga", (List<SelectListItem>)ViewData["prtljaga"])
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cena karte</td>
+                    <td>
+                        <span id="racuncena"></span>
+                        <input type="hidden" id="cenainput" name="cenainput" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="rezerviraj" value="Kupi" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+   }
+}
+
+<script>
+    $(function () {
+        var cene;
+        $(".letnaslov").click(function () {
+            $(this).next().toggle();
+        });
+
+        $(".reserve").click(function () {
+            $("#modalw #datumtja").val($(this).parent().siblings(".datumtja").val());
+            $("#modalw #letid").val($(this).parent().siblings(".letid").val());
+            $("#modalw #tipkarte").val($(this).parent().siblings(".tipkarte").val());
+            $("#modalw #datumtja").attr("readonly", "readonly");
+            $("#modalw #datumnazaj").attr("readonly", "readonly");
+            if ($(this).parent().siblings(".tipkarte").val() != "Povratni") {
+                $("#modalw .datumprihoda").remove();
+            }
+
+            cene = new Array();
+            $(this).parent().parent().siblings(".letinfo").find("li span").each(function () {
+                cene.push($(this).html());
+            });
+
+            changeCena("BusinessClass");
+
+            $("#razredi").change(function () {
+                changeCena($(this).val());
+            });
+
+            function changeCena(value) {
+                if (value == "BusinessClass") {
+                    cena = cene[1];
+                } else if (value == "EconomyClass") {
+                    cena = cene[2];
+                } else if (value == "FirstClass") {
+                    cena = cene[0];
+                }
+                $("#modalw #racuncena").html(cena);
+                $("#modalw #cenainput").val(cena);
+            }
+
+            $("#modalw").dialog({
+                width: 260,
+                height: 400
+            });
+            return false;
+
+        });
+    });
+</script>

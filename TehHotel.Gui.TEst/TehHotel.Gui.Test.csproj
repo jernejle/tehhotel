@@ -169,6 +169,7 @@
     <Compile Include="Controllers\DvoranaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Controllers\LetalisceController.cs" />
     <Compile Include="Controllers\RacunController.cs" />
     <Compile Include="Controllers\RezervacijeController.cs" />
     <Compile Include="Controllers\SobaController.cs" />
@@ -199,6 +200,11 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\HotelService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LetalisceService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -278,6 +284,9 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\plane_landing.ico" />
+    <Content Include="Images\plane_off.ico" />
+    <Content Include="Images\reserve.ico" />
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -418,6 +427,8 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\Letalisce\IskanjeLeta.cshtml" />
+    <Content Include="Views\Letalisce\MozniLeti.cshtml" />
     <None Include="Web References\HotelService\HotelService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -433,6 +444,48 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <None Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
+    <Content Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
+    <Content Include="Web References\LetalisceService\Dodatek.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\LetalisceService\KartaZaOsebo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\LetalisceService\KartaZaZival.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\LetalisceService\let.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\LetalisceService\Let1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\LetalisceService\Letalec2.wsdl" />
+    <Content Include="Web References\LetalisceService\Letalisce.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\LetalisceService\Letalo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\LetalisceService\NarocilnicaZaCarter.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\LetalisceService\Poslovalnica.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\LetalisceService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\LetalisceService\Rezervacija.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\LetalisceService\Stranka.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\LetalisceService\Vozilo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
     <None Include="Web References\RezervacijaService\RezervacijaService.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -490,6 +543,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>TehHotel_Gui_Test_BankaSecureService_KBP_Prijava</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://164.8.251.93/SOATravel/letalec2/ForeachAirlines.svc%3fsingleWsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LetalisceService\</RelPath>
+      <UpdateFromURL>http://164.8.251.93/SOATravel/letalec2/ForeachAirlines.svc%3fsingleWsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TehHotel_Gui_Test_LetalisceService_Letalec2</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:1476/HotelService.svc">
       <UrlBehavior>Dynamic</UrlBehavior>

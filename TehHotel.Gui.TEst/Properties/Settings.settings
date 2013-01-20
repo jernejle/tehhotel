@@ -16,6 +16,8 @@
     </Setting>
     <Setting Name="TehHotel_Gui_Test_BankaSecureService_KBP_Prijava" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://164.8.251.93:8080/KBP_Prijava/KBP_Prijava</Value>
+    <Setting Name="TehHotel_Gui_Test_LetalisceService_Letalec2" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.8.251.93/SOATravel/letalec2/ForeachAirlines.svc</Value>
     </Setting>
   </Settings>
 </SettingsFile>
