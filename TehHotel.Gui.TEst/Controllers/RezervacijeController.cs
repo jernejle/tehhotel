@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -145,8 +146,11 @@ namespace TehHotel.Gui.Test.Controllers
             client.CreateRezervacija(strankaId, true, model.hotelid,true, rez_sobe.ToArray(), r);
             ModelState.Clear();
 
-            return RedirectToAction("Pobrisi");
-        }
+            Session["dvorane"] = null;
+            Session["parkirisca"] = null;
+            Session["sobe"] = null;
 
+            return RedirectToAction("PodrobnostiStranka","Racun", new { strankaId = strankaId } );
+        }
     }
 }

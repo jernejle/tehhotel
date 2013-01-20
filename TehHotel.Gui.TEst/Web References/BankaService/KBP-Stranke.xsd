@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.feri.uni-mb.si/soa/KBP/placiloSKartico" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PlaciloSKartico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="StevilkaKartice" type="xs:int" />
+        <xs:element minOccurs="0" name="StevilkaRacunaPrejemnik" type="xs:string" />
+        <xs:element name="ZnesekPlacila" type="xs:decimal" />
+        <xs:element name="ValutaPlacila" type="xs:string" />
+        <xs:element name="CasPlacila" type="xs:dateTime" />
+        <xs:element name="Lokacija" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

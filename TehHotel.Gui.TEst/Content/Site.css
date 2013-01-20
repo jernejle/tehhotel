@@ -780,16 +780,22 @@ table input {
     margin-top: 30px;
 }
 
-.mojatabela td {
+.mojatabela td, .mojatabela th {
     padding: 5px 50px 10px 0;
     text-align: center;
 }
 
 
-.mojatabela th {
-    padding: 0px 50px 10px 0; 
-    text-align: center;
+.mojatabelaSoba {
+    width: 100%;
+    margin-top: 30px;
 }
+
+.mojatabelaSoba td, .mojatabelaSoba th {
+    text-align: center;
+    padding: 0;
+}
+
 
 .napaka {
     color: red;

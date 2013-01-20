@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.feri.uni-mb.si/soa/KBP/izdaniRacun" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="IzdaniRacun">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Racun">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StevilkaRacuna" type="xs:unsignedShort" />
+              <xs:element name="DatumRacuna" type="xs:date" />
+              <xs:element name="Valuta" type="xs:string" />
+              <xs:element name="Lokacija" type="xs:string" />
+              <xs:element name="PlacilniRok" type="xs:date" />
+              <xs:element name="Izdajatelj">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="NazivNaslov">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Naziv" type="xs:string" />
+                          <xs:element name="Ulica" type="xs:string" />
+                          <xs:element name="Kraj" type="xs:string" />
+                          <xs:element name="NazivDrzave" type="xs:string" />
+                          <xs:element name="PostnaStevilka" type="xs:unsignedShort" />
+                          <xs:element name="KodaDrzave" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FinancniPodatki">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="BancniRacun">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element minOccurs="0" name="StevilkaBancnegaRacuna" type="xs:string" />
+                                <xs:element name="NazivBanke" type="xs:string" />
+                                <xs:element name="BIC" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Prejemnik">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="NazivNaslov">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Naziv" type="xs:string" />
+                          <xs:element name="Ulica" type="xs:string" />
+                          <xs:element name="Kraj" type="xs:string" />
+                          <xs:element name="NazivDrzave" type="xs:string" />
+                          <xs:element name="PostnaStevilka" type="xs:unsignedShort" />
+                          <xs:element name="KodaDrzave" type="xs:string" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="FinancniPodatki">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="BancniRacun">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="StevilkaBancnegaRacuna" type="xs:string" />
+                                <xs:element name="NazivBanke" type="xs:string" />
+                                <xs:element name="BIC" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PostavkeRacuna">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="Postavka">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Opis" type="xs:string" />
+                          <xs:element name="KolicinaArtikla">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Kolicina" type="xs:float" />
+                                <xs:element name="EnotaMere" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="CenaEnote" type="xs:decimal" />
+                          <xs:element name="ZnesekPostavke" type="xs:decimal" />
+                          <xs:element name="DavkiNaPostavki">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="OdstotekDavkaPostavke" type="xs:decimal" />
+                                <xs:element name="ZnesekDavkaPostavke" type="xs:decimal" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PovzetekZneskovRacuna">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OsnovaZaDavek" type="xs:decimal" />
+                    <xs:element name="Davek" type="xs:decimal" />
+                    <xs:element name="ZnesekRacuna" type="xs:decimal" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PlaciloRacuna" nillable="true">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Opravljeno" type="xs:boolean" />
+                    <xs:element name="DatumPlacila" nillable="true" type="xs:date" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

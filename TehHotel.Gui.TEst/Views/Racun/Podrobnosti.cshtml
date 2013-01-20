@@ -2,40 +2,44 @@
     ViewBag.Title = "Podrobnosti";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{ if (ViewData["odgovor"] != null)
+   {
+    <p style="color: #3889B8;">@ViewData["odgovor"]</p>
+   }
+}
+
+@{ if (ViewData["izdanPriBanki"] != null && ViewData["odgovor"] == null)
+   {
+   <p style="color: #3889B8;">Račun je bil posredovan k banki.</p>
+   }
+}
 
 <h2>Podrobnosti računa</h2>
 
 <table class="mojatabela">
     <tr>
-        <th>
-            #id
+        <th>#id
         </th>
-        <th>
-            Številka računa
+        <th>Številka računa
         </th>
-        <th>
-            Datum
+        <th>Datum
         </th>
 
-        <th>
-            Valuta
+        <th>Valuta
         </th>
 
-        <th>
-            Cena
+        <th>Cena
         </th>
-        <th>
-            Plačano
+        <th>Plačano
         </th>
-        <th>
-            Hotel
+        <th>Hotel
         </th>
     </tr>
 
-@{ var racun = (TehHotel.Gui.Test.RezervacijaService.Racun)ViewData["racun"]; }
+    @{ var racun = (TehHotel.Gui.Test.RezervacijaService.Racun)ViewData["racun"]; }
     <tr>
         <td>
-            @racun.Id
+            @racun.IdRacun
         </td>
         <td>
             @racun.StevilkaRacuna
@@ -57,79 +61,111 @@
         </td>
     </tr>
 </table>
-@{ if (racun.RezervacijeSob != null && racun.RezervacijeSob.Count() != 0) {
-<br />
-<h3>Rezervacije sob</h3>
-<table class="mojatabela">
-    <tr>
-        <th>Datum od</th>
-        <th>Datum do</th>
-        <th>Številka sobe</th>
-        <th>Število postelj</th>
-        <th>Hrana</th>
-    </tr>
-    @foreach (TehHotel.Gui.Test.RezervacijaService.RezervacijaSobe rs in racun.RezervacijeSob)
-    {
-        <tr>
-            <td>@rs.DatumOd.ToShortDateString()</td>
-            <td>@rs.DatumDo.ToShortDateString()</td>
-            <td>@rs.Soba.Stevilka</td>
-            <td>@rs.Soba.StPostelj</td>
-            <td>@rs.Hrana</td>
-        </tr>
-
-    }
-</table>  
-}
-}
-
-@{ if (racun.RezervacijeDvorane != null && racun.RezervacijeDvorane.Count() != 0) {
-<br />
-<h3>Rezervacije dvoran</h3>
+@{ if (racun.RezervacijeSob != null && racun.RezervacijeSob.Count() != 0)
+   {
+    <br />
+    <h3>Rezervacije sob</h3>
     <table class="mojatabela">
-    <tr>
-        <th>Datum od</th>
-        <th>Datum do</th>
-        <th>Cena</th>
-        <th>Število ljudi</th>
-        <th>Dvorana</th>
-    </tr>
-    @foreach (TehHotel.Gui.Test.RezervacijaService.RezervacijaDvorane rd in racun.RezervacijeDvorane)
-    {
         <tr>
-            <td>@rd.DatumOd.ToShortDateString()</td>
-            <td>@rd.DatumDo.ToShortDateString()</td>
-            <td>@rd.Cena</td>
-            <td>@rd.SteviloLjudi</td>
-            <td>@rd.Dvorana.Ime</td>
+            <th>Datum od</th>
+            <th>Datum do</th>
+            <th>Številka sobe</th>
+            <th>Število postelj</th>
+            <th>Hrana</th>
         </tr>
-    }
-</table>  
-}
+        @foreach (TehHotel.Gui.Test.RezervacijaService.RezervacijaSobe rs in racun.RezervacijeSob)
+        {
+            <tr>
+                <td>@rs.DatumOd.ToShortDateString()</td>
+                <td>@rs.DatumDo.ToShortDateString()</td>
+                <td>@rs.Soba.Stevilka</td>
+                <td>@rs.Soba.StPostelj</td>
+                <td>@rs.Hrana</td>
+            </tr>
+
+        }
+    </table>  
+   }
 }
 
-@{ if (racun.RezervacijeParkirisca != null && racun.RezervacijeParkirisca.Count() != 0) {
-<br />
-<h3>Rezervacije parkirišč</h3>
+@{ if (racun.RezervacijeDvorane != null && racun.RezervacijeDvorane.Count() != 0)
+   {
+    <br />
+    <h3>Rezervacije dvoran</h3>
     <table class="mojatabela">
-    <tr>
-        <th>Datum od</th>
-        <th>Datum do</th>
-        <th>Cena</th>
-        <th>Številka parkirišča</th>
-        <th>Pokrito</th>
-    </tr>
-    @foreach (TehHotel.Gui.Test.RezervacijaService.RezervacijaParkirisca rp in racun.RezervacijeParkirisca)
-    {
         <tr>
-            <td>@rp.DatumOd.ToShortDateString()</td>
-            <td>@rp.DatumDo.ToShortDateString()</td>
-            <td>@rp.Cena</td>
-            <td>@rp.Parkirisce.Stevilka</td>
-            <td>@rp.Parkirisce.Pokrito</td>
+            <th>Datum od</th>
+            <th>Datum do</th>
+            <th>Cena</th>
+            <th>Število ljudi</th>
+            <th>Dvorana</th>
         </tr>
-    }
-</table>  
+        @foreach (TehHotel.Gui.Test.RezervacijaService.RezervacijaDvorane rd in racun.RezervacijeDvorane)
+        {
+            <tr>
+                <td>@rd.DatumOd.ToShortDateString()</td>
+                <td>@rd.DatumDo.ToShortDateString()</td>
+                <td>@rd.Cena</td>
+                <td>@rd.SteviloLjudi</td>
+                <td>@rd.Dvorana.Ime</td>
+            </tr>
+        }
+    </table>  
+   }
+}
+
+@{ if (racun.RezervacijeParkirisca != null && racun.RezervacijeParkirisca.Count() != 0)
+   {
+    <br />
+    <h3>Rezervacije parkirišč</h3>
+    <table class="mojatabela">
+        <tr>
+            <th>Datum od</th>
+            <th>Datum do</th>
+            <th>Cena</th>
+            <th>Številka parkirišča</th>
+            <th>Pokrito</th>
+        </tr>
+        @foreach (TehHotel.Gui.Test.RezervacijaService.RezervacijaParkirisca rp in racun.RezervacijeParkirisca)
+        {
+            <tr>
+                <td>@rp.DatumOd.ToShortDateString()</td>
+                <td>@rp.DatumDo.ToShortDateString()</td>
+                <td>@rp.Cena</td>
+                <td>@rp.Parkirisce.Stevilka</td>
+                <td>@rp.Parkirisce.Pokrito</td>
+            </tr>
+        }
+    </table>  
        
+   }
 }
+@{ if (!@racun.Placano && ViewData["izdanPriBanki"] == null)
+   {
+    <input type="button" id="posredujb" name="posredujb" value="Posreduj banki" />
+    <div style="display: none; background-color: #EFEEEF" id="dialog-form" title="Vpis stranke">
+        <form method="post" action="/Racun/Posreduj">
+            TRR:
+            <input type="text" name="trr" />
+            <input type="hidden" name="racunId" value="@racun.IdRacun" />
+            Ker morajo komitenti obstajati na banki, lahko uporabimo enega izmed treh prej ustvarjenih računov:
+            <br />
+            SI56251000000001201<br />
+            SI56251000000001202<br />
+            SI56251000000001203<br />
+            <br />
+            <input type="submit" name="submitposreduj" value="Posreduj" />
+        </form>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#posredujb").click(function () {
+                $("#dialog-form").dialog({
+                    width: 350
+                });
+                return false;
+            });
+        });
+    </script>
+   }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.feri.uni-mb.si/soa/KBP/prenosDenarja" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PrenosDenarja">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="StevilkaRacunaPosiljatelj" type="xs:string" />
+        <xs:element name="StevilkaRacunaPrejemnik" type="xs:string" />
+        <xs:element name="ZnesekPrenosa" type="xs:decimal" />
+        <xs:element name="Valuta" type="xs:string" />
+        <xs:element name="CasPrenosa" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

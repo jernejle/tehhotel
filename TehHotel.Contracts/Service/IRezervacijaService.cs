@@ -48,6 +48,9 @@ namespace TehHotel.Contracts.Service
         Racun ReadRacun(int Racunid);
 
         [OperationContract]
+        Racun ReadRacunStranka(int StrankaId);
+
+        [OperationContract]
         Soba ReadSoba(int SobaId);
 
         [OperationContract]

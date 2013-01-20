@@ -101,7 +101,7 @@ namespace TehHotel.Model
 
         public bool PlacajRacun(int id)
         {
-            throw new NotImplementedException(); // TO-DO
+            return racdao.Placaj(id);
         }
 
         public List<Soba> ListMozneRezervacijeSobe(int idHotel, DateTime datumOd, DateTime datumDo, FilterOptionsSoba fos)
@@ -122,6 +122,11 @@ namespace TehHotel.Model
         public Racun ReadRacun(int Racunid)
         {
             return racdao.Read(Racunid);
+        }
+
+        public Racun ReadRacunStranka(int StrankaId)
+        {
+            return racdao.ReadByStranka(StrankaId);
         }
 
         public Soba ReadSoba(int SobaId)

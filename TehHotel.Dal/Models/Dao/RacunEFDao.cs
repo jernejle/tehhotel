@@ -15,7 +15,7 @@ namespace TehHotel.Dal.Models.Dao
 
         public RacunEFDao()
         {
-             db = new TehHotelContext();
+            db = new TehHotelContext();
 
             Mapper.CreateMap<RacunEF, Racun>();
             Mapper.CreateMap<Racun, RacunEF>();
@@ -54,86 +54,86 @@ namespace TehHotel.Dal.Models.Dao
 
         public bool Create(Racun entity)
         {
-                if (entity != null)
+            if (entity != null)
+            {
+                RacunEF rac = Mapper.Map<Racun, RacunEF>(entity);
+                HotelEF h = new HotelEF() { Id = entity.HotelId };
+                StrankaEF s = new StrankaEF() { Id = entity.Stranka.Id };
+                db.Stranke.Attach(s);
+                db.Hoteli.Attach(h);
+
+                rac.Hotel = h;
+                rac.Stranka = s;
+
+                if (entity.RezervacijeSob != null)
                 {
-                    RacunEF rac = Mapper.Map<Racun, RacunEF>(entity);
-                    HotelEF h = new HotelEF() { Id = entity.HotelId };
-                    StrankaEF s = new StrankaEF() { Id = entity.Stranka.Id};
-                    db.Stranke.Attach(s);
-                    db.Hoteli.Attach(h);
-
-                    rac.Hotel = h;
-                    rac.Stranka = s;
-
-                    if (entity.RezervacijeSob != null)
+                    int sobaid;
+                    for (int i = 0; i < entity.RezervacijeSob.Count; i++)
                     {
-                        int sobaid;
-                        for (int i = 0; i < entity.RezervacijeSob.Count; i++)
-                        {
-                            sobaid = entity.RezervacijeSob.ElementAt(i).Soba.Id;
-                            rac.RezervacijeSob.ElementAt(i).Hotel = h;
-                            rac.RezervacijeSob.ElementAt(i).Stranka = s;
-                            rac.RezervacijeSob.ElementAt(i).Soba = db.Sobe.SingleOrDefault(x => x.Id ==  sobaid);
-                        }
+                        sobaid = entity.RezervacijeSob.ElementAt(i).Soba.Id;
+                        rac.RezervacijeSob.ElementAt(i).Hotel = h;
+                        rac.RezervacijeSob.ElementAt(i).Stranka = s;
+                        rac.RezervacijeSob.ElementAt(i).Soba = db.Sobe.SingleOrDefault(x => x.Id == sobaid);
                     }
-
-                    if (entity.RezervacijeDvorane != null)
-                    {
-                        int dvoranaId;
-                        for (int i = 0; i < entity.RezervacijeDvorane.Count; i++)
-                        {
-                            dvoranaId = entity.RezervacijeDvorane.ElementAt(i).Dvorana.Id;
-                            rac.RezervacijeDvorane.ElementAt(i).Stranka = s;
-                            rac.RezervacijeDvorane.ElementAt(i).Dvorana = db.Dvorane.SingleOrDefault(x => x.Id == dvoranaId);
-                        }
-                    }
-
-                    if (entity.RezervacijeParkirisca != null)
-                    {
-                        int parkId;
-                        for (int i = 0; i < entity.RezervacijeParkirisca.Count; i++)
-                        {
-                            parkId = entity.RezervacijeParkirisca.ElementAt(i).Parkirisce.Id;
-                            rac.RezervacijeParkirisca.ElementAt(i).Parkirisce = db.Parkirisca.SingleOrDefault(x => x.Id == parkId);
-                            rac.RezervacijeParkirisca.ElementAt(i).Stranka = s;
-                        }
-                    }
-                    
-                    db.Racuni.Add(rac);
-                    db.SaveChanges();
-                    return true;
                 }
-                return false;
+
+                if (entity.RezervacijeDvorane != null)
+                {
+                    int dvoranaId;
+                    for (int i = 0; i < entity.RezervacijeDvorane.Count; i++)
+                    {
+                        dvoranaId = entity.RezervacijeDvorane.ElementAt(i).Dvorana.Id;
+                        rac.RezervacijeDvorane.ElementAt(i).Stranka = s;
+                        rac.RezervacijeDvorane.ElementAt(i).Dvorana = db.Dvorane.SingleOrDefault(x => x.Id == dvoranaId);
+                    }
+                }
+
+                if (entity.RezervacijeParkirisca != null)
+                {
+                    int parkId;
+                    for (int i = 0; i < entity.RezervacijeParkirisca.Count; i++)
+                    {
+                        parkId = entity.RezervacijeParkirisca.ElementAt(i).Parkirisce.Id;
+                        rac.RezervacijeParkirisca.ElementAt(i).Parkirisce = db.Parkirisca.SingleOrDefault(x => x.Id == parkId);
+                        rac.RezervacijeParkirisca.ElementAt(i).Stranka = s;
+                    }
+                }
+
+                db.Racuni.Add(rac);
+                db.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public Racun Read(int id)
         {
-                RacunEF racunef = db.Racuni.Include("Stranka").Include("RezervacijeSob").Include("RezervacijeSob.Soba").Include("RezervacijeDvorane").Include("RezervacijeParkirisca").SingleOrDefault(x => x.Id == id);
-                Racun rp = (racunef != null) ? Mapper.Map<RacunEF, Racun>(racunef) : null;
-                return rp;
+            RacunEF racunef = db.Racuni.Include("Stranka").Include("RezervacijeSob").Include("RezervacijeSob.Soba").Include("RezervacijeDvorane").Include("RezervacijeParkirisca").SingleOrDefault(x => x.Id == id);
+            Racun rp = (racunef != null) ? Mapper.Map<RacunEF, Racun>(racunef) : null;
+            return rp;
         }
 
         public Racun ReadByStranka(int id)
         {
-                RacunEF racunef = db.Racuni.Include("Stranka").Include("RezervacijeSob").Include("RezervacijeDvorane").Include("RezervacijeParkirisca").Where(w => w.Placano == false).Where(q => q.Stranka.Id == id).OrderByDescending(x => x.Id).FirstOrDefault();
-                Racun rp = (racunef != null) ? Mapper.Map<RacunEF, Racun>(racunef) : null;
-                return rp;
+            RacunEF racunef = db.Racuni.Include("Stranka").Include("RezervacijeSob").Include("RezervacijeDvorane").Include("RezervacijeParkirisca").Where(w => w.Placano == false).Where(q => q.Stranka.Id == id).OrderByDescending(x => x.Id).FirstOrDefault();
+            Racun rp = (racunef != null) ? Mapper.Map<RacunEF, Racun>(racunef) : null;
+            return rp;
         }
 
         public List<Racun> ReadAllByStranka(int id)
         {
-                List<RacunEF> racuni_ef = db.Racuni.Include("Stranka").Include("RezervacijeSob").Include("RezervacijeDvorane").Include("RezervacijeParkirisca").Where(q => q.Stranka.Id == id).ToList();
-                List<Racun> racuni = (racuni_ef != null ) ? Mapper.Map<List<RacunEF>, List<Racun>>(racuni_ef) : null;
-                return racuni;
+            List<RacunEF> racuni_ef = db.Racuni.Include("Stranka").Include("RezervacijeSob").Include("RezervacijeDvorane").Include("RezervacijeParkirisca").Where(q => q.Stranka.Id == id).ToList();
+            List<Racun> racuni = (racuni_ef != null) ? Mapper.Map<List<RacunEF>, List<Racun>>(racuni_ef) : null;
+            return racuni;
         }
 
         public bool Update(Racun entity)
         {
-                RacunEF rac_ef = Mapper.Map<Racun, RacunEF>(entity);
-                db.Racuni.Attach(rac_ef);
-                db.Entry(rac_ef).State = EntityState.Modified;
-                db.SaveChanges();
-                return true;
+            RacunEF rac_ef = Mapper.Map<Racun, RacunEF>(entity);
+            db.Racuni.Attach(rac_ef);
+            db.Entry(rac_ef).State = EntityState.Modified;
+            db.SaveChanges();
+            return true;
         }
 
         public bool Delete(int id)
@@ -168,9 +168,9 @@ namespace TehHotel.Dal.Models.Dao
 
         public List<Racun> List()
         {
-                List<RacunEF> racuni_ef = db.Racuni.ToList();
-                List<Racun> racuni = (racuni_ef != null) ? Mapper.Map<List<RacunEF>, List<Racun>>(racuni_ef) : null;
-                return racuni;
+            List<RacunEF> racuni_ef = db.Racuni.ToList();
+            List<Racun> racuni = (racuni_ef != null) ? Mapper.Map<List<RacunEF>, List<Racun>>(racuni_ef) : null;
+            return racuni;
         }
 
         public List<Racun> readNeplacaniRacuniStranke(int idStranka)
@@ -178,6 +178,22 @@ namespace TehHotel.Dal.Models.Dao
             List<RacunEF> racuni_ef = db.Racuni.Include("Stranka").Include("RezervacijeSob").Include("RezervacijeDvorane").Include("RezervacijeParkirisca").Where(q => q.Stranka.Id == idStranka).Where(x => x.Placano == false).ToList();
             List<Racun> racuni = (racuni_ef != null) ? Mapper.Map<List<RacunEF>, List<Racun>>(racuni_ef) : null;
             return racuni;
+        }
+
+        public bool Placaj(int idRacun)
+        {
+            RacunEF r = db.Racuni.SingleOrDefault(x => x.Id == idRacun);
+
+            if (r != null && r.Placano == false)
+            {
+                r.Placano = true;
+                db.Racuni.Attach(r);
+                db.Entry(r).State = EntityState.Modified;
+                db.SaveChanges();
+                return true;
+            }
+            else
+                return false;
         }
     }
 }

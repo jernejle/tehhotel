@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws.kbp.soa.feri.uni_mb.si/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="KBP-Stranke" targetNamespace="http://ws.kbp.soa.feri.uni_mb.si/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=1" namespace="http://www.feri.uni-mb.si/soa/KBP/prenosDenarja" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=2" namespace="http://www.feri.uni-mb.si/soa/KBP/pregledPrometa" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=3" namespace="http://www.feri.uni-mb.si/soa/KBP/placiloSKartico" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=4" namespace="http://www.feri.uni-mb.si/soa/KBP/odgovor" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=5" namespace="http://www.feri.uni-mb.si/soa/KBP/kredit" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=6" namespace="http://www.feri.uni-mb.si/soa/KBP/izdaniRacun" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=7" namespace="http://www.feri.uni-mb.si/soa/KBP/intranet" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke?xsd=8" namespace="http://www.feri.uni-mb.si/soa/KBP" />
+    </xsd:schema>
+  </types>
+  <message name="izdajRacun">
+    <part xmlns:ns1="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns1:izdajRacun" />
+  </message>
+  <message name="izdajRacunResponse">
+    <part xmlns:ns2="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns2:izdajRacunResponse" />
+  </message>
+  <message name="pregledNeplacanihIzdanihRacunov">
+    <part xmlns:ns3="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns3:pregledNeplacanihIzdanihRacunov" />
+  </message>
+  <message name="pregledNeplacanihIzdanihRacunovResponse">
+    <part xmlns:ns4="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns4:pregledNeplacanihIzdanihRacunovResponse" />
+  </message>
+  <message name="pregledPlacanihIzdanihRacunov">
+    <part xmlns:ns5="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns5:pregledPlacanihIzdanihRacunov" />
+  </message>
+  <message name="pregledPlacanihIzdanihRacunovResponse">
+    <part xmlns:ns6="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns6:pregledPlacanihIzdanihRacunovResponse" />
+  </message>
+  <message name="preklicAvtomatskegaPlacevanjaRacuna">
+    <part xmlns:ns7="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns7:preklicAvtomatskegaPlacevanjaRacuna" />
+  </message>
+  <message name="preklicAvtomatskegaPlacevanjaRacunaResponse">
+    <part xmlns:ns8="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns8:preklicAvtomatskegaPlacevanjaRacunaResponse" />
+  </message>
+  <message name="preklicNeplacanegaRacuna">
+    <part xmlns:ns9="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns9:preklicNeplacanegaRacuna" />
+  </message>
+  <message name="preklicNeplacanegaRacunaResponse">
+    <part xmlns:ns10="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns10:preklicNeplacanegaRacunaResponse" />
+  </message>
+  <message name="pregledPrometa">
+    <part xmlns:ns11="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns11:pregledPrometa" />
+  </message>
+  <message name="pregledPrometaResponse">
+    <part xmlns:ns12="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns12:pregledPrometaResponse" />
+  </message>
+  <message name="pregledStanja">
+    <part xmlns:ns13="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns13:pregledStanja" />
+  </message>
+  <message name="pregledStanjaResponse">
+    <part xmlns:ns14="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns14:pregledStanjaResponse" />
+  </message>
+  <message name="pregledNeplacanihRacunov">
+    <part xmlns:ns15="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns15:pregledNeplacanihRacunov" />
+  </message>
+  <message name="pregledNeplacanihRacunovResponse">
+    <part xmlns:ns16="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns16:pregledNeplacanihRacunovResponse" />
+  </message>
+  <message name="pregledPlacanihRacunov">
+    <part xmlns:ns17="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns17:pregledPlacanihRacunov" />
+  </message>
+  <message name="pregledPlacanihRacunovResponse">
+    <part xmlns:ns18="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns18:pregledPlacanihRacunovResponse" />
+  </message>
+  <message name="placiloSKartico">
+    <part xmlns:ns19="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns19:placiloSKartico" />
+  </message>
+  <message name="placiloSKarticoResponse">
+    <part xmlns:ns20="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns20:placiloSKarticoResponse" />
+  </message>
+  <message name="pregledPlacilSKartico">
+    <part xmlns:ns21="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns21:pregledPlacilSKartico" />
+  </message>
+  <message name="pregledPlacilSKarticoResponse">
+    <part xmlns:ns22="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns22:pregledPlacilSKarticoResponse" />
+  </message>
+  <message name="prenosDenarja">
+    <part xmlns:ns23="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns23:prenosDenarja" />
+  </message>
+  <message name="prenosDenarjaResponse">
+    <part xmlns:ns24="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns24:prenosDenarjaResponse" />
+  </message>
+  <message name="avtomatskoPlacevanjeRacuna">
+    <part xmlns:ns25="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns25:avtomatskoPlacevanjeRacuna" />
+  </message>
+  <message name="avtomatskoPlacevanjeRacunaResponse">
+    <part xmlns:ns26="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns26:avtomatskoPlacevanjeRacunaResponse" />
+  </message>
+  <message name="pregledKreditovNaRacunu">
+    <part xmlns:ns27="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns27:pregledKreditovNaRacunu" />
+  </message>
+  <message name="pregledKreditovNaRacunuResponse">
+    <part xmlns:ns28="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns28:pregledKreditovNaRacunuResponse" />
+  </message>
+  <message name="prijava">
+    <part xmlns:ns29="http://www.feri.uni-mb.si/soa/KBP/intranet" name="parameters" element="ns29:prijava" />
+  </message>
+  <message name="prijavaResponse">
+    <part xmlns:ns30="http://www.feri.uni-mb.si/soa/KBP/intranet" name="parameters" element="ns30:prijavaResponse" />
+  </message>
+  <message name="placajRacun">
+    <part xmlns:ns31="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns31:placajRacun" />
+  </message>
+  <message name="placajRacunResponse">
+    <part xmlns:ns32="http://www.feri.uni-mb.si/soa/KBP" name="parameters" element="ns32:placajRacunResponse" />
+  </message>
+  <portType name="KBPBusinessWSImpl">
+    <operation name="izdajRacun">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/izdajRacunRequest" message="tns:izdajRacun" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/izdajRacunResponse" message="tns:izdajRacunResponse" />
+    </operation>
+    <operation name="pregledNeplacanihIzdanihRacunov">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledNeplacanihIzdanihRacunovRequest" message="tns:pregledNeplacanihIzdanihRacunov" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledNeplacanihIzdanihRacunovResponse" message="tns:pregledNeplacanihIzdanihRacunovResponse" />
+    </operation>
+    <operation name="pregledPlacanihIzdanihRacunov">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledPlacanihIzdanihRacunovRequest" message="tns:pregledPlacanihIzdanihRacunov" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledPlacanihIzdanihRacunovResponse" message="tns:pregledPlacanihIzdanihRacunovResponse" />
+    </operation>
+    <operation name="preklicAvtomatskegaPlacevanjaRacuna">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/preklicAvtomatskegaPlacevanjaRacunaRequest" message="tns:preklicAvtomatskegaPlacevanjaRacuna" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/preklicAvtomatskegaPlacevanjaRacunaResponse" message="tns:preklicAvtomatskegaPlacevanjaRacunaResponse" />
+    </operation>
+    <operation name="preklicNeplacanegaRacuna">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/preklicNeplacanegaRacunaRequest" message="tns:preklicNeplacanegaRacuna" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/preklicNeplacanegaRacunaResponse" message="tns:preklicNeplacanegaRacunaResponse" />
+    </operation>
+    <operation name="pregledPrometa">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledPrometaRequest" message="tns:pregledPrometa" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledPrometaResponse" message="tns:pregledPrometaResponse" />
+    </operation>
+    <operation name="pregledStanja">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledStanjaRequest" message="tns:pregledStanja" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledStanjaResponse" message="tns:pregledStanjaResponse" />
+    </operation>
+    <operation name="pregledNeplacanihRacunov">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledNeplacanihRacunovRequest" message="tns:pregledNeplacanihRacunov" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledNeplacanihRacunovResponse" message="tns:pregledNeplacanihRacunovResponse" />
+    </operation>
+    <operation name="pregledPlacanihRacunov">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledPlacanihRacunovRequest" message="tns:pregledPlacanihRacunov" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledPlacanihRacunovResponse" message="tns:pregledPlacanihRacunovResponse" />
+    </operation>
+    <operation name="placiloSKartico">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/placiloSKarticoRequest" message="tns:placiloSKartico" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/placiloSKarticoResponse" message="tns:placiloSKarticoResponse" />
+    </operation>
+    <operation name="pregledPlacilSKartico">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledPlacilSKarticoRequest" message="tns:pregledPlacilSKartico" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledPlacilSKarticoResponse" message="tns:pregledPlacilSKarticoResponse" />
+    </operation>
+    <operation name="prenosDenarja">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/prenosDenarjaRequest" message="tns:prenosDenarja" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/prenosDenarjaResponse" message="tns:prenosDenarjaResponse" />
+    </operation>
+    <operation name="avtomatskoPlacevanjeRacuna">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/avtomatskoPlacevanjeRacunaRequest" message="tns:avtomatskoPlacevanjeRacuna" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/avtomatskoPlacevanjeRacunaResponse" message="tns:avtomatskoPlacevanjeRacunaResponse" />
+    </operation>
+    <operation name="pregledKreditovNaRacunu">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledKreditovNaRacunuRequest" message="tns:pregledKreditovNaRacunu" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/pregledKreditovNaRacunuResponse" message="tns:pregledKreditovNaRacunuResponse" />
+    </operation>
+    <operation name="prijava">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/prijavaRequest" message="tns:prijava" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/prijavaResponse" message="tns:prijavaResponse" />
+    </operation>
+    <operation name="placajRacun">
+      <input wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/placajRacunRequest" message="tns:placajRacun" />
+      <output wsam:Action="http://ws.kbp.soa.feri.uni_mb.si/KBPBusinessWSImpl/placajRacunResponse" message="tns:placajRacunResponse" />
+    </operation>
+  </portType>
+  <binding name="KBPBusinessWSImplPortBinding" type="tns:KBPBusinessWSImpl">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="izdajRacun">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pregledNeplacanihIzdanihRacunov">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pregledPlacanihIzdanihRacunov">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="preklicAvtomatskegaPlacevanjaRacuna">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="preklicNeplacanegaRacuna">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pregledPrometa">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pregledStanja">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pregledNeplacanihRacunov">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pregledPlacanihRacunov">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="placiloSKartico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pregledPlacilSKartico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="prenosDenarja">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="avtomatskoPlacevanjeRacuna">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pregledKreditovNaRacunu">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="prijava">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="placajRacun">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="KBP-Stranke">
+    <port name="KBPBusinessWSImplPort" binding="tns:KBPBusinessWSImplPortBinding">
+      <soap:address location="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke" />
+    </port>
+  </service>
+</definitions>

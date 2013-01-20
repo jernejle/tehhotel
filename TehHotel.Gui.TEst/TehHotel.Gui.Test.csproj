@@ -181,6 +181,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Models\BancniRacun.cs" />
     <Compile Include="ViewModel\RentACarModel.cs" />
     <Compile Include="Models\RezervacijaModel.cs" />
     <Compile Include="Models\RezervacijaPosebneStoritve.cs" />
@@ -190,6 +191,16 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\BankaSecureService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\BankaService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
     <Compile Include="Web References\HotelService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -206,12 +217,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Web References\RentACarVozilaService\Reference.cs">
+    <Compile Include="Web References\LetalisceService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Web References\LetalisceService\Reference.cs">
+    <Compile Include="Web References\RentACarVozilaService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -321,12 +332,36 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Web References\RentACarRezervacijeService\RentACar2_Rezervacije.disco" />
-    <Content Include="Web References\RentACarVozilaService\Reference.map">
+    <None Include="Web References\RentACarRezervacijeService\RentACar2_Rezervacije.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\RentACarRezervacijeService\RentACar2_Rezervacije0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\RentACarRezervacijeService\RentACar2_Rezervacije1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\RentACarRezervacijeService\Rezervacija.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\RentACarRezervacijeService\Rezervacije.wsdl" />
+    <Content Include="Web References\RentACarStrankeService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Web References\RentACarVozilaService\RentACar2_Vozila.disco" />
+    <None Include="Web References\RentACarStrankeService\RentACar2_Stranke.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\RentACarStrankeService\RentACar2_Stranke0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\RentACarStrankeService\RentACar2_Stranke1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\RentACarStrankeService\Stranka.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\RentACarStrankeService\Stranke.wsdl" />
     <Content Include="Web References\RezervacijaService\Dvorana.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -336,11 +371,36 @@
     <Content Include="Web References\RezervacijaService\Racun.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\RezervacijaService\Reference.map">
+    <Content Include="Web References\BankaSecureService\KBP_Prijava.wsdl" />
+    <None Include="Web References\BankaSecureService\KBP_Prijava.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\BankaSecureService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Web References\RezervacijaService\RezervacijaService.disco" />
+    <Content Include="Web References\RentACarVozilaService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <None Include="Web References\RentACarVozilaService\RentACar2_Vozila.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\RentACarVozilaService\RentACar2_Vozila0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\RentACarVozilaService\RentACar2_Vozila1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\RentACarVozilaService\Vozila.wsdl" />
+    <Content Include="Web References\RentACarVozilaService\Vozilo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\RezervacijaService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\RezervacijaService\RezervacijaService.disco" />
     <Content Include="Web References\StrankaService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -391,16 +451,71 @@
     <Content Include="Views\Parkirisce\MozneRezervacije.cshtml" />
     <Content Include="Views\Hotel\Izpis.cshtml" />
     <Content Include="Views\Hotel\Podrobnosti.cshtml" />
+    <Content Include="Views\RentACar\IzposojaResult.cshtml" />
+    <Content Include="Views\RentACar\Izposoja.cshtml" />
+    <Content Include="Views\Letalisce\IskanjeLeta.cshtml" />
+    <Content Include="Views\Letalisce\MozniLeti.cshtml" />
+    <Content Include="Web References\RentACarStrankeService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <Content Include="Web References\HotelService\HotelService.wsdl" />
     <Content Include="Views\RentACar\IzposojaResult.cshtml" />
     <Content Include="Views\RentACar\Izposoja.cshtml" />
     <Content Include="Views\Letalisce\IskanjeLeta.cshtml" />
     <Content Include="Views\Letalisce\MozniLeti.cshtml" />
-    <Content Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
     <Content Include="Web References\RentACarStrankeService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
+    <Content Include="Web References\BankaService\IzdaniRacun.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\BankaService\KBP-Stranke.wsdl" />
+    <None Include="Web References\BankaService\KBP-Stranke.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\BankaService\KBP-Stranke6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\BankaService\Kredit.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\BankaService\Odgovor.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\BankaService\PlaciloSKartico.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\BankaService\PregledPrometa.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\BankaService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\RentACar\IzposojaResult.cshtml" />
+    <Content Include="Views\RentACar\Izposoja.cshtml" />
+    <Content Include="Views\Letalisce\IskanjeLeta.cshtml" />
+    <Content Include="Views\Letalisce\MozniLeti.cshtml" />
     <Content Include="Web References\HotelService\HotelService.wsdl" />
     <Content Include="Views\DodatneStoritve\Index.cshtml" />
     <None Include="Web References\HotelService\HotelService.xsd">
@@ -417,45 +532,7 @@
     <Content Include="Web References\HotelService\Zaposleni.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <None Include="Web References\RentACarRezervacijeService\RentACar2_Rezervacije.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\RentACarRezervacijeService\RentACar2_Rezervacije0.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\RentACarRezervacijeService\RentACar2_Rezervacije1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Web References\RentACarRezervacijeService\Rezervacija.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\RentACarRezervacijeService\Rezervacije.wsdl" />
-    <None Include="Web References\RentACarStrankeService\RentACar2_Stranke.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\RentACarStrankeService\RentACar2_Stranke0.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\RentACarStrankeService\RentACar2_Stranke1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Web References\RentACarStrankeService\Stranka.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
-    <Content Include="Web References\RentACarStrankeService\Stranke.wsdl" />
-    <None Include="Web References\RentACarVozilaService\RentACar2_Vozila.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\RentACarVozilaService\RentACar2_Vozila0.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\RentACarVozilaService\RentACar2_Vozila1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Web References\RentACarVozilaService\Vozila.wsdl" />
-    <Content Include="Web References\RentACarVozilaService\Vozilo.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </Content>
+    <None Include="Web References\RezervacijaService\RezervacijaService.wsdl" />
     <Content Include="Web References\LetalisceService\Dodatek.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -500,7 +577,7 @@
     <None Include="Web References\RezervacijaService\RezervacijaService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Web References\RezervacijaService\RezervacijaService0.wsdl" />
+    <None Include="Web References\RezervacijaService\RezervacijaService0.wsdl" />
     <None Include="Web References\RezervacijaService\RezervacijaService0.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -533,27 +610,16 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc">
+    <WebReferenceUrl Include="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\RentACarRezervacijeService\</RelPath>
-      <UpdateFromURL>http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc</UpdateFromURL>
+      <UpdateFromURL>http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc%3fwsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>TehHotel_Gui_Test_RentACarRezervacijeService_Rezervacije</CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="http://164.8.251.93/SOATravel/letalec2/ForeachAirlines.svc%3fsingleWsdl">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\LetalisceService\</RelPath>
-      <UpdateFromURL>http://164.8.251.93/SOATravel/letalec2/ForeachAirlines.svc%3fsingleWsdl</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>TehHotel_Gui_Test_LetalisceService_Letalec2</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
@@ -566,16 +632,49 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>TehHotel_Gui_Test_RentACarStrankeService_Stranke</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Vozila.Vozila.svc">
+    <WebReferenceUrl Include="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Vozila.Vozila.svc%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\RentACarVozilaService\</RelPath>
-      <UpdateFromURL>http://164.8.251.93/SOATravel/rentacar2/RentACar2_Vozila.Vozila.svc</UpdateFromURL>
+      <UpdateFromURL>http://164.8.251.93/SOATravel/rentacar2/RentACar2_Vozila.Vozila.svc%3fwsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>TehHotel_Gui_Test_RentACarVozilaService_Vozila</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://164.8.251.93:8080/KBP-Banka/KBP-Stranke%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\BankaService\</RelPath>
+      <UpdateFromURL>http://164.8.251.93:8080/KBP-Banka/KBP-Stranke%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TehHotel_Gui_Test_BankaService_KBP_Stranke</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://164.8.251.93:8080/KBP_Prijava/KBP_Prijava%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\BankaSecureService\</RelPath>
+      <UpdateFromURL>http://164.8.251.93:8080/KBP_Prijava/KBP_Prijava%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TehHotel_Gui_Test_BankaSecureService_KBP_Prijava</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://164.8.251.93/SOATravel/letalec2/ForeachAirlines.svc%3fsingleWsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LetalisceService\</RelPath>
+      <UpdateFromURL>http://164.8.251.93/SOATravel/letalec2/ForeachAirlines.svc%3fsingleWsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TehHotel_Gui_Test_LetalisceService_Letalec2</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://164.8.251.93/SOATravel/hotel2/HotelService.svc">
       <UrlBehavior>Dynamic</UrlBehavior>

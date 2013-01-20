@@ -2,9 +2,8 @@
 <DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Results>
     <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc?xsd=xsd2" filename="RentACar2_Stranke.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc?disco" filename="RentACar2_Stranke.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc?xsd=xsd1" filename="RentACar2_Stranke0.xsd" />
     <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc?wsdl" filename="Stranke.wsdl" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc?xsd=xsd0" filename="RentACar2_Stranke0.xsd" />
-    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc?xsd=xsd1" filename="RentACar2_Stranke1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc?xsd=xsd0" filename="RentACar2_Stranke1.xsd" />
   </Results>
 </DiscoveryClientResultsFile>
