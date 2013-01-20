@@ -166,6 +166,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DodatneStoritveController.cs" />
     <Compile Include="Controllers\DvoranaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelController.cs" />
@@ -402,6 +403,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <Content Include="Web References\HotelService\HotelService.wsdl" />
+    <Content Include="Views\DodatneStoritve\Index.cshtml" />
     <None Include="Web References\HotelService\HotelService.xsd">
       <SubType>Designer</SubType>
     </None>
