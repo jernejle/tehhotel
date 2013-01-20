@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5ec72336-43c5-4979-92e2-eb4fb1b1b9c0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a95e85c6-a5ad-42bd-b2de-21dba4acbfe6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:1476/RezervacijaServiceSecure.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://164.8.251.93/SOATravel/hotel2/RezervacijaServiceSecure.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RezervacijaServiceSecure.xsd" MetadataType="Schema" ID="76e8bc27-987b-4cbb-b711-7a8d04e305ef" SourceId="1" SourceUrl="http://localhost:1476/RezervacijaServiceSecure.svc?xsd=xsd0" />
-    <MetadataFile FileName="RezervacijaServiceSecure1.xsd" MetadataType="Schema" ID="d6908957-5b85-492d-8dab-53e8de7fb382" SourceId="1" SourceUrl="http://localhost:1476/RezervacijaServiceSecure.svc?xsd=xsd2" />
-    <MetadataFile FileName="RezervacijaServiceSecure2.xsd" MetadataType="Schema" ID="6735cca8-a753-43bd-aefe-09730f67c56d" SourceId="1" SourceUrl="http://localhost:1476/RezervacijaServiceSecure.svc?xsd=xsd1" />
-    <MetadataFile FileName="RezervacijaServiceSecure.wsdl" MetadataType="Wsdl" ID="8d00f23f-223f-4ffe-902d-668b6f6defb6" SourceId="1" SourceUrl="http://localhost:1476/RezervacijaServiceSecure.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="RezervacijaServiceSecure1.wsdl" MetadataType="Wsdl" ID="7c4ed235-41ee-41e0-b121-fdc8a8a3b996" SourceId="1" SourceUrl="http://localhost:1476/RezervacijaServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="RezervacijaServiceSecure.xsd" MetadataType="Schema" ID="80df51a9-2411-4103-b5cd-b74dd649cc5a" SourceId="1" SourceUrl="http://164.8.251.93/SOATravel/hotel2/RezervacijaServiceSecure.svc?xsd=xsd2" />
+    <MetadataFile FileName="RezervacijaServiceSecure.wsdl" MetadataType="Wsdl" ID="aab7235b-cd34-451a-bab2-e52edae4ec1c" SourceId="1" SourceUrl="http://164.8.251.93/SOATravel/hotel2/RezervacijaServiceSecure.svc?wsdl" />
+    <MetadataFile FileName="RezervacijaServiceSecure1.wsdl" MetadataType="Wsdl" ID="5204134d-faf6-4253-8e78-cc947d4c49b6" SourceId="1" SourceUrl="http://164.8.251.93/SOATravel/hotel2/RezervacijaServiceSecure.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="RezervacijaServiceSecure1.xsd" MetadataType="Schema" ID="334aa102-b639-41e1-8993-00793bcdbd70" SourceId="1" SourceUrl="http://164.8.251.93/SOATravel/hotel2/RezervacijaServiceSecure.svc?xsd=xsd1" />
+    <MetadataFile FileName="RezervacijaServiceSecure2.xsd" MetadataType="Schema" ID="a515aaa8-46e7-4589-88c7-f7dc75b1adad" SourceId="1" SourceUrl="http://164.8.251.93/SOATravel/hotel2/RezervacijaServiceSecure.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

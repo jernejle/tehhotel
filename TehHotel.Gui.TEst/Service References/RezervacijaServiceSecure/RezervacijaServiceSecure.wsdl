@@ -1,172 +1,862 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http//www.tehhotel.com/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http//www.tehhotel.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsdl:types>
-    <xsd:schema targetNamespace="http//www.tehhotel.com/Imports">
-      <xsd:import schemaLocation="http://localhost:1476/RezervacijaServiceSecure.svc?xsd=xsd0" namespace="http//www.tehhotel.com/" />
-      <xsd:import schemaLocation="http://localhost:1476/RezervacijaServiceSecure.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:1476/RezervacijaServiceSecure.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TehHotel.Contracts.Data" />
-    </xsd:schema>
-  </wsdl:types>
-  <wsdl:message name="RezervacijaService_CreateRezervacija_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateRezervacija" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_CreateRezervacija_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateRezervacijaResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_DeleteRacun_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRacun" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_DeleteRacun_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRacunResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_DeleteRezervacijaSobe_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRezervacijaSobe" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_DeleteRezervacijaSobe_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRezervacijaSobeResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_DeleteRezervacijaDvorane_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRezervacijaDvorane" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_DeleteRezervacijaDvorane_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRezervacijaDvoraneResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_DeleteRezervacijaParkirisca_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRezervacijaParkirisca" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_DeleteRezervacijaParkirisca_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteRezervacijaParkiriscaResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ListRacun_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListRacun" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ListRacun_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListRacunResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ListRacunNeplacani_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListRacunNeplacani" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ListRacunNeplacani_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListRacunNeplacaniResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_PlacajRacun_InputMessage">
-    <wsdl:part name="parameters" element="tns:PlacajRacun" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_PlacajRacun_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PlacajRacunResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ListMozneRezervacijeSobe_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListMozneRezervacijeSobe" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ListMozneRezervacijeSobe_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListMozneRezervacijeSobeResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ListMozneRezervacijeDvorane_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListMozneRezervacijeDvorane" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ListMozneRezervacijeDvorane_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListMozneRezervacijeDvoraneResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ListMozneRezervacijeParkirisca_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListMozneRezervacijeParkirisca" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ListMozneRezervacijeParkirisca_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListMozneRezervacijeParkiriscaResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ReadRacun_InputMessage">
-    <wsdl:part name="parameters" element="tns:ReadRacun" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ReadRacun_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ReadRacunResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ReadRacunStranka_InputMessage">
-    <wsdl:part name="parameters" element="tns:ReadRacunStranka" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ReadRacunStranka_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ReadRacunStrankaResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ReadSoba_InputMessage">
-    <wsdl:part name="parameters" element="tns:ReadSoba" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ReadSoba_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ReadSobaResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ReadDvorana_InputMessage">
-    <wsdl:part name="parameters" element="tns:ReadDvorana" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ReadDvorana_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ReadDvoranaResponse" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ReadParkirisce_InputMessage">
-    <wsdl:part name="parameters" element="tns:ReadParkirisce" />
-  </wsdl:message>
-  <wsdl:message name="RezervacijaService_ReadParkirisce_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ReadParkirisceResponse" />
-  </wsdl:message>
-  <wsdl:portType name="RezervacijaService">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http//www.tehhotel.com/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RezervacijaServiceSecure" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:AsymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:InitiatorToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:WssX509V3Token10 />
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:InitiatorToken>
+            <sp:RecipientToken>
+              <wsp:Policy>
+                <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                  <wsp:Policy>
+                    <sp:WssX509V3Token10 />
+                  </wsp:Policy>
+                </sp:X509Token>
+              </wsp:Policy>
+            </sp:RecipientToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic128 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+            <sp:OnlySignEntireHeadersAndBody />
+          </wsp:Policy>
+        </sp:AsymmetricBinding>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportRefKeyIdentifier />
+            <sp:MustSupportRefIssuerSerial />
+          </wsp:Policy>
+        </sp:Wss10>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_CreateRezervacija_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_CreateRezervacija_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_DeleteRacun_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_DeleteRacun_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_DeleteRezervacijaSobe_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_DeleteRezervacijaSobe_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_DeleteRezervacijaDvorane_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_DeleteRezervacijaDvorane_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_DeleteRezervacijaParkirisca_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_DeleteRezervacijaParkirisca_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ListRacun_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ListRacun_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ListRacunNeplacani_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ListRacunNeplacani_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_PlacajRacun_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_PlacajRacun_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ListMozneRezervacijeSobe_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ListMozneRezervacijeSobe_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ListMozneRezervacijeDvorane_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ListMozneRezervacijeDvorane_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ListMozneRezervacijeParkirisca_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ListMozneRezervacijeParkirisca_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ReadRacun_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ReadRacun_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ReadRacunStranka_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ReadRacunStranka_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ReadSoba_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ReadSoba_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ReadDvorana_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ReadDvorana_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ReadParkirisce_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RezervacijaServiceSecureEndpoint_ReadParkirisce_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http//www.tehhotel.com/" location="http://164.8.251.93/SOATravel/hotel2/RezervacijaServiceSecure.svc?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="RezervacijaServiceSecureEndpoint" type="i0:RezervacijaService">
+    <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CreateRezervacija">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/CreateRezervacija" message="tns:RezervacijaService_CreateRezervacija_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/CreateRezervacijaResponse" message="tns:RezervacijaService_CreateRezervacija_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/CreateRezervacija" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_CreateRezervacija_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_CreateRezervacija_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteRacun">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/DeleteRacun" message="tns:RezervacijaService_DeleteRacun_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/DeleteRacunResponse" message="tns:RezervacijaService_DeleteRacun_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/DeleteRacun" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_DeleteRacun_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_DeleteRacun_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteRezervacijaSobe">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/DeleteRezervacijaSobe" message="tns:RezervacijaService_DeleteRezervacijaSobe_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/DeleteRezervacijaSobeResponse" message="tns:RezervacijaService_DeleteRezervacijaSobe_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/DeleteRezervacijaSobe" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_DeleteRezervacijaSobe_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_DeleteRezervacijaSobe_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteRezervacijaDvorane">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/DeleteRezervacijaDvorane" message="tns:RezervacijaService_DeleteRezervacijaDvorane_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/DeleteRezervacijaDvoraneResponse" message="tns:RezervacijaService_DeleteRezervacijaDvorane_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/DeleteRezervacijaDvorane" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_DeleteRezervacijaDvorane_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_DeleteRezervacijaDvorane_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteRezervacijaParkirisca">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/DeleteRezervacijaParkirisca" message="tns:RezervacijaService_DeleteRezervacijaParkirisca_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/DeleteRezervacijaParkiriscaResponse" message="tns:RezervacijaService_DeleteRezervacijaParkirisca_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/DeleteRezervacijaParkirisca" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_DeleteRezervacijaParkirisca_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_DeleteRezervacijaParkirisca_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListRacun">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ListRacun" message="tns:RezervacijaService_ListRacun_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ListRacunResponse" message="tns:RezervacijaService_ListRacun_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ListRacun" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ListRacun_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ListRacun_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListRacunNeplacani">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ListRacunNeplacani" message="tns:RezervacijaService_ListRacunNeplacani_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ListRacunNeplacaniResponse" message="tns:RezervacijaService_ListRacunNeplacani_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ListRacunNeplacani" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ListRacunNeplacani_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ListRacunNeplacani_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="PlacajRacun">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/PlacajRacun" message="tns:RezervacijaService_PlacajRacun_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/PlacajRacunResponse" message="tns:RezervacijaService_PlacajRacun_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/PlacajRacun" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_PlacajRacun_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_PlacajRacun_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListMozneRezervacijeSobe">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ListMozneRezervacijeSobe" message="tns:RezervacijaService_ListMozneRezervacijeSobe_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ListMozneRezervacijeSobeResponse" message="tns:RezervacijaService_ListMozneRezervacijeSobe_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ListMozneRezervacijeSobe" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ListMozneRezervacijeSobe_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ListMozneRezervacijeSobe_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListMozneRezervacijeDvorane">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ListMozneRezervacijeDvorane" message="tns:RezervacijaService_ListMozneRezervacijeDvorane_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ListMozneRezervacijeDvoraneResponse" message="tns:RezervacijaService_ListMozneRezervacijeDvorane_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ListMozneRezervacijeDvorane" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ListMozneRezervacijeDvorane_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ListMozneRezervacijeDvorane_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListMozneRezervacijeParkirisca">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ListMozneRezervacijeParkirisca" message="tns:RezervacijaService_ListMozneRezervacijeParkirisca_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ListMozneRezervacijeParkiriscaResponse" message="tns:RezervacijaService_ListMozneRezervacijeParkirisca_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ListMozneRezervacijeParkirisca" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ListMozneRezervacijeParkirisca_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ListMozneRezervacijeParkirisca_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ReadRacun">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadRacun" message="tns:RezervacijaService_ReadRacun_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadRacunResponse" message="tns:RezervacijaService_ReadRacun_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ReadRacun" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ReadRacun_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ReadRacun_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ReadRacunStranka">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadRacunStranka" message="tns:RezervacijaService_ReadRacunStranka_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadRacunStrankaResponse" message="tns:RezervacijaService_ReadRacunStranka_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ReadRacunStranka" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ReadRacunStranka_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ReadRacunStranka_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ReadSoba">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadSoba" message="tns:RezervacijaService_ReadSoba_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadSobaResponse" message="tns:RezervacijaService_ReadSoba_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ReadSoba" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ReadSoba_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ReadSoba_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ReadDvorana">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadDvorana" message="tns:RezervacijaService_ReadDvorana_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadDvoranaResponse" message="tns:RezervacijaService_ReadDvorana_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ReadDvorana" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ReadDvorana_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ReadDvorana_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ReadParkirisce">
-      <wsdl:input wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadParkirisce" message="tns:RezervacijaService_ReadParkirisce_InputMessage" />
-      <wsdl:output wsaw:Action="http//www.tehhotel.com/RezervacijaService/ReadParkirisceResponse" message="tns:RezervacijaService_ReadParkirisce_OutputMessage" />
+      <soap:operation soapAction="http//www.tehhotel.com/RezervacijaService/ReadParkirisce" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ReadParkirisce_Input_policy" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#RezervacijaServiceSecureEndpoint_ReadParkirisce_output_policy" />
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
-  </wsdl:portType>
+  </wsdl:binding>
+  <wsdl:service name="RezervacijaServiceSecure">
+    <wsdl:port name="RezervacijaServiceSecureEndpoint" binding="tns:RezervacijaServiceSecureEndpoint">
+      <soap:address location="http://164.8.251.93/SOATravel/hotel2/RezervacijaServiceSecure.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://164.8.251.93/SOATravel/hotel2/RezervacijaServiceSecure.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <X509Data>
+              <X509Certificate>MIIB6jCCAVOgAwIBAgIQ34a6nGmBlIZNkj2Mg1+r6zANBgkqhkiG9w0BAQQFADAQMQ4wDAYDVQQDEwVSUEtleTAeFw0wNjA2MTIyMzQ1MjNaFw0zOTEyMzEyMzU5NTlaMBAxDjAMBgNVBAMTBVJQS2V5MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDffKnouzHOoSRNlYU5N0WdruWJ+QtAt2/mSANz6ppn1gdpeUhMRXtIFW3RWll5CnD/PjQyXElEb8aH1t9nCYtVq5u1a3rqARcCbiKgIq91I2+HTu269o3Mj5bGU8I0pMZT/N62I1BiZSK/qInwFwLsiceSzr+PM5zaZr9OrBoQMQIDAQABo0UwQzBBBgNVHQEEOjA4gBCZVCvjHOVVHer4dvUUgNAuoRIwEDEOMAwGA1UEAxMFUlBLZXmCEN+GupxpgZSGTZI9jINfq+swDQYJKoZIhvcNAQEEBQADgYEAbDk5z6FEhUceoXP2aTFsnigGSCaHflhDVieEFoRsuGkcaJLiiqbPT3tug4mYMbjopn4tJdlOakKZYwA4n/dDsvOoty5mHaK5f20SCHy0APmtTBNzAAt44YpwY1i0IVMsQGr1sOY0tP6AXdLw8GWqo8uO4NIxVfaRdFR4aFW07Tg=</X509Certificate>
+            </X509Data>
+          </KeyInfo>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
 </wsdl:definitions>

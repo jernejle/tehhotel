@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="OneHKoUSfx1uvZArCM5GJdNmwSQ=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="6jAEwsTG3bWBu+S4035uu+94qqM=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="customBinding" name="RezervacijaServiceSecureEndpoint">
       <properties>
@@ -716,10 +716,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="RezervacijaServiceSecureEndpoint" contract="RezervacijaServiceSecure.RezervacijaService" bindingType="customBinding" address="http://localhost:1476/RezervacijaServiceSecure.svc" bindingConfiguration="RezervacijaServiceSecureEndpoint">
+    <endpoint name="RezervacijaServiceSecureEndpoint" contract="RezervacijaServiceSecure.RezervacijaService" bindingType="customBinding" address="http://164.8.251.93/SOATravel/hotel2/RezervacijaServiceSecure.svc" bindingConfiguration="RezervacijaServiceSecureEndpoint">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:1476/RezervacijaServiceSecure.svc</serializedValue>
+          <serializedValue>http://164.8.251.93/SOATravel/hotel2/RezervacijaServiceSecure.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

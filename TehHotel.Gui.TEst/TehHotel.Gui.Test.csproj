@@ -324,26 +324,26 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <None Include="Service References\RezervacijaServiceSecure\configuration91.svcinfo" />
-    <None Include="Service References\RezervacijaServiceSecure\configuration.svcinfo" />
-    <None Include="Service References\RezervacijaServiceSecure\Reference.svcmap">
+    <Content Include="Service References\RezervacijaServiceSecure\configuration91.svcinfo" />
+    <Content Include="Service References\RezervacijaServiceSecure\configuration.svcinfo" />
+    <Content Include="Service References\RezervacijaServiceSecure\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    </Content>
     <Content Include="Views\Rezervacije\Izpis.cshtml" />
     <Content Include="Web References\HotelService\Hotel.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\HotelService\HotelService.disco" />
+    <None Include="Web References\HotelService\HotelService.disco" />
     <Content Include="Web References\RentACarRezervacijeService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <None Include="Service References\RezervacijaServiceSecure\RezervacijaServiceSecure.wsdl" />
+    <Content Include="Service References\RezervacijaServiceSecure\RezervacijaServiceSecure.wsdl" />
     <None Include="Service References\RezervacijaServiceSecure\RezervacijaServiceSecure.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\RezervacijaServiceSecure\RezervacijaServiceSecure1.wsdl" />
+    <Content Include="Service References\RezervacijaServiceSecure\RezervacijaServiceSecure1.wsdl" />
     <None Include="Service References\RezervacijaServiceSecure\RezervacijaServiceSecure1.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -481,7 +481,6 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Web References\HotelService\HotelService.wsdl" />
     <Content Include="Views\RentACar\IzposojaResult.cshtml" />
     <Content Include="Views\RentACar\Izposoja.cshtml" />
     <Content Include="Views\Letalisce\IskanjeLeta.cshtml" />
@@ -538,19 +537,19 @@
     <Content Include="Views\RentACar\Izposoja.cshtml" />
     <Content Include="Views\Letalisce\IskanjeLeta.cshtml" />
     <Content Include="Views\Letalisce\MozniLeti.cshtml" />
-    <Content Include="Web References\HotelService\HotelService.wsdl" />
+    <None Include="Web References\HotelService\HotelService.wsdl" />
     <Content Include="Views\DodatneStoritve\Index.cshtml" />
     <None Include="Web References\HotelService\HotelService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Web References\HotelService\HotelService0.wsdl" />
+    <None Include="Web References\HotelService\HotelService0.wsdl" />
     <None Include="Web References\HotelService\HotelService0.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Web References\HotelService\Reference.map">
+    <None Include="Web References\HotelService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web References\HotelService\Zaposleni.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -695,10 +694,8 @@
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>
-      </CachedAppSettingsObjectName>
-      <CachedSettingsPropName>
-      </CachedSettingsPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TehHotel_Gui_Test_HotelService_HotelService</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://164.8.251.93/SOATravel/hotel2/RezervacijaService.svc">
       <UrlBehavior>Dynamic</UrlBehavior>
