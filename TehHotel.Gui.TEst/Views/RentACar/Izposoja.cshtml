@@ -1,0 +1,69 @@
+﻿@model TehHotel.Gui.Test.Models.RentACarModel
+
+@{
+    ViewBag.Title = "Izposoja avtomobila";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Izposoja avtomobila</h2>
+@using (Html.BeginForm("Rezervacija", "RentACar"))
+{
+    <div class="editor-label">
+        <h3>Stranka</h3>
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(x => x.IdStranka, new SelectList(Model.Stranke, "Id", "Ime"))
+    </div>
+    <div class="editor-label">
+        <h3>Od</h3>
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.DatumOd, new { @class = "datepicker" })
+        @Html.ValidationMessageFor(x => x.DatumOd)
+    </div>
+    <div class="editor-label">
+        <h3>Do</h3>
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(x => x.DatumDo, new { @class = "datepicker" })
+        @Html.ValidationMessageFor(x => x.DatumDo)
+    </div>
+    <table class="mojatabela">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Naziv</th>
+                <th>Tip</th>
+                <th>Letnik</th>
+                <th>Moč</th>
+                <th>Število oseb</th>
+                <th>Število vrat</th>
+                <th>Gorivo</th>
+                <th>Klima</th>
+                <th>Vinjeta</th>
+                <th>Cena</th>
+                <th></th>
+                <tr>
+        </thead>
+        @foreach (var vozilo in Model.VozilaFull)
+        {
+            <tbody>
+                <tr>
+                    <td>@vozilo.IdVozilo</td>
+                    <td>@vozilo.Naziv</td>
+                    <td>@vozilo.Tip</td>
+                    <td>@vozilo.Letnik</td>
+                    <td>@vozilo.MocMotorja</td>
+                    <td>@vozilo.SteviloOseb</td>
+                    <td>@vozilo.SteviloVrat</td>
+                    <td>@vozilo.Gorivo</td>
+                    <td>@vozilo.Klima</td>
+                    <td>@vozilo.Vinjeta</td>
+                    <td>@vozilo.CenaDan</td>
+                    <td>@Html.RadioButtonFor(x => x.IdVozilo, vozilo.IdVozilo)</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+    @Html.ValidationMessageFor(x => x.IdVozilo)<br />
+    <input type="submit" value="Rezerviraj" />
+}

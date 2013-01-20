@@ -52,7 +52,37 @@ namespace TehHotel.Gui.Test.Properties {
                 return ((string)(this["TehHotel_Gui_Test_StrankaService_StrankaService"]));
             }
         }
+
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://164.8.251.93/SOATravel/rentacar2/RentACar2_Stranke.Stranke.svc")]
+        public string TehHotel_Gui_Test_RentACarStrankeService_Stranke {
+            get {
+                return ((string)(this["TehHotel_Gui_Test_RentACarStrankeService_Stranke"]));
+            }
+        }
+
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://164.8.251.93/SOATravel/rentacar2/RentACar2_Rezervacije.Rezervacije.svc")]
+        public string TehHotel_Gui_Test_RentACarRezervacijeService_Rezervacije {
+            get {
+                return ((string)(this["TehHotel_Gui_Test_RentACarRezervacijeService_Rezervacije"]));
+            }
+        }
         
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://164.8.251.93/SOATravel/rentacar2/RentACar2_Vozila.Vozila.svc")]
+        public string TehHotel_Gui_Test_RentACarVozilaService_Vozila {
+            get {
+                return ((string)(this["TehHotel_Gui_Test_RentACarVozilaService_Vozila"]));
+            }
+        }
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
@@ -62,5 +92,6 @@ namespace TehHotel.Gui.Test.Properties {
                 return ((string)(this["TehHotel_Gui_Test_LetalisceService_Letalec2"]));
             }
         }
+
     }
 }
