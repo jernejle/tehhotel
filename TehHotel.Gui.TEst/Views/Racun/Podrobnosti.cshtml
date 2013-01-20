@@ -10,7 +10,7 @@
 
 @{ if (ViewData["izdanPriBanki"] != null && ViewData["odgovor"] == null)
    {
-   <p style="color: #3889B8;">Račun je bil posredovan k banki.</p>
+    <p style="color: #3889B8;">Račun je bil posredovan k banki.</p>
    }
 }
 
@@ -144,18 +144,21 @@
    {
     <input type="button" id="posredujb" name="posredujb" value="Posreduj banki" />
     <div style="display: none; background-color: #EFEEEF" id="dialog-form" title="Vpis stranke">
-        <form method="post" action="/Racun/Posreduj">
-            TRR:
+        @using (Html.BeginForm("Posreduj", "Racun"))
+        {
+            <p>
+                TRR:
             <input type="text" name="trr" />
-            <input type="hidden" name="racunId" value="@racun.IdRacun" />
-            Ker morajo komitenti obstajati na banki, lahko uporabimo enega izmed treh prej ustvarjenih računov:
+                <input type="hidden" name="racunId" value="@racun.IdRacun" />
+                Ker morajo komitenti obstajati na banki, lahko uporabimo enega izmed treh prej ustvarjenih računov:
             <br />
-            SI56251000000001201<br />
-            SI56251000000001202<br />
-            SI56251000000001203<br />
-            <br />
-            <input type="submit" name="submitposreduj" value="Posreduj" />
-        </form>
+                SI56251000000001201<br />
+                SI56251000000001202<br />
+                SI56251000000001203<br />
+                <br />
+                <input type="submit" name="submitposreduj" value="Posreduj" />
+            </p>
+        }
     </div>
     <script type="text/javascript">
         $(function () {
