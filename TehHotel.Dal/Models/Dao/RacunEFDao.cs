@@ -115,7 +115,7 @@ namespace TehHotel.Dal.Models.Dao
 
         public Racun ReadByStranka(int id)
         {
-            RacunEF racunef = db.Racuni.Include("Stranka").Include("RezervacijeSob").Include("RezervacijeDvorane").Include("RezervacijeParkirisca").Where(w => w.Placano == false).Where(q => q.Stranka.Id == id).OrderByDescending(x => x.Id).FirstOrDefault();
+            RacunEF racunef = db.Racuni.Include("Stranka").Include("RezervacijeSob").Include("RezervacijeSob.Soba").Include("RezervacijeDvorane").Include("RezervacijeParkirisca").Where(w => w.Placano == false).Where(q => q.Stranka.Id == id).OrderByDescending(x => x.Id).FirstOrDefault();
             Racun rp = (racunef != null) ? Mapper.Map<RacunEF, Racun>(racunef) : null;
             return rp;
         }

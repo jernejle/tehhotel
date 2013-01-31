@@ -24,29 +24,33 @@ namespace TehHotel.Gui.Test.Controllers
 
         public void PosodobiRacune()
         {
-            List<BancniRacun> bancniRacuni = new List<BancniRacun>();
-            bancniRacuni.Add(new BancniRacun("teh-dejan", "123456", "SI56251000000001201"));
-            bancniRacuni.Add(new BancniRacun("teh-gregor", "123456", "SI56251000000001202"));
-            bancniRacuni.Add(new BancniRacun("teh-jernej", "123456", "SI56251000000001203"));
-
-            RezervacijaServiceSecure.RezervacijaServiceClient rclient = new RezervacijaServiceSecure.RezervacijaServiceClient();
-           
-            BankaService.KBPStranke client = new BankaService.KBPStranke();
-
-            foreach (BancniRacun b in bancniRacuni)
+            try
             {
-                client.SetUpime(b.upime);
-                client.SetGeslo(b.geslo);
+                List<BancniRacun> bancniRacuni = new List<BancniRacun>();
+                bancniRacuni.Add(new BancniRacun("teh-dejan", "123456", "SI56251000000001201"));
+                bancniRacuni.Add(new BancniRacun("teh-gregor", "123456", "SI56251000000001202"));
+                bancniRacuni.Add(new BancniRacun("teh-jernej", "123456", "SI56251000000001203"));
 
-                BankaService.IzdaniRacun[] bankaRacuni = client.pregledPlacanihRacunov(b.trr);
-                if (bankaRacuni != null)
+                RezervacijaServiceSecure.RezervacijaServiceClient rclient = new RezervacijaServiceSecure.RezervacijaServiceClient();
+
+                BankaService.KBPStranke client = new BankaService.KBPStranke();
+
+                foreach (BancniRacun b in bancniRacuni)
                 {
-                    foreach (BankaService.IzdaniRacun bracun in bankaRacuni)
+                    client.SetUpime(b.upime);
+                    client.SetGeslo(b.geslo);
+
+                    BankaService.IzdaniRacun[] bankaRacuni = client.pregledPlacanihRacunov(b.trr);
+                    if (bankaRacuni != null)
                     {
-                        rclient.PlacajRacun(bracun.Racun.StevilkaRacuna);
+                        foreach (BankaService.IzdaniRacun bracun in bankaRacuni)
+                        {
+                            rclient.PlacajRacun(bracun.Racun.StevilkaRacuna);
+                        }
                     }
                 }
             }
+            catch { }
         }
 
     }
