@@ -28,12 +28,12 @@ namespace TehHotel.Gui.Test.Controllers
         {
             if (ModelState.IsValid)
             {
-                    RezervacijaService.RezervacijaService client = new RezervacijaService.RezervacijaService();
-                    PreveriAtribute(r.Fos);
-                    Soba[] sobe = client.ListMozneRezervacijeSobe(r.HotelId, true, r.DatumOd, true, r.DatumDo, true, r.Fos);
-                    ViewBag.sobe = sobe;
-                    ViewBag.rezervacijaSobe = r;
-                    return View("MozneRezervacije");
+                RezervacijaService.RezervacijaService client = new RezervacijaService.RezervacijaService();
+                PreveriAtribute(r.Fos);
+                Soba[] sobe = client.ListMozneRezervacijeSobe(r.HotelId, true, r.DatumOd, true, r.DatumDo, true, r.Fos);
+                ViewBag.sobe = sobe;
+                ViewBag.rezervacijaSobe = r;
+                return View("MozneRezervacije");
             }
             ViewBag.hoteli = ListHotel();
             return View("Rezervacija", r);
@@ -45,40 +45,43 @@ namespace TehHotel.Gui.Test.Controllers
         {
             try
             {
-                
-                List<RezervacijaPosebneStoritve> sobe_list = null;
-                if (Session["sobe"] == null)
+                if (model.idStoritve > 0)
                 {
-                    sobe_list = new List<RezervacijaPosebneStoritve>();
-                    sobe_list.Add(model);
-                }
-                else
-                {
-                    sobe_list = (List<RezervacijaPosebneStoritve>)Session["sobe"];
-                    Boolean obstaja = false;
-                    foreach (RezervacijaPosebneStoritve rps in sobe_list)
+                    List<RezervacijaPosebneStoritve> sobe_list = null;
+                    if (Session["sobe"] == null)
                     {
-                        if (rps.idStoritve == model.idStoritve && ((rps.datumOd < model.datumOd && rps.datumDo > model.datumDo) ||
-                            (rps.datumOd >= model.datumOd && rps.datumDo <= model.datumDo) ||
-                            (rps.datumOd >= model.datumOd && rps.datumOd <= model.datumDo) ||
-                            (rps.datumDo <= model.datumDo && rps.datumDo >= model.datumOd)))
-                        {
-                            obstaja = true;
-                            break;
-                        }
-                    }
-                    if (!obstaja)
-                    {
+                        sobe_list = new List<RezervacijaPosebneStoritve>();
                         sobe_list.Add(model);
                     }
+                    else
+                    {
+                        sobe_list = (List<RezervacijaPosebneStoritve>)Session["sobe"];
+                        Boolean obstaja = false;
+                        foreach (RezervacijaPosebneStoritve rps in sobe_list)
+                        {
+                            if (rps.idStoritve == model.idStoritve && ((rps.datumOd < model.datumOd && rps.datumDo > model.datumDo) ||
+                                (rps.datumOd >= model.datumOd && rps.datumDo <= model.datumDo) ||
+                                (rps.datumOd >= model.datumOd && rps.datumOd <= model.datumDo) ||
+                                (rps.datumDo <= model.datumDo && rps.datumDo >= model.datumOd)))
+                            {
+                                obstaja = true;
+                                break;
+                            }
+                        }
+                        if (!obstaja)
+                        {
+                            sobe_list.Add(model);
+                        }
+                    }
+                    Session["sobe"] = sobe_list;
+
                 }
-                Session["sobe"] = sobe_list;
-                
             }
             catch (Exception e)
             {
                 Response.Write(e.InnerException);
             }
+
             this.ModelState.Clear();
             return RedirectToAction("Index");
         }
